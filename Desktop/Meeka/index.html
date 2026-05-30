@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeka</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+    body { margin: 0; padding: 0; font-family: sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    #pin-form {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        width: 300px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+    #pin-form h3 { margin: 0 0 12px; font-size: 15px; }
+    #pin-form select, #pin-form input, #pin-form textarea {
+        width: 100%;
+        margin-bottom: 8px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+    #pin-form textarea { height: 60px; resize: none; }
+    .form-buttons { display: flex; gap: 8px; }
+    .form-buttons button {
+        flex: 1;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    #save-btn { background: #2d8a4e; color: white; }
+    #cancel-btn { background: #eee; color: #333; }
+
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="pin-form">
+    <h3>📍 Add pin</h3>
+    <select id="pin-type">
+        <option value="camp">⛺ Campsite</option>
+        <option value="cafe">☕ Cafe / Food</option>
+        <option value="lookout">🔭 Lookout</option>
+        <option value="warn">⚠️ Warning</option>
+        <option value="secret">🌿 Secret Spot</option>
+    </select>
+    <input id="pin-name" type="text" placeholder="Name this spot...">
+    <textarea id="pin-note" placeholder="Your notes..."></textarea>
+    <select id="pin-stars">
+        <option value="1">⭐ 1 star</option>
+        <option value="2">⭐⭐ 2 stars</option>
+        <option value="3" selected>⭐⭐⭐ 3 stars</option>
+        <option value="4">⭐⭐⭐⭐ 4 stars</option>
+        <option value="5">⭐⭐⭐⭐⭐ 5 stars</option>
+    </select>
+    <div class="form-buttons">
+        <button id="save-btn" onclick="savePin()">Save pin</button>
+        <button id="cancel-btn" onclick="cancelPin()">Cancel</button>
+    </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
