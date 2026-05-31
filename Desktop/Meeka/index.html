@@ -43,19 +43,22 @@
     }
     #save-btn { background: #2d8a4e; color: white; }
     #cancel-btn { background: #eee; color: #333; }
-
+    .emoji-icon { background: none; border: none; }
     </style>
 </head>
 <body>
     <div id="map"></div>
     <div id="pin-form">
     <h3>📍 Add pin</h3>
+    <input type="hidden" id="edit-index" value="-1">
     <select id="pin-type">
         <option value="camp">⛺ Campsite</option>
         <option value="cafe">☕ Cafe / Food</option>
+        <option value="water">💧 Water Source</option>
         <option value="lookout">🔭 Lookout</option>
         <option value="warn">⚠️ Warning</option>
         <option value="secret">🌿 Secret Spot</option>
+        
     </select>
     <input id="pin-name" type="text" placeholder="Name this spot...">
     <textarea id="pin-note" placeholder="Your notes..."></textarea>
@@ -67,7 +70,7 @@
         <option value="5">⭐⭐⭐⭐⭐ 5 stars</option>
     </select>
     <div class="form-buttons">
-        <button id="save-btn" onclick="savePin()">Save pin</button>
+        <button id="save-btn" onclick="savePin()">Save</button>
         <button id="cancel-btn" onclick="cancelPin()">Cancel</button>
     </div>
 </div>
