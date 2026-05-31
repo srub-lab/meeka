@@ -122,6 +122,7 @@ function startGPS() {
         const lng = position.coords.longitude;
         if (userMarker) {
             userMarker.setLatLng([lat, lng]);
+            checkProximity(lat, lng);
         } else {
             userMarker = L.circleMarker([lat, lng], {
                 radius: 10,
@@ -169,4 +170,34 @@ function speak(text) {
     }
 
     window.speechSynthesis.speak(utterance);
+}
+let spokenPins = new Set();
+let proximityRadius = 5;
+
+function checkProximity(userLat, userLng) {
+    savedPins.forEach(function(p, index) {
+        if (spokenPins.has(index)) return;
+        
+        const dist = getDistance(userLat, userLng, parseFloat(p.lat), parseFloat(p.lng));
+        
+        console.log('Distance to ' + p.name + ': ' + dist.toFixed(2) + 'km');
+if (dist <= proximityRadius) {
+            spokenPins.add(index);
+            const t = pinTypes[p.type];
+            const km = dist.toFixed(1);
+            const text = t.label + ' ahead. ' + p.name + '. ' + p.note + '. Rated ' + p.stars + ' stars. ' + km + ' kilometres.';
+            speak(text);
+            setTimeout(function() { spokenPins.delete(index); }, 60000);
+        }
+    });
+}
+
+function getDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLng/2) * Math.sin(dLng/2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
