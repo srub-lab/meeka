@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
     body { margin: 0; padding: 0; font-family: sans-serif; }
-    #map { height: 100vh; width: 100%; }
+    #map { height: calc(100vh - 32px); width: 100%; margin-top: 32px; }
     #pin-form {
         display: none;
         position: fixed;
@@ -48,6 +48,7 @@
 </head>
 <body>
     <div id="map"></div>
+    <div id="season-bar" style="position:fixed;top:0;left:0;right:0;padding:6px 12px;font-size:13px;color:white;z-index:1000;text-align:center;"></div>
     <div id="pin-form">
     <h3>📍 Add pin</h3>
     <input type="hidden" id="edit-index" value="-1">
