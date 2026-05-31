@@ -37,8 +37,16 @@ function makePopup(p, index) {
         p.note + '<br><br>' +
         '⭐'.repeat(p.stars) + '<br>' +
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
+        '<button onclick="speakPin(' + index + ')">🔊 Read</button> ' +
         '<button onclick="editPin(' + index + ')">✏️ Edit</button> ' +
         '<button onclick="deletePin(' + index + ')">🗑️ Remove</button>';
+}
+
+function speakPin(index) {
+    const p = savedPins[index];
+    const t = pinTypes[p.type];
+    const text = t.label + '. ' + p.name + '. ' + p.note + '. Rated ' + p.stars + ' stars.';
+    speak(text);
 }
 
 function renderAllPins() {
@@ -132,3 +140,33 @@ function startGPS() {
 
 startGPS();
 renderAllPins();
+let targetVoice = null;
+
+// Function to load and cache the specific voice
+function loadVoice() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    targetVoice = voices.find(v => v.name === 'Google UK English Female') || voices[0];
+}
+
+// Trigger loadVoice when the browser finishes loading its voice list
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = loadVoice;
+    loadVoice(); // Try loading immediately in case they are already cached
+}
+
+function speak(text) {
+    if (!('speechSynthesis' in window)) return;
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    // Use the cached voice if found
+    if (targetVoice) {
+        utterance.voice = targetVoice;
+    }
+
+    window.speechSynthesis.speak(utterance);
+}
