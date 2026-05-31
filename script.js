@@ -6,11 +6,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const pinTypes = {
     camp:    { icon: '⛺', color: '#2d8a4e', label: 'Campsite' },
+    caravan: { icon: '🚐', color: '#df1d1d', label: 'Caravan Site' },
+    secret:  { icon: '🌿', color: '#520b7e', label: 'Secret Spot' },
+    car:     { icon: '🚗', color: '#db21c5', label: 'Good Track' },
+    point:   { icon: '📍', color: '#791a09', label: 'Point of Interest' },
     cafe:    { icon: '☕', color: '#e4a000', label: 'Cafe / Food' },
     water:   { icon: '💧', color: '#1a6dd8', label: 'Water Source' },
-    lookout: { icon: '🔭', color: '#1a6dd8', label: 'Lookout' },
+    dump:    { icon: '🗑️', color: '#1f15a8', label: 'Dump Site' },
     warn:    { icon: '⚠️', color: '#cc3333', label: 'Warning' },
-    secret:  { icon: '🌿', color: '#7b3fa0', label: 'Secret Spot' }
 };
 
 let savedPins = JSON.parse(localStorage.getItem('meeka-pins') || '[]');
