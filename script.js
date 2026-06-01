@@ -98,7 +98,7 @@ function savePin() {
         type: document.getElementById('pin-type').value,
         name: document.getElementById('pin-name').value || 'My pin',
         note: document.getElementById('pin-note').value || '',
-        stars: document.getElementById('pin-stars').value
+        stars: document.getElementById('pin-stars').value || '',
         url: document.getElementById('pin-url').value || '',
     };
     if (index === -1) {
@@ -187,7 +187,6 @@ function checkProximity(userLat, userLng) {
         
         const dist = getDistance(userLat, userLng, parseFloat(p.lat), parseFloat(p.lng));
         
-        console.log('Distance to ' + p.name + ': ' + dist.toFixed(2) + 'km');
 if (dist <= proximityRadius) {
             spokenPins.add(index);
             const t = pinTypes[p.type];
