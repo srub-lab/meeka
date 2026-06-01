@@ -140,6 +140,7 @@ function startGPS() {
                 fillOpacity: 1
             }).addTo(map);
             map.setView([lat, lng], 12);
+            getWeather(lat, lng);
         }
     }, function(error) {
         console.log('GPS error:', error);
@@ -221,3 +222,15 @@ const season = getNoogarSeason();
 const bar = document.getElementById('season-bar');
 bar.style.background = season.color;
 bar.textContent = '🌙 ' + season.name + ' — ' + season.desc;
+
+function getWeather(lat, lng) {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lng + '&current=temperature_2m,weathercode,windspeed_10m')
+        .then(response => response.json())
+        .then(data => {
+            const temp = data.current.temperature_2m;
+            const wind = data.current.windspeed_10m;
+            const season = getNoogarSeason();
+            const bar = document.getElementById('season-bar');
+            bar.textContent = '🌙 ' + season.name + ' · 🌡️ ' + temp + '°C · 💨 ' + wind + 'km/h';
+        });
+}
