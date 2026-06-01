@@ -26,8 +26,9 @@ function saveToStorage() {
 }
 
 function makeIcon(type) {
+    const pinType = pinTypes[type] || pinTypes['point'];
     return L.divIcon({
-        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinTypes[type].icon + '</span>',
+        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinType.icon + '</span>',
         className: 'emoji-icon',
         iconSize: [30, 30],
         iconAnchor: [15, 15]
@@ -35,7 +36,7 @@ function makeIcon(type) {
 }
 
 function makePopup(p, index) {
-    const t = pinTypes[p.type];
+    const t = pinTypes[p.type] || pinTypes['point'];
     return '<b>' + t.icon + ' ' + p.name + '</b><br>' +
         '<small>' + t.label + '</small><br><br>' +
         p.note + '<br><br>' +
