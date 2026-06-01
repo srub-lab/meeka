@@ -235,3 +235,52 @@ function getWeather(lat, lng) {
             document.getElementById('season-text').textContent = '🌙 ' + season.name + ' · 🌡️ ' + temp + '°C · 💨 ' + wind + 'km/h';
         });
 }
+let faunaMarkers = [];
+let activeLayers = { birds: false, fish: false };
+
+function toggleLayer(type) {
+    if (activeLayers[type]) {
+        faunaMarkers.forEach(function(m) { map.removeLayer(m); });
+        faunaMarkers = [];
+        activeLayers[type] = false;
+        document.getElementById('btn-' + type).style.background = 'white';
+    } else {
+        activeLayers[type] = true;
+        document.getElementById('btn-' + type).style.background = '#e0f0e0';
+        fetchFauna(type);
+    }
+}
+
+function fetchFauna(type) {
+    const centre = map.getCenter();
+    const lat = centre.lat.toFixed(5);
+    const lng = centre.lng.toFixed(5);
+    const group = type === 'birds' ? 'Birds' : 'Fishes';
+    
+    fetch('https://biocache-ws.ala.org.au/ws/occurrences/search?q=*&lat=' + lat + '&lon=' + lng + '&radius=20&pageSize=20&fq=species_group:' + group)
+        .then(response => response.json())
+        .then(data => {
+            const seen = new Set();
+            data.occurrences.forEach(function(o) {
+                if (!o.vernacularName || !o.decimalLatitude) return;
+                if (seen.has(o.vernacularName)) return;
+                seen.add(o.vernacularName);
+                
+                const icon = L.divIcon({
+                    html: '<span style="font-size:20px;">' + (type === 'birds' ? '🐦' : '🐟') + '</span>',
+                    className: 'emoji-icon',
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+                
+                const marker = L.marker([o.decimalLatitude, o.decimalLongitude], { icon }).addTo(map);
+                marker.bindPopup(
+                    '<b>' + (type === 'birds' ? '🐦' : '🐟') + ' ' + o.vernacularName + '</b><br>' +
+                    '<small><i>' + o.scientificName + '</i></small><br><br>' +
+                    (o.year ? 'Recorded: ' + o.year + '<br>' : '') +
+                    '<small>Atlas of Living Australia</small>'
+                );
+                faunaMarkers.push(marker);
+            });
+        });
+}
