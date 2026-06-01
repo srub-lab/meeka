@@ -15,7 +15,8 @@ const pinTypes = {
     dump:    { icon: '🗑️', color: '#1f15a8', label: 'Dump Site' },
     warn:    { icon: '⚠️', color: '#cc3333', label: 'Warning' },
 };
-
+let faunaMarkers = [];
+let activeLayers = { birds: false, fish: false };
 let savedPins = JSON.parse(localStorage.getItem('meeka-pins') || '[]');
 let markers = [];
 let pendingLat, pendingLng;
@@ -41,6 +42,7 @@ function makePopup(p, index) {
         '⭐'.repeat(p.stars) + '<br>' +
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
         (p.url ? '<a href="' + p.url + '" target="_blank">🔗 More info</a><br><br>' : '') +
+        (p.photo ? '<img src="' + p.photo + '" style="width:100%;border-radius:8px;margin-bottom:8px;"><br>' : '') +
         '<button onclick="speakPin(' + index + ')">🔊 Read</button> ' +
         '<button onclick="editPin(' + index + ')">✏️ Edit</button> ' +
         '<button onclick="deletePin(' + index + ')">🗑️ Remove</button>';
@@ -82,6 +84,10 @@ function editPin(index) {
     document.getElementById('pin-url').value = p.url || '';
     document.getElementById('pin-form').style.display = 'block';
     document.getElementById('pin-form').querySelector('h3').textContent = '✏️ Edit pin';
+    if (p.photo) {
+    document.getElementById('preview-img').src = p.photo;
+    document.getElementById('photo-preview').style.display = 'block';
+    document.getElementById('pin-photo').dataset.photo = p.photo;}
 }
 
 function deletePin(index) {
@@ -100,6 +106,7 @@ function savePin() {
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value || '',
         url: document.getElementById('pin-url').value || '',
+        photo: document.getElementById('pin-photo').dataset.photo || '',
     };
     if (index === -1) {
         savedPins.push(pin);
@@ -118,6 +125,9 @@ function cancelPin() {
     document.getElementById('pin-stars').value = '3';
     document.getElementById('pin-url').value = '';
     document.getElementById('edit-index').value = '-1';
+    document.getElementById('pin-photo').value = '';
+    document.getElementById('pin-photo').dataset.photo = '';
+    document.getElementById('photo-preview').style.display = 'none';
 }
 
 let userMarker = null;
@@ -235,8 +245,7 @@ function getWeather(lat, lng) {
             document.getElementById('season-text').textContent = '🌙 ' + season.name + ' · 🌡️ ' + temp + '°C · 💨 ' + wind + 'km/h';
         });
 }
-let faunaMarkers = [];
-let activeLayers = { birds: false, fish: false };
+
 
 function toggleLayer(type) {
     if (activeLayers[type]) {
@@ -284,3 +293,31 @@ function fetchFauna(type) {
             });
         });
 }
+document.getElementById('pin-photo').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const maxSize = 400;
+            let width = img.width;
+            let height = img.height;
+            if (width > height) {
+                if (width > maxSize) { height *= maxSize / width; width = maxSize; }
+            } else {
+                if (height > maxSize) { width *= maxSize / height; height = maxSize; }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+            const resized = canvas.toDataURL('image/jpeg', 0.7);
+            document.getElementById('preview-img').src = resized;
+            document.getElementById('photo-preview').style.display = 'block';
+            document.getElementById('pin-photo').dataset.photo = resized;
+        };
+        img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+});
