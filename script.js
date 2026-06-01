@@ -40,6 +40,7 @@ function makePopup(p, index) {
         p.note + '<br><br>' +
         '⭐'.repeat(p.stars) + '<br>' +
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
+        (p.url ? '<a href="' + p.url + '" target="_blank">🔗 More info</a><br><br>' : '') +
         '<button onclick="speakPin(' + index + ')">🔊 Read</button> ' +
         '<button onclick="editPin(' + index + ')">✏️ Edit</button> ' +
         '<button onclick="deletePin(' + index + ')">🗑️ Remove</button>';
@@ -78,6 +79,7 @@ function editPin(index) {
     document.getElementById('pin-name').value = p.name;
     document.getElementById('pin-note').value = p.note;
     document.getElementById('pin-stars').value = p.stars;
+    document.getElementById('pin-url').value = p.url || '';
     document.getElementById('pin-form').style.display = 'block';
     document.getElementById('pin-form').querySelector('h3').textContent = '✏️ Edit pin';
 }
@@ -97,6 +99,7 @@ function savePin() {
         name: document.getElementById('pin-name').value || 'My pin',
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value
+        url: document.getElementById('pin-url').value || '',
     };
     if (index === -1) {
         savedPins.push(pin);
@@ -113,6 +116,7 @@ function cancelPin() {
     document.getElementById('pin-name').value = '';
     document.getElementById('pin-note').value = '';
     document.getElementById('pin-stars').value = '3';
+    document.getElementById('pin-url').value = '';
     document.getElementById('edit-index').value = '-1';
 }
 
