@@ -47,8 +47,13 @@
     </style>
 </head>
 <body>
+    <!-- Season bar at top of page -->
     <div id="map"></div>
-    <div id="season-bar" style="position:fixed;top:0;left:0;right:0;padding:6px 12px;font-size:13px;color:white;z-index:1000;text-align:center;"></div>
+    <div id="season-bar" style="position:fixed;top:0;left:0;right:0;padding:6px 12px;font-size:13px;color:black;z-index:1000;background:#000;display:flex;align-items:center;justify-content:center;">
+    <span id="season-text" style="flex:1;text-align:center;"></span>
+    <img src="logo.png" style="height:100px;opacity:0.85;">
+</div>
+<!-- PINS -->
     <div id="pin-form">
     <h3>📍 Add pin</h3>
     <input type="hidden" id="edit-index" value="-1">

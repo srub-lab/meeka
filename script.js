@@ -218,10 +218,11 @@ function getNoogarSeason() {
     return { name: 'Kambarang', desc: 'Second spring. Wildflowers bloom.', color: '#e4a000' };
 }
 
+// top banner seasons
 const season = getNoogarSeason();
 const bar = document.getElementById('season-bar');
-bar.style.background = season.color;
-bar.textContent = '🌙 ' + season.name + ' — ' + season.desc;
+bar.style.background = '#FFFFFF';
+document.getElementById('season-text').textContent = '🌙 ' + season.name;
 
 function getWeather(lat, lng) {
     fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lng + '&current=temperature_2m,weathercode,windspeed_10m')
@@ -231,6 +232,6 @@ function getWeather(lat, lng) {
             const wind = data.current.windspeed_10m;
             const season = getNoogarSeason();
             const bar = document.getElementById('season-bar');
-            bar.textContent = '🌙 ' + season.name + ' · 🌡️ ' + temp + '°C · 💨 ' + wind + 'km/h';
+            document.getElementById('season-text').textContent = '🌙 ' + season.name + ' · 🌡️ ' + temp + '°C · 💨 ' + wind + 'km/h';
         });
 }
