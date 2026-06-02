@@ -340,32 +340,27 @@ function toggleDFES() {
 }
 
 function fetchDFES() {
-    fetch('https://corsproxy.io/?' + encodeURIComponent('https://api.emergency.wa.gov.au/v1/capau'))
-        .then(response => response.text())
-        .then(xmlText => {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlText, 'text/xml');
-            const alerts = xml.querySelectorAll('alert');
-            
-            alerts.forEach(function(alert) {
-                const headline = alert.querySelector('headline') ? alert.querySelector('headline').textContent : 'Emergency Alert';
-                const description = alert.querySelector('description') ? alert.querySelector('description').textContent : '';
-                const severity = alert.querySelector('severity') ? alert.querySelector('severity').textContent.trim() : '';
-                const web = alert.querySelector('web') ? alert.querySelector('web').textContent : '';
-                const circle = alert.querySelector('circle') ? alert.querySelector('circle').textContent : '';
+    fetch('https://corsproxy.io/?' + encodeURIComponent('https://api.emergency.wa.gov.au/v1/incidents'))
+        .then(response => response.json())
+        .then(data => {
+            data.incidents.forEach(function(incident) {
+                if (!incident.location || !incident.location.latitude) return;
                 
-                if (!circle) return;
+                const lat = incident.location.latitude;
+                const lng = incident.location.longitude;
+                const name = incident.name || 'Incident';
+                const type = incident['incident-type'] || '';
+                const status = incident['incident-status'] || '';
+                const suburb = incident.suburbs ? incident.suburbs[0] : '';
                 
-                const parts = circle.split(',');
-                if (parts.length < 2) return;
-                
-                const lat = parseFloat(parts[0]);
-                const lng = parseFloat(parts[1].split(' ')[0]);
-                
-                if (isNaN(lat) || isNaN(lng)) return;
+                const emoji = name.includes('Earthquake') ? '🌋' :
+                              name.includes('Fire') || name.includes('Burn') ? '🔥' :
+                              name.includes('Road Crash') ? '🚗' :
+                              name.includes('Hazmat') || name.includes('Chemical') ? '☣️' :
+                              name.includes('Smoke') ? '💨' : '🔴';
                 
                 const icon = L.divIcon({
-                    html: '<span style="font-size:24px;">🔴</span>',
+                    html: '<span style="font-size:24px;">' + emoji + '</span>',
                     className: 'emoji-icon',
                     iconSize: [24, 24],
                     iconAnchor: [12, 12]
@@ -373,10 +368,11 @@ function fetchDFES() {
                 
                 const marker = L.marker([lat, lng], { icon }).addTo(map);
                 marker.bindPopup(
-                    '<b>🔴 ' + headline + '</b><br><br>' +
-                    '<small>Severity: ' + severity + '</small><br><br>' +
-                    description.substring(0, 200) + '...<br><br>' +
-                    (web ? '<a href="' + web + '" target="_blank">🔗 Full details</a>' : '')
+                    '<b>' + emoji + ' ' + name + '</b><br>' +
+                    '<small>' + type + '</small><br><br>' +
+                    'Status: ' + status + '<br>' +
+                    'Location: ' + suburb + '<br><br>' +
+                    '<a href="https://www.emergency.wa.gov.au" target="_blank">🔗 Emergency WA</a>'
                 );
                 dfesMarkers.push(marker);
             });
