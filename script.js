@@ -322,3 +322,67 @@ document.getElementById('pin-photo').addEventListener('change', function(e) {
     };
     reader.readAsDataURL(file);
 });
+
+let dfesMarkers = [];
+let dfesActive = false;
+
+function toggleDFES() {
+    if (dfesActive) {
+        dfesMarkers.forEach(function(m) { map.removeLayer(m); });
+        dfesMarkers = [];
+        dfesActive = false;
+        document.getElementById('btn-dfes').style.background = 'white';
+    } else {
+        dfesActive = true;
+        document.getElementById('btn-dfes').style.background = '#ffe0e0';
+        fetchDFES();
+    }
+}
+
+function fetchDFES() {
+    fetch('https://corsproxy.io/?' + encodeURIComponent('https://api.emergency.wa.gov.au/v1/capau'))
+        .then(response => response.text())
+        .then(xmlText => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(xmlText, 'text/xml');
+            const alerts = xml.querySelectorAll('alert');
+            
+            alerts.forEach(function(alert) {
+                const headline = alert.querySelector('headline') ? alert.querySelector('headline').textContent : 'Emergency Alert';
+                const description = alert.querySelector('description') ? alert.querySelector('description').textContent : '';
+                const severity = alert.querySelector('severity') ? alert.querySelector('severity').textContent.trim() : '';
+                const web = alert.querySelector('web') ? alert.querySelector('web').textContent : '';
+                const circle = alert.querySelector('circle') ? alert.querySelector('circle').textContent : '';
+                
+                if (!circle) return;
+                
+                const parts = circle.split(',');
+                if (parts.length < 2) return;
+                
+                const lat = parseFloat(parts[0]);
+                const lng = parseFloat(parts[1].split(' ')[0]);
+                
+                if (isNaN(lat) || isNaN(lng)) return;
+                
+                const icon = L.divIcon({
+                    html: '<span style="font-size:24px;">🔴</span>',
+                    className: 'emoji-icon',
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+                
+                const marker = L.marker([lat, lng], { icon }).addTo(map);
+                marker.bindPopup(
+                    '<b>🔴 ' + headline + '</b><br><br>' +
+                    '<small>Severity: ' + severity + '</small><br><br>' +
+                    description.substring(0, 200) + '...<br><br>' +
+                    (web ? '<a href="' + web + '" target="_blank">🔗 Full details</a>' : '')
+                );
+                dfesMarkers.push(marker);
+            });
+        })
+        .catch(function(error) {
+            console.log('DFES error:', error);
+            alert('Could not load DFES data — try again shortly');
+        });
+}
