@@ -26,9 +26,21 @@ function saveToStorage() {
 }
 
 function makeIcon(type) {
+    const customIcons = {
+        water: 'icons/water.png',
+        fish: 'icons/fish.png'
+    };
+    if (customIcons[type]) {
+        return L.divIcon({
+            html: '<img src="' + customIcons[type] + '" style="width:44px;height:44px;">',
+            className: 'emoji-icon',
+            iconSize: [44, 44],
+            iconAnchor: [22, 44]
+        });
+    }
     const pinType = pinTypes[type] || pinTypes['point'];
     return L.divIcon({
-        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinType.icon + '</span>',
+        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinTypes[type].icon + '</span>',tml: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinType.icon + '</span>',
         className: 'emoji-icon',
         iconSize: [30, 30],
         iconAnchor: [15, 15]
@@ -277,7 +289,7 @@ function fetchFauna(type) {
                 seen.add(o.vernacularName);
                 
                 const icon = L.divIcon({
-                    html: '<span style="font-size:20px;">' + (type === 'birds' ? '🐦' : '🐟') + '</span>',
+                    html: type === 'fish' ? '<img src="icons/fish.png" style="width:44px;height:44px;">' : '<span style="font-size:20px;">🐦</span>',
                     className: 'emoji-icon',
                     iconSize: [24, 24],
                     iconAnchor: [12, 12]
