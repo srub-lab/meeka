@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="19.43" y1="9" x2="19.43" y2="33.13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f47820"/>
+      <stop offset=".5" stop-color="#f5ed25"/>
+      <stop offset="1" stop-color="#f47820"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <path d="M0,19.95C0,9.01,8.88,0,20,0s20,8.9,20,19.95-8.99,20.05-20,20.05S0,30.88,0,19.95Z" style="fill: #fff; fill-rule: evenodd;"/>
+    <path d="M20,37.02c9.4,0,17.02-7.64,17.02-17.07S29.4,2.88,20,2.88,2.98,10.52,2.98,19.95s7.62,17.07,17.02,17.07Z" style="fill: #0b3380;"/>
+    <path d="M20,4.66c8.46,0,15.25,6.91,15.25,15.29s-6.89,15.29-15.25,15.29-15.25-6.91-15.25-15.29,6.79-15.29,15.25-15.29ZM20,1.41C9.66,1.41,1.41,9.79,1.41,19.95s8.36,18.64,18.59,18.64,18.59-8.38,18.59-18.64S30.34,1.41,20,1.41Z" style="fill: #d6001c;"/>
+    <path d="M22.34,31.68c9.43-3.06,9.69-13.38,4.15-18.85-.93,6.05-9.1,1.44-4.9-5.66-6.74,1.54-8.99,6.67-9.04,9.71,0,0-1.15-.37-1.14-2.93-7.44,12.35,2.51,14.44,6.41,17.72-1.71-3.12-1.69-8.65,3.6-10.49-1.72,4.6,4.02,5.77.92,10.49Z" style="fill: url(#linear-gradient); fill-rule: evenodd;"/>
+    <path d="M7.78,31.67L30.13,5.81l2.23,1.93-22.35,25.86-2.23-1.93Z" style="fill: #d6001c; fill-rule: evenodd;"/>
+  </g>
+</svg>

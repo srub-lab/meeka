@@ -365,22 +365,28 @@ function fetchDFES() {
                 const status = incident['incident-status'] || '';
                 const suburb = incident.suburbs ? incident.suburbs[0] : '';
                 
-                const emoji = name.includes('Earthquake') ? '🌋' :
-                              name.includes('Fire') || name.includes('Burn') ? '🔥' :
-                              name.includes('Road Crash') ? '🚗' :
-                              name.includes('Hazmat') || name.includes('Chemical') ? '☣️' :
-                              name.includes('Smoke') ? '💨' : '🔴';
-                
-                const icon = L.divIcon({
-                    html: '<span style="font-size:24px;">' + emoji + '</span>',
-                    className: 'emoji-icon',
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
-                });
+                const iconMap = {
+    'ew-other-burn-off': 'ew-prescribed-burn-or-burn-off',
+    'ew-other-fire': 'ew-other-fire',
+    'ew-structure-fire': 'ew-structure-fire-warning',
+    'ew-earthquake': 'ew-earthquake',
+    'ew-other-road-crash': 'ew-other-incident',
+    'ew-hazmat-general-warning': 'ew-hazmat-general-warning',
+    'ew-other-smell-of-gas': 'ew-hazardous-materials',
+    'ew-other-active-alarm': 'ew-other-incident',
+    'ew-other-report-of-smoke': 'ew-other-incident',
+};
+const incidentIcon = iconMap[incident['incident-icon']] || 'ew-other-incident';
+    const icon = L.divIcon({
+    html: '<img src="icons/dfes/' + incidentIcon + '.svg" style="width:36px;height:36px;">',
+    className: 'emoji-icon',
+    iconSize: [36, 36],
+    iconAnchor: [18, 36]
+});
                 
                 const marker = L.marker([lat, lng], { icon }).addTo(map);
                 marker.bindPopup(
-                    '<b>' + emoji + ' ' + name + '</b><br>' +
+                    '<b>' + name + '</b><br>' +
                     '<small>' + type + '</small><br><br>' +
                     'Status: ' + status + '<br>' +
                     'Location: ' + suburb + '<br><br>' +
