@@ -24,23 +24,31 @@ let pendingLat, pendingLng;
 function saveToStorage() {
     localStorage.setItem('meeka-pins', JSON.stringify(savedPins));
 }
-
+// Custom icons comma on all except last default emojis which are image based
 function makeIcon(type) {
     const customIcons = {
-        water: 'icons/water.png',
-        fish: 'icons/fish.png'
+        fish: 'icons/fish.png',
+        camp: 'icons/camp.png',
+	    caravan: 'icons/caravan.png',
+	    secret: 'icons/secret.png',
+ 	    car: 'icons/car.png',
+	    point: 'icons/point.png',
+        cafe: 'icons/cafe.png',
+	    water: 'icons/water.png',
+	    dump: 'icons/dump.png',
+	    warn: 'icons/warn.png'
     };
     if (customIcons[type]) {
         return L.divIcon({
-            html: '<img src="' + customIcons[type] + '" style="width:44px;height:44px;">',
+            html: '<img src="' + customIcons[type] + '" style="width:45px;height:45px;object-fit:contain;">',
             className: 'emoji-icon',
-            iconSize: [44, 44],
-            iconAnchor: [22, 44]
+            iconSize: [45, 45],
+            iconAnchor: [15, 30]
         });
     }
     const pinType = pinTypes[type] || pinTypes['point'];
     return L.divIcon({
-        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinTypes[type].icon + '</span>',tml: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinType.icon + '</span>',
+        html: '<span style="font-size:24px;filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.3));">' + pinType.icon + '</span>',
         className: 'emoji-icon',
         iconSize: [30, 30],
         iconAnchor: [15, 15]
@@ -289,11 +297,13 @@ function fetchFauna(type) {
                 seen.add(o.vernacularName);
                 
                 const icon = L.divIcon({
-                    html: type === 'fish' ? '<img src="icons/fish.png" style="width:44px;height:44px;">' : '<span style="font-size:20px;">🐦</span>',
-                    className: 'emoji-icon',
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
-                });
+    html: '<div style="width:12px;height:12px;background:' + 
+          (type === 'birds' ? '#2d8a4e' : '#1a6dd8') + 
+          ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
+    className: '',
+    iconSize: [12, 12],
+    iconAnchor: [6, 6]
+});
                 
                 const marker = L.marker([o.decimalLatitude, o.decimalLongitude], { icon }).addTo(map);
                 marker.bindPopup(
