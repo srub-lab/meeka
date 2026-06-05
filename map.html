@@ -111,10 +111,10 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     }
 
     #save-btn {
-        background: #2d8a4e;
-        color: white;
-        box-shadow: 0 3px 10px rgba(45,138,78,0.30);
-    }
+    background: rgba(214, 114, 20, 0.75);
+    color: white;
+    box-shadow: 0 3px 10px rgba(214,114,20,0.25);
+}
 
     #save-btn:active { opacity: 0.85; }
 
@@ -157,27 +157,27 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 </div>
 <!-- PINS -->
     <div id="pin-form">
-    <h3>📍 Add pin</h3>
+    <h3>Add Pin</h3>
     <input type="hidden" id="edit-index" value="-1">
- <select id="pin-type">
-    <option value="camp">Campsite</option>
-    <option value="caravan">Caravan Site</option>
-    <option value="secret">Secret Spot</option>
-    <option value="car">Good Track</option>
-    <option value="point">Point of Interest</option>
-    <option value="cafe">Cafe / Food</option>
-    <option value="water">Water Source</option>
-    <option value="dump">Dump Site</option>
-    <option value="warn">Warning</option>
-</select>
-
+    <select id="pin-type">
+        <option value="camp">Campsite</option>
+        <option value="caravan">Caravan Site</option>
+        <option value="secret">Secret Spot</option>
+        <option value="car">Good Track</option>
+        <option value="point">Point of Interest</option>
+        <option value="cafe">Cafe / Food</option>
+        <option value="water">Water Source</option>
+        <option value="dump">Dump Site</option>
+        <option value="warn">Warning</option>
+    </select>
     <input id="pin-name" type="text" placeholder="Name this spot...">
     <textarea id="pin-note" placeholder="Your notes..."></textarea>
+    <input id="pin-address" type="text" placeholder="Address or phone number...">
     <input id="pin-url" type="url" placeholder="Link (optional)... https://...">
     <input id="pin-photo" type="file" accept="image/*" style="width:100%;margin-bottom:8px;font-size:13px;">
     <div id="photo-preview" style="display:none;margin-bottom:8px;">
-    <img id="preview-img" style="width:100%;border-radius:8px;max-height:150px;object-fit:cover;">
-</div>
+        <img id="preview-img" style="width:100%;border-radius:8px;max-height:150px;object-fit:cover;">
+    </div>
     <select id="pin-stars">
         <option value="1">⭐ 1 star</option>
         <option value="2">⭐⭐ 2 stars</option>

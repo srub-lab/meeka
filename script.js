@@ -5,15 +5,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const pinTypes = {
-    camp:    { icon: '⛺', color: '#2d8a4e', label: 'Campsite' },
-    caravan: { icon: '🚐', color: '#df1d1d', label: 'Caravan Site' },
-    secret:  { icon: '🌿', color: '#520b7e', label: 'Secret Spot' },
-    car:     { icon: '🚗', color: '#db21c5', label: 'Good Track' },
-    point:   { icon: '📍', color: '#791a09', label: 'Point of Interest' },
-    cafe:    { icon: '☕', color: '#e4a000', label: 'Cafe / Food' },
-    water:   { icon: '💧', color: '#1a6dd8', label: 'Water Source' },
-    dump:    { icon: '🗑️', color: '#1f15a8', label: 'Dump Site' },
-    warn:    { icon: '⚠️', color: '#cc3333', label: 'Warning' },
+    camp:    { icon: '', color: '#2d8a4e', label: 'Campsite' },
+    caravan: { icon: '', color: '#df1d1d', label: 'Caravan Site' },
+    secret:  { icon: '', color: '#520b7e', label: 'Secret Spot' },
+    car:     { icon: '', color: '#db21c5', label: 'Good Track' },
+    point:   { icon: '', color: '#791a09', label: 'Point of Interest' },
+    cafe:    { icon: '', color: '#e4a000', label: 'Cafe / Food' },
+    water:   { icon: '', color: '#1a6dd8', label: 'Water Source' },
+    dump:    { icon: '', color: '#1f15a8', label: 'Dump Site' },
+    warn:    { icon: '', color: '#cc3333', label: 'Warning' },
 };
 let faunaMarkers = [];
 let activeLayers = { birds: false, fish: false };
@@ -64,9 +64,9 @@ function makePopup(p, index) {
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
         (p.url ? '<a href="' + p.url + '" target="_blank">🔗 More info</a><br><br>' : '') +
         (p.photo ? '<img src="' + p.photo + '" style="width:100%;border-radius:8px;margin-bottom:8px;"><br>' : '') +
-        '<button onclick="speakPin(' + index + ')">🔊 Read</button> ' +
-        '<button onclick="editPin(' + index + ')">✏️ Edit</button> ' +
-        '<button onclick="deletePin(' + index + ')">🗑️ Remove</button>';
+        '<button onclick="speakPin(' + index + ')" style="padding:8px 14px;border-radius:10px;border:none;background:#333;color:#f2f2f2;font-size:13px;font-weight:600;cursor:pointer;margin-right:4px;">Read</button>' +
+        '<button onclick="editPin(' + index + ')" style="padding:8px 14px;border-radius:10px;border:none;background:rgba(214,114,20,0.85);color:white;font-size:13px;font-weight:600;cursor:pointer;margin-right:4px;">Edit</button>' +
+        '<button onclick="deletePin(' + index + ')" style="padding:8px 14px;border-radius:10px;border:none;background:#f0f0f0;color:#444;font-size:13px;font-weight:600;cursor:pointer;">Remove</button>';
 }
 
 function speakPin(index) {
@@ -91,7 +91,7 @@ map.on('click', function(e) {
     pendingLng = e.latlng.lng.toFixed(5);
     document.getElementById('edit-index').value = '-1';
     document.getElementById('pin-form').style.display = 'block';
-    document.getElementById('pin-form').querySelector('h3').textContent = '📍 Add pin';
+    document.getElementById('pin-form').querySelector('h3').textContent = 'Add Pin';
     document.getElementById('pin-name').focus();
 });
 
@@ -103,8 +103,9 @@ function editPin(index) {
     document.getElementById('pin-note').value = p.note;
     document.getElementById('pin-stars').value = p.stars;
     document.getElementById('pin-url').value = p.url || '';
+    document.getElementById('pin-address').value = p.address || '';
     document.getElementById('pin-form').style.display = 'block';
-    document.getElementById('pin-form').querySelector('h3').textContent = '✏️ Edit pin';
+    document.getElementById('pin-form').querySelector('h3').textContent = 'Edit Pin';
     if (p.photo) {
     document.getElementById('preview-img').src = p.photo;
     document.getElementById('photo-preview').style.display = 'block';
@@ -126,6 +127,8 @@ function savePin() {
         name: document.getElementById('pin-name').value || 'My pin',
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value || '',
+        address: document.getElementById('pin-address').value || '',
+        address: document.getElementById('pin-address').value || '',
         url: document.getElementById('pin-url').value || '',
         photo: document.getElementById('pin-photo').dataset.photo || '',
     };
@@ -144,6 +147,8 @@ function cancelPin() {
     document.getElementById('pin-name').value = '';
     document.getElementById('pin-note').value = '';
     document.getElementById('pin-stars').value = '3';
+    document.getElementById('pin-address').value = '';
+    document.getElementById('pin-address').value = '';
     document.getElementById('pin-url').value = '';
     document.getElementById('edit-index').value = '-1';
     document.getElementById('pin-photo').value = '';
