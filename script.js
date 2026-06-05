@@ -1,3 +1,7 @@
+// Firebase setup
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
+
 const map = L.map('map').setView([-33.57, 115.82], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -15,14 +19,38 @@ const pinTypes = {
     dump:    { icon: '', color: '#1f15a8', label: 'Dump Site' },
     warn:    { icon: '', color: '#cc3333', label: 'Warning' },
 };
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBlFRgfgLIwubKc60ZAjAK8DP4oYyTd9No",
+    authDomain: "boodja-42835.firebaseapp.com",
+    databaseURL: "https://boodja-42835-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "boodja-42835",
+    storageBucket: "boodja-42835.firebasestorage.app",
+    messagingSenderId: "913649223248",
+    appId: "1:913649223248:web:882cd7fd4ca09e0f2a7355"
+};
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getDatabase(firebaseApp);
+const pinsRef = ref(db, 'pins');
+
 let faunaMarkers = [];
 let activeLayers = { birds: false, fish: false };
-let savedPins = JSON.parse(localStorage.getItem('meeka-pins') || '[]');
+let savedPins = [];
 let markers = [];
 let pendingLat, pendingLng;
 
+onValue(pinsRef, function(snapshot) {
+    const data = snapshot.val();
+    savedPins = data ? Object.values(data) : [];
+    renderAllPins();
+});
+
 function saveToStorage() {
-    localStorage.setItem('meeka-pins', JSON.stringify(savedPins));
+    const pinsObj = {};
+    savedPins.forEach(function(pin, i) {
+        pinsObj['pin_' + i] = pin;
+    });
+    set(pinsRef, pinsObj);
 }
 // Custom icons comma on all except last default emojis which are image based
 function makeIcon(type) {
@@ -57,12 +85,9 @@ function makeIcon(type) {
 
 function makePopup(p, index) {
     const t = pinTypes[p.type] || pinTypes['point'];
-    return '<b>' + p.name + '</b><br>' +
+    return '<b>' + t.icon + ' ' + p.name + '</b><br>' +
         '<small>' + t.label + '</small><br><br>' +
-        (p.note ? p.note + '<br><br>' : '') +
-        (p.address ? '<small>' + p.address + '</small><br>' : '') +
-        (p.phone ? '<small>' + p.phone + '</small><br>' : '') +
-        (p.address || p.phone ? '<br>' : '') +
+        p.note + '<br><br>' +
         '⭐'.repeat(p.stars) + '<br>' +
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
         (p.url ? '<a href="' + p.url + '" target="_blank">🔗 More info</a><br><br>' : '') +
@@ -75,7 +100,7 @@ function makePopup(p, index) {
 function speakPin(index) {
     const p = savedPins[index];
     const t = pinTypes[p.type];
-    const text = t.label + '. ' + p.name + '. ' + p.note + '. ' + (p.address ? p.address + '. ' : '') + (p.phone ? p.phone + '. ' : '') + 'Rated ' + p.stars + ' stars.';
+    const text = t.label + '. ' + p.name + '. ' + p.note + '. Rated ' + p.stars + ' stars.';
     speak(text);
 }
 
@@ -107,7 +132,6 @@ function editPin(index) {
     document.getElementById('pin-stars').value = p.stars;
     document.getElementById('pin-url').value = p.url || '';
     document.getElementById('pin-address').value = p.address || '';
-    document.getElementById('pin-phone').value = p.phone || '';
     document.getElementById('pin-form').style.display = 'block';
     document.getElementById('pin-form').querySelector('h3').textContent = 'Edit Pin';
     if (p.photo) {
@@ -132,7 +156,7 @@ function savePin() {
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value || '',
         address: document.getElementById('pin-address').value || '',
-        phone: document.getElementById('pin-phone').value || '',
+        address: document.getElementById('pin-address').value || '',
         url: document.getElementById('pin-url').value || '',
         photo: document.getElementById('pin-photo').dataset.photo || '',
     };
@@ -152,7 +176,7 @@ function cancelPin() {
     document.getElementById('pin-note').value = '';
     document.getElementById('pin-stars').value = '3';
     document.getElementById('pin-address').value = '';
-    document.getElementById('pin-phone').value = '';
+    document.getElementById('pin-address').value = '';
     document.getElementById('pin-url').value = '';
     document.getElementById('edit-index').value = '-1';
     document.getElementById('pin-photo').value = '';
@@ -418,3 +442,11 @@ const incidentIcon = iconMap[incident['incident-icon']] || 'ew-other-incident';
             alert('Could not load DFES data — try again shortly');
         });
 }
+// Expose functions to global scope for inline HTML onclick handlers
+window.savePin = savePin;
+window.cancelPin = cancelPin;
+window.editPin = editPin;
+window.deletePin = deletePin;
+window.speakPin = speakPin;
+window.toggleLayer = toggleLayer;
+window.toggleDFES = toggleDFES;
