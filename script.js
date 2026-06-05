@@ -57,9 +57,12 @@ function makeIcon(type) {
 
 function makePopup(p, index) {
     const t = pinTypes[p.type] || pinTypes['point'];
-    return '<b>' + t.icon + ' ' + p.name + '</b><br>' +
+    return '<b>' + p.name + '</b><br>' +
         '<small>' + t.label + '</small><br><br>' +
-        p.note + '<br><br>' +
+        (p.note ? p.note + '<br><br>' : '') +
+        (p.address ? '<small>' + p.address + '</small><br>' : '') +
+        (p.phone ? '<small>' + p.phone + '</small><br>' : '') +
+        (p.address || p.phone ? '<br>' : '') +
         '⭐'.repeat(p.stars) + '<br>' +
         '<small>' + p.lat + ', ' + p.lng + '</small><br><br>' +
         (p.url ? '<a href="' + p.url + '" target="_blank">🔗 More info</a><br><br>' : '') +
@@ -72,7 +75,7 @@ function makePopup(p, index) {
 function speakPin(index) {
     const p = savedPins[index];
     const t = pinTypes[p.type];
-    const text = t.label + '. ' + p.name + '. ' + p.note + '. Rated ' + p.stars + ' stars.';
+    const text = t.label + '. ' + p.name + '. ' + p.note + '. ' + (p.address ? p.address + '. ' : '') + (p.phone ? p.phone + '. ' : '') + 'Rated ' + p.stars + ' stars.';
     speak(text);
 }
 
@@ -104,6 +107,7 @@ function editPin(index) {
     document.getElementById('pin-stars').value = p.stars;
     document.getElementById('pin-url').value = p.url || '';
     document.getElementById('pin-address').value = p.address || '';
+    document.getElementById('pin-phone').value = p.phone || '';
     document.getElementById('pin-form').style.display = 'block';
     document.getElementById('pin-form').querySelector('h3').textContent = 'Edit Pin';
     if (p.photo) {
@@ -128,7 +132,7 @@ function savePin() {
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value || '',
         address: document.getElementById('pin-address').value || '',
-        address: document.getElementById('pin-address').value || '',
+        phone: document.getElementById('pin-phone').value || '',
         url: document.getElementById('pin-url').value || '',
         photo: document.getElementById('pin-photo').dataset.photo || '',
     };
@@ -148,7 +152,7 @@ function cancelPin() {
     document.getElementById('pin-note').value = '';
     document.getElementById('pin-stars').value = '3';
     document.getElementById('pin-address').value = '';
-    document.getElementById('pin-address').value = '';
+    document.getElementById('pin-phone').value = '';
     document.getElementById('pin-url').value = '';
     document.getElementById('edit-index').value = '-1';
     document.getElementById('pin-photo').value = '';
