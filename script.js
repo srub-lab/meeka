@@ -41,13 +41,17 @@ let pendingLat, pendingLng;
 pinsRef.on('value', function(snapshot) {
     const data = snapshot.val();
     savedPins = data ? Object.values(data) : [];
+    savedPins.forEach(function(pin, i) {
+        if (!pin.id) pin.id = 'pin_' + i;
+    });
     renderAllPins();
 });
 
 function saveToStorage() {
     const pinsObj = {};
-    savedPins.forEach(function(pin, i) {
-        pinsObj['pin_' + i] = pin;
+    savedPins.forEach(function(pin) {
+        if (!pin.id) pin.id = 'pin_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+        pinsObj[pin.id] = pin;
     });
     pinsRef.set(pinsObj);
 }
