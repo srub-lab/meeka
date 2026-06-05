@@ -1,6 +1,5 @@
 // Firebase setup
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
+
 
 const map = L.map('map').setView([-33.57, 115.82], 10);
 
@@ -29,9 +28,9 @@ const firebaseConfig = {
     messagingSenderId: "913649223248",
     appId: "1:913649223248:web:882cd7fd4ca09e0f2a7355"
 };
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getDatabase(firebaseApp);
-const pinsRef = ref(db, 'pins');
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const pinsRef = db.ref('pins');
 
 let faunaMarkers = [];
 let activeLayers = { birds: false, fish: false };
@@ -39,7 +38,7 @@ let savedPins = [];
 let markers = [];
 let pendingLat, pendingLng;
 
-onValue(pinsRef, function(snapshot) {
+pinsRef.on('value', function(snapshot) {
     const data = snapshot.val();
     savedPins = data ? Object.values(data) : [];
     renderAllPins();
@@ -50,7 +49,7 @@ function saveToStorage() {
     savedPins.forEach(function(pin, i) {
         pinsObj['pin_' + i] = pin;
     });
-    set(pinsRef, pinsObj);
+    pinsRef.set(pinsObj);
 }
 // Custom icons comma on all except last default emojis which are image based
 function makeIcon(type) {
