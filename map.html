@@ -172,7 +172,8 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </select>
     <input id="pin-name" type="text" placeholder="Name this spot...">
     <textarea id="pin-note" placeholder="Your notes..."></textarea>
-    <input id="pin-address" type="text" placeholder="Address or phone number...">
+    <input id="pin-address" type="text" placeholder="Address...">
+    <input id="pin-phone" type="tel" placeholder="Phone number...">
     <input id="pin-url" type="url" placeholder="Link (optional)... https://...">
     <input id="pin-photo" type="file" accept="image/*" style="width:100%;margin-bottom:8px;font-size:13px;">
     <div id="photo-preview" style="display:none;margin-bottom:8px;">
@@ -191,7 +192,7 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 <script>
 function myFunction() {
     var x = document.getElementById("myTopnav");
