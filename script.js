@@ -3,9 +3,30 @@
 
 const map = L.map('map').setView([-33.57, 115.82], 10);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+});
+
+const stadiaOutdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
+    attribution: '© Stadia Maps © OpenMapTiles © OpenStreetMap contributors'
+});
+
+const stadiaSatellite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
+    attribution: '© Stadia Maps © OpenMapTiles © OpenStreetMap contributors'
+});
+
+const stadiaDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    attribution: '© Stadia Maps © OpenMapTiles © OpenStreetMap contributors'
+});
+
+stadiaOutdoors.addTo(map);
+let currentLayer = stadiaOutdoors;
+
+function setMapLayer(layer) {
+    map.removeLayer(currentLayer);
+    layer.addTo(map);
+    currentLayer = layer;
+}
 
 const pinTypes = {
     camp:    { icon: '', color: '#2d8a4e', label: 'Campsite' },
@@ -485,3 +506,4 @@ window.deletePin = deletePin;
 window.speakPin = speakPin;
 window.toggleLayer = toggleLayer;
 window.toggleDFES = toggleDFES;
+window.setMapLayer = setMapLayer;
