@@ -22,11 +22,7 @@ const stadiaDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smoot
 stadiaOutdoors.addTo(map);
 let currentLayer = stadiaOutdoors;
 
-function setMapLayer(layer) {
-    map.removeLayer(currentLayer);
-    layer.addTo(map);
-    currentLayer = layer;
-}
+
 
 const pinTypes = {
     camp:    { icon: '', color: '#2d8a4e', label: 'Campsite' },
@@ -506,4 +502,3 @@ window.deletePin = deletePin;
 window.speakPin = speakPin;
 window.toggleLayer = toggleLayer;
 window.toggleDFES = toggleDFES;
-window.setMapLayer = setMapLayer;
