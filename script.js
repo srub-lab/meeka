@@ -33,7 +33,7 @@ const db = firebase.database();
 const pinsRef = db.ref('pins');
 
 let faunaMarkers = [];
-let activeLayers = { birds: false, fish: false };
+let activeLayers = { birds: false, fish: false, plants: false };
 let savedPins = [];
 let markers = [];
 let pendingLat, pendingLng;
@@ -341,32 +341,43 @@ function fetchFauna(type) {
     const centre = map.getCenter();
     const lat = centre.lat.toFixed(5);
     const lng = centre.lng.toFixed(5);
-    const group = type === 'birds' ? 'Birds' : 'Fishes';
-    
-    fetch('https://biocache-ws.ala.org.au/ws/occurrences/search?q=*&lat=' + lat + '&lon=' + lng + '&radius=20&pageSize=20&fq=species_group:' + group)
+    const taxon = type === 'birds' ? '3' : type === 'fish' ? '47178' : '47126';
+    const btn = document.getElementById('btn-' + type);
+    btn.style.opacity = '0.5';
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=20&taxon_id=' + taxon + '&per_page=20&order_by=observed_on', { signal: controller.signal })
         .then(response => response.json())
         .then(data => {
             const seen = new Set();
-            data.occurrences.forEach(function(o) {
-                if (!o.vernacularName || !o.decimalLatitude) return;
-                if (seen.has(o.vernacularName)) return;
-                seen.add(o.vernacularName);
-                
+            data.results.forEach(function(o) {
+                if (!o.taxon || !o.location) return;
+                const parts = o.location.split(',');
+                if (parts.length < 2) return;
+                const oLat = parseFloat(parts[0]);
+                const oLng = parseFloat(parts[1]);
+                const name = o.taxon.preferred_common_name || o.taxon.name;
+                if (seen.has(name)) return;
+                seen.add(name);
+
                 const icon = L.divIcon({
-    html: '<div style="width:12px;height:12px;background:' + 
-          (type === 'birds' ? '#2d8a4e' : '#1a6dd8') + 
-          ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
-    className: '',
-    iconSize: [12, 12],
-    iconAnchor: [6, 6]
-});
-                
-                const marker = L.marker([o.decimalLatitude, o.decimalLongitude], { icon }).addTo(map);
+                    html: '<div style="width:12px;height:12px;background:' +
+                          (type === 'birds' ? '#2d8a4e' : type === 'fish' ? '#1a6dd8' : '#7b3fa0') +
+                          ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
+                    className: '',
+                    iconSize: [12, 12],
+                    iconAnchor: [6, 6]
+                });
+
+                const marker = L.marker([oLat, oLng], { icon }).addTo(map);
                 marker.bindPopup(
-                    '<b>' + (type === 'birds' ? '🐦' : '🐟') + ' ' + o.vernacularName + '</b><br>' +
-                    '<small><i>' + o.scientificName + '</i></small><br><br>' +
-                    (o.year ? 'Recorded: ' + o.year + '<br>' : '') +
-                    '<small>Atlas of Living Australia</small>'
+                    '<b>' + (type === 'birds' ? '🐦' : type === 'fish' ? '🐟' : '🌿') + ' ' + name + '</b><br>' +
+                    '<small><i>' + o.taxon.name + '</i></small><br><br>' +
+                    (o.observed_on ? 'Recorded: ' + o.observed_on + '<br>' : '') +
+                    (o.photos && o.photos.length > 0 ? '<img src="' + o.photos[0].url.replace('square', 'small') + '" style="width:100%;border-radius:8px;margin-top:6px;"><br>' : '') +
+                    '<small>iNaturalist</small>'
                 );
                 faunaMarkers.push(marker);
             });
