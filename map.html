@@ -146,6 +146,13 @@ function toggleLayerMenu() {
     const options = document.getElementById('layer-options');
     options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
 }
+function setMapLayer(layer) {
+    if (typeof currentLayer !== 'undefined') {
+        map.removeLayer(currentLayer);
+    }
+    layer.addTo(map);
+    currentLayer = layer;
+}
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
