@@ -48,6 +48,7 @@ pinsRef.on('value', function(snapshot) {
 });
 
 function saveToStorage() {
+    if (savedPins.length === 0) return;
     const pinsObj = {};
     savedPins.forEach(function(pin) {
         if (!pin.id) pin.id = 'pin_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
@@ -191,9 +192,10 @@ let userMarker = null;
 
 function startGPS() {
     if (!navigator.geolocation) return;
-    navigator.geolocation.watchPosition(function(position) {
+       navigator.geolocation.watchPosition(function(position) {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
+        updateGPSIndicator(position.coords.accuracy);
         if (userMarker) {
             userMarker.setLatLng([lat, lng]);
             checkProximity(lat, lng);
@@ -289,6 +291,18 @@ function getNoogarSeason() {
 const season = getNoogarSeason();
 const bar = document.getElementById('season-bar');
 document.getElementById('season-text').innerHTML = '<img src="icons/moon.png" style="height:45px;vertical-align:middle;margin-right:4px;">' + season.name;
+
+function updateGPSIndicator(accuracy) {
+    let color, label;
+    if (accuracy <= 20) { color = '#4ade80'; label = 'GPS'; }
+    else if (accuracy <= 100) { color = '#fb923c'; label = 'GPS'; }
+    else if (accuracy <= 500) { color = '#f87171'; label = 'GPS'; }
+    else { color = '#6b7280'; label = 'GPS'; }
+    const indicator = document.getElementById('gps-indicator');
+    if (indicator) indicator.innerHTML = 
+        '<span style="width:7px;height:7px;border-radius:50%;background:' + color + ';display:inline-block;margin-right:3px;"></span>' +
+        '<span style="font-size:11px;color:' + color + ';">' + label + '</span>';
+}
 
 function getWeather(lat, lng) {
     fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lng + '&current=temperature_2m,weathercode,windspeed_10m')
