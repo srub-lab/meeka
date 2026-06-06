@@ -118,7 +118,14 @@ function renderAllPins() {
     });
 }
 
+let speechUnlocked = false;
+
 map.on('click', function(e) {
+    if (!speechUnlocked) {
+        const unlock = new SpeechSynthesisUtterance('');
+        window.speechSynthesis.speak(unlock);
+        speechUnlocked = true;
+    }
     pendingLat = e.latlng.lat.toFixed(5);
     pendingLng = e.latlng.lng.toFixed(5);
     document.getElementById('edit-index').value = '-1';
@@ -160,7 +167,7 @@ function savePin() {
         note: document.getElementById('pin-note').value || '',
         stars: document.getElementById('pin-stars').value || '',
         address: document.getElementById('pin-address').value || '',
-        address: document.getElementById('pin-address').value || '',
+        phone: document.getElementById('pin-phone').value || '',
         url: document.getElementById('pin-url').value || '',
         photo: document.getElementById('pin-photo').dataset.photo || '',
     };
