@@ -140,18 +140,20 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
         <i class="fa fa-bars"></i>
     </a>
 </div>
-    <div id="map"></div>
-    <div id="layer-btns" style="position:fixed;bottom:80px;right:10px;z-index:1000;display:flex;flex-direction:column;gap:6px;">
-    <button id="btn-birds" onclick="toggleLayer('birds')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-    <img src="icons/bird.png" style="width:32px;height:32px;display:block;">
-</button>
-<button id="btn-fish" onclick="toggleLayer('fish')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-    <img src="icons/fish.png" style="width:32px;height:32px;display:block;">
-</button>
-<button id="btn-dfes" onclick="toggleDFES()" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-    <img src="icons/dfes/ew-other-fire.svg" style="width:32px;height:32px;display:block;">
-</button>
-
+  <div id="layer-options" style="display:none;flex-direction:column;gap:6px;align-items:flex-end;">
+        <button id="btn-birds" onclick="toggleLayer('birds')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+            <img src="icons/bird.png" style="width:32px;height:32px;display:block;">
+        </button>
+        <button id="btn-fish" onclick="toggleLayer('fish')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+            <img src="icons/fish.png" style="width:32px;height:32px;display:block;">
+        </button>
+        <button id="btn-dfes" onclick="toggleDFES()" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+            <img src="icons/dfes/ew-other-fire.svg" style="width:32px;height:32px;display:block;">
+        </button>
+    </div>
+    <button onclick="toggleLayerMenu()" style="background:#333;border:none;border-radius:8px;padding:8px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);">
+        <img src="icons/bird.png" style="width:32px;height:32px;display:block;filter:invert(1);">
+    </button>
 </div>
     <div id="season-bar" style="position:fixed;bottom:0;left:0;right:0;padding:6px 12px;font-size:13px;color:#f2f2f2;z-index:999;background:#333;display:flex;align-items:center;justify-content:center;">
     <span id="season-text" style="text-align:center;"></span>
@@ -197,8 +199,12 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script src="script.js"></script>
-<script src="script.js"></script>
 <script>
+function toggleLayerMenu() {
+    const options = document.getElementById('layer-options');
+    options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+}
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
