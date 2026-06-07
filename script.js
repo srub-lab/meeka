@@ -494,6 +494,63 @@ const incidentIcon = iconMap[incident['incident-icon']] || 'ew-other-incident';
             alert('Could not load DFES data — try again shortly');
         });
 }
+let waCampMarkers = [];
+let waCampsActive = false;
+
+function toggleWACamps() {
+    const btn = document.getElementById('btn-wacamps');
+    if (waCampsActive) {
+        waCampMarkers.forEach(m => map.removeLayer(m));
+        waCampMarkers = [];
+        waCampsActive = false;
+        btn.style.background = 'white';
+    } else {
+        waCampsActive = true;
+        btn.style.background = '#ffe0b2';
+        fetchWACamps();
+    }
+}
+
+function fetchWACamps() {
+    if (!waCampsActive) return;
+    waCampMarkers.forEach(m => map.removeLayer(m));
+    waCampMarkers = [];
+    const centre = map.getCenter();
+    const lat = centre.lat.toFixed(5);
+    const lng = centre.lng.toFixed(5);
+    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[tourism=camp_site](around:50000,' + lat + ',' + lng + ');out;')
+        .then(r => r.json())
+        .then(data => {
+            data.elements.forEach(function(e) {
+                if (!e.lat || !e.lon) return;
+                const name = e.tags.name || 'Campsite';
+                const icon = L.divIcon({
+                    html: '<div style="width:12px;height:12px;background:#d67214;border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
+                    className: '',
+                    iconSize: [12, 12],
+                    iconAnchor: [6, 6]
+                });
+                const marker = L.marker([e.lat, e.lon], { icon }).addTo(map);
+                marker.bindPopup(
+                    '<b>' + name + '</b><br>' +
+                    '<small>WA Campsite</small><br><br>' +
+                    (e.tags.fee ? 'Fee: ' + e.tags.fee + '<br>' : '') +
+                    (e.tags.toilets ? 'Toilets: ' + e.tags.toilets + '<br>' : '') +
+                    (e.tags.shower ? 'Shower: ' + e.tags.shower + '<br>' : '') +
+                    (e.tags.water ? 'Water: ' + e.tags.water + '<br>' : '') +
+                    (e.tags.caravans ? 'Caravans: ' + e.tags.caravans + '<br>' : '') +
+                    (e.tags.website ? '<br><a href="' + e.tags.website + '" target="_blank">More info</a>' : '') +
+                    '<br><small>© OpenStreetMap</small>'
+                );
+                waCampMarkers.push(marker);
+            });
+        });
+}
+
+map.on('moveend', function() {
+    fetchWACamps();
+});
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -502,3 +559,4 @@ window.deletePin = deletePin;
 window.speakPin = speakPin;
 window.toggleLayer = toggleLayer;
 window.toggleDFES = toggleDFES;
+window.toggleWACamps = toggleWACamps;
