@@ -547,8 +547,75 @@ function fetchWACamps() {
         });
 }
 
+let fuelMarkers = [];
+let fuelActive = false;
+
+function toggleFuel() {
+    const btn = document.getElementById('btn-fuel');
+    if (fuelActive) {
+        fuelMarkers.forEach(m => map.removeLayer(m));
+        fuelMarkers = [];
+        fuelActive = false;
+        btn.style.background = '#333';
+    } else {
+        fuelActive = true;
+        btn.style.background = '#d67214';
+        fetchOSMLayer('amenity=fuel', fuelMarkers, '#e63946', 'Fuel Station');
+    }
+}
+
+let waterMarkers = [];
+let waterActive = false;
+
+function toggleWater() {
+    const btn = document.getElementById('btn-water');
+    if (waterActive) {
+        waterMarkers.forEach(m => map.removeLayer(m));
+        waterMarkers = [];
+        waterActive = false;
+        btn.style.background = '#333';
+    } else {
+        waterActive = true;
+        btn.style.background = '#1a6dd8';
+        fetchOSMLayer('amenity=drinking_water', waterMarkers, '#1a6dd8', 'Drinking Water');
+    }
+}
+
+function fetchOSMLayer(tag, markersArray, colour, label) {
+    const centre = map.getCenter();
+    const lat = centre.lat.toFixed(5);
+    const lng = centre.lng.toFixed(5);
+    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[' + tag + '](around:50000,' + lat + ',' + lng + ');out;')
+        .then(r => r.json())
+        .then(data => {
+            markersArray.length = 0;
+            data.elements.forEach(function(e) {
+                if (!e.lat || !e.lon) return;
+                const name = e.tags.name || label;
+                const icon = L.divIcon({
+                    html: '<div style="width:12px;height:12px;background:' + colour + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
+                    className: '',
+                    iconSize: [12, 12],
+                    iconAnchor: [6, 6]
+                });
+                const marker = L.marker([e.lat, e.lon], { icon }).addTo(map);
+                marker.bindPopup(
+                    '<b>' + name + '</b><br>' +
+                    '<small>' + label + '</small><br>' +
+                    (e.tags.brand ? e.tags.brand + '<br>' : '') +
+                    (e.tags.opening_hours ? 'Hours: ' + e.tags.opening_hours + '<br>' : '') +
+                    (e.tags.website ? '<br><a href="' + e.tags.website + '" target="_blank">More info</a>' : '') +
+                    '<br><small>© OpenStreetMap</small>'
+                );
+                markersArray.push(marker);
+            });
+        });
+}
+
 map.on('moveend', function() {
     fetchWACamps();
+    if (fuelActive) { fuelMarkers.forEach(m => map.removeLayer(m)); fuelMarkers.length = 0; fetchOSMLayer('amenity=fuel', fuelMarkers, '#e63946', 'Fuel Station'); }
+    if (waterActive) { waterMarkers.forEach(m => map.removeLayer(m)); waterMarkers.length = 0; fetchOSMLayer('amenity=drinking_water', waterMarkers, '#1a6dd8', 'Drinking Water'); }
 });
 
 // Expose functions to global scope for inline HTML onclick handlers
@@ -560,3 +627,5 @@ window.speakPin = speakPin;
 window.toggleLayer = toggleLayer;
 window.toggleDFES = toggleDFES;
 window.toggleWACamps = toggleWACamps;
+window.toggleFuel = toggleFuel;
+window.toggleWater = toggleWater;
