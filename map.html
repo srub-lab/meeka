@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-#map { height: calc(100vh - 86px); width: 100%; margin-top: 38px; }
+#map { height: calc(100vh - 86px); width: 100%; margin-top: 48px; }
 .topnav { background-color: #333; overflow: visible; position:fixed;top:0;left:0;right:0;z-index:1000; }
 .topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px; }
 .topnav a:hover { background-color: #ddd; color: black; }
@@ -227,6 +227,11 @@ function myFunction() {
         x.className = "topnav";
     }
 }
+document.getElementById('map').addEventListener('click', function() {
+    document.getElementById('nature-panel').style.display = 'none';
+    document.getElementById('travel-panel').style.display = 'none';
+    document.getElementById('map-style-menu').style.display = 'none';
+});
 </script>
 </body>
 </html>

@@ -49,7 +49,7 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const pinsRef = db.ref('pins');
 
-let faunaMarkers = [];
+let faunaMarkers = { birds: [], fish: [], plants: [] };
 let activeLayers = { birds: false, fish: false, plants: false };
 let savedPins = [];
 let markers = [];
@@ -232,8 +232,10 @@ function startGPS() {
                 opacity: 1,
                 fillOpacity: 1
             }).addTo(map);
-            map.setView([lat, lng], 12);
+              map.setView([lat, lng], 12);
             getWeather(lat, lng);
+            checkProximity(lat, lng);
+            checkProximity(lat, lng);
         }
     }, function(error) {
         console.log('GPS error:', error);
@@ -259,8 +261,9 @@ if ('speechSynthesis' in window) {
 
 function speak(text) {
     if (!('speechSynthesis' in window)) return;
-
     window.speechSynthesis.cancel();
+    window.speechSynthesis.resume();
+    window.speechSynthesis.resume();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.9;
     utterance.pitch = 1;
@@ -343,10 +346,11 @@ function getWeather(lat, lng) {
 
 function toggleLayer(type) {
     if (activeLayers[type]) {
-        faunaMarkers.forEach(function(m) { map.removeLayer(m); });
-        faunaMarkers = [];
+        faunaMarkers[type].forEach(function(m) { map.removeLayer(m); });
+        faunaMarkers[type] = [];
         activeLayers[type] = false;
         document.getElementById('btn-' + type).style.background = 'white';
+        document.getElementById('btn-' + type).style.opacity = '1';
     } else {
         activeLayers[type] = true;
         document.getElementById('btn-' + type).style.background = '#e0f0e0';
@@ -365,7 +369,7 @@ function fetchFauna(type) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
 
-   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=20&taxon_id=' + taxon + '&per_page=20&order_by=observed_on', { signal: controller.signal })
+   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&taxon_id=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
         .then(response => response.json())
         .then(data => {
             const seen = new Set();
@@ -396,7 +400,7 @@ function fetchFauna(type) {
                     (o.photos && o.photos.length > 0 ? '<img src="' + o.photos[0].url.replace('square', 'small') + '" style="width:100%;border-radius:8px;margin-top:6px;"><br>' : '') +
                     '<small>iNaturalist</small>'
                 );
-                faunaMarkers.push(marker);
+                faunaMarkers[type].push(marker);
             });
         });
 }
@@ -438,6 +442,7 @@ function toggleDFES() {
         dfesMarkers = [];
         dfesActive = false;
         document.getElementById('btn-dfes').style.background = 'white';
+        document.getElementById('btn-dfes').style.opacity = '1';
     } else {
         dfesActive = true;
         document.getElementById('btn-dfes').style.background = '#ffe0e0';
@@ -504,6 +509,7 @@ function toggleWACamps() {
         waCampMarkers = [];
         waCampsActive = false;
         btn.style.background = 'white';
+        btn.style.opacity = '1';
     } else {
         waCampsActive = true;
         btn.style.background = '#ffe0b2';
@@ -556,7 +562,8 @@ function toggleFuel() {
         fuelMarkers.forEach(m => map.removeLayer(m));
         fuelMarkers = [];
         fuelActive = false;
-        btn.style.background = '#333';
+        btn.style.background = 'white';
+        btn.style.opacity = '1';
     } else {
         fuelActive = true;
         btn.style.background = '#d67214';
@@ -573,7 +580,8 @@ function toggleWater() {
         waterMarkers.forEach(m => map.removeLayer(m));
         waterMarkers = [];
         waterActive = false;
-        btn.style.background = '#333';
+        btn.style.background = 'white';
+        btn.style.opacity = '1';
     } else {
         waterActive = true;
         btn.style.background = '#1a6dd8';
