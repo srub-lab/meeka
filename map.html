@@ -69,33 +69,61 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     <a href="https://parks.dpaw.wa.gov.au/" target="_blank">WA Parks</a>
     <a href="https://www.emergency.wa.gov.au/" target="_blank">DFES</a>
     <a href="https://www.bom.gov.au/wa/" target="_blank">BOM</a>
+    <a href="https://zoom.earth/maps/satellite/#view=-27.71,132.96,5z/overlays=radar" target="_blank">Zoom Earth</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <div id="map"></div>
-<div id="layer-menu" style="position:fixed;bottom:80px;right:10px;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
-    <div id="layer-options" style="display:none;flex-direction:column;gap:6px;align-items:flex-end;">
-        <button id="btn-birds" onclick="toggleLayer('birds')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-            <img src="icons/bird.png" style="width:32px;height:32px;display:block;">
+<!-- Layer panel -->
+<div id="layer-panel" style="display:none;position:fixed;bottom:48px;right:0;left:0;z-index:1000;background:#222;border-top:1px solid #444;padding:12px 16px;">
+    <div style="color:#aaa;font-size:11px;font-weight:600;letter-spacing:0.08em;margin-bottom:8px;">NATURE</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+        <button id="btn-birds" onclick="toggleLayer('birds')" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/bird.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Birds</span>
         </button>
-        <button id="btn-fish" onclick="toggleLayer('fish')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-            <img src="icons/fish.png" style="width:32px;height:32px;display:block;">
+        <button id="btn-fish" onclick="toggleLayer('fish')" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/fish.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Fish</span>
         </button>
-           <button id="btn-dfes" onclick="toggleDFES()" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-            <img src="icons/dfes/ew-other-fire.svg" style="width:32px;height:32px;display:block;">
+        <button id="btn-plants" onclick="toggleLayer('plants')" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/plant.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Plants</span>
         </button>
-        <button id="btn-plants" onclick="toggleLayer('plants')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-            <img src="icons/plant.png" style="width:32px;height:32px;display:block;">
-        </button>
-        <hr style="width:100%;border:none;border-top:1px solid #eee;margin:2px 0;">
-        <button onclick="setMapLayer(stadiaOutdoors)" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);font-size:10px;font-weight:600;color:#333;width:46px;">OUT</button>
-        <button onclick="setMapLayer(stadiaSatellite)" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);font-size:10px;font-weight:600;color:#333;width:46px;">SAT</button>
-        <button onclick="setMapLayer(stadiaDark)" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);font-size:10px;font-weight:600;color:#333;width:46px;">DARK</button>
-        <button onclick="setMapLayer(osmLayer)" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);font-size:10px;font-weight:600;color:#333;width:46px;">OSM</button>
     </div>
+    <div style="color:#aaa;font-size:11px;font-weight:600;letter-spacing:0.08em;margin-bottom:8px;">TRAVEL</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+        <button id="btn-wacamps" onclick="toggleWACamps()" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/wa.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Camps</span>
+        </button>
+        <button id="btn-fuel" onclick="toggleFuel()" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/fuel.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Fuel</span>
+        </button>
+        <button id="btn-water" onclick="toggleWater()" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/drinkwater.png" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">Water</span>
+        </button>
+        <button id="btn-dfes" onclick="toggleDFES()" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;width:52px;">
+            <img src="icons/dfes/ew-other-fire.svg" style="width:28px;height:28px;display:block;">
+            <span style="color:#ccc;font-size:9px;">DFES</span>
+        </button>
+    </div>
+    <div style="color:#aaa;font-size:11px;font-weight:600;letter-spacing:0.08em;margin-bottom:8px;">MAP STYLE</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button onclick="setMapLayer(osmLayer)" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px 10px;cursor:pointer;color:#ccc;font-size:11px;font-weight:600;">MAP</button>
+        <button onclick="setMapLayer(stadiaOutdoors)" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px 10px;cursor:pointer;color:#ccc;font-size:11px;font-weight:600;">TOPO</button>
+        <button onclick="setMapLayer(stadiaSatellite)" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px 10px;cursor:pointer;color:#ccc;font-size:11px;font-weight:600;">SAT</button>
+        <button onclick="setMapLayer(stadiaDark)" style="background:#333;border:1px solid #555;border-radius:8px;padding:6px 10px;cursor:pointer;color:#ccc;font-size:11px;font-weight:600;">DARK</button>
+    </div>
+</div>
+<!-- Layer toggle button -->
+<div style="position:fixed;bottom:48px;right:10px;z-index:1001;">
     <button onclick="toggleLayerMenu()" style="background:#333;border:none;border-radius:8px;padding:8px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);">
-    <img src="icons/info.png" style="width:32px;height:32px;display:block;filter:invert(1);">
+        <img src="icons/info.png" style="width:32px;height:32px;display:block;filter:invert(1);">
     </button>
 </div>
 <div id="season-bar" style="position:fixed;bottom:0;left:0;right:0;padding:6px 12px;font-size:13px;color:#f2f2f2;z-index:999;background:#333;display:flex;align-items:center;justify-content:center;">
@@ -143,8 +171,8 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 <script src="script.js"></script>
 <script>
 function toggleLayerMenu() {
-    const options = document.getElementById('layer-options');
-    options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+    const panel = document.getElementById('layer-panel');
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
 }
 function setMapLayer(layer) {
     if (typeof currentLayer !== 'undefined') {
