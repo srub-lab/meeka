@@ -362,14 +362,14 @@ function fetchFauna(type) {
     const centre = map.getCenter();
     const lat = centre.lat.toFixed(5);
     const lng = centre.lng.toFixed(5);
-    const taxon = type === 'birds' ? '3' : type === 'fish' ? '47178' : '47126';
+    const taxon = type === 'birds' ? 'Aves' : type === 'fish' ? 'Actinopterygii' : 'Plantae';
     const btn = document.getElementById('btn-' + type);
     btn.style.opacity = '0.5';
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
 
-   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&taxon_id=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
+   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&iconic_taxa[]=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
         .then(response => response.json())
         .then(data => {
             data.results.forEach(function(o) {
