@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeka</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeka</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 #map { height: calc(100vh - 86px); width: 100%; margin-top: 38px; }
-.topnav { background-color: #333; overflow: hidden; }
+.topnav { background-color: #333; overflow: visible; position:fixed;top:0;left:0;right:0;z-index:1000; }
 .topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px; }
 .topnav a:hover { background-color: #ddd; color: black; }
 .topnav a.active { background-color: #d67214; color: white; }
@@ -18,16 +17,22 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) { display: none; }
     .topnav a.icon { float: right; display: block; }
-    .topnav.responsive { position: relative; }
+    .topnav.responsive { position: fixed; }
     .topnav.responsive .icon { position: absolute; right: 0; top: 0; }
     .topnav.responsive a { float: none; display: block; text-align: left; }
 }
-/* Map style dropdown */
-.map-style-dropdown { display:none; position:absolute; top:100%; left:0; background:#333; z-index:2000; min-width:120px; }
-.map-style-dropdown a { float:none; display:block; padding:10px 16px; font-size:15px; border-bottom:1px solid #444; }
-.map-style-dropdown a:hover { background:#444; }
-#map-style-nav { position:relative; }
-/* Layer panels */
+#map-style-menu {
+    display: none;
+    position: fixed;
+    top: 38px;
+    left: 0;
+    right: 0;
+    background: #444;
+    z-index: 999;
+    overflow: hidden;
+}
+#map-style-menu a { float:left; color:#f2f2f2; padding:12px 16px; text-decoration:none; font-size:15px; }
+#map-style-menu a:hover { background:#555; }
 .layer-panel {
     display: none;
     position: fixed;
@@ -43,63 +48,57 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 .layer-panel-title { color: #888; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; margin-bottom: 8px; }
 .layer-btn {
     background: white; border: 1px solid #ddd; border-radius: 8px;
-.layer-btn {
-    background: #333; border: 1px solid #555; border-radius: 8px;
     padding: 6px; cursor: pointer; display: flex; flex-direction: column;
     align-items: center; gap: 3px; width: 52px;
 }
 .layer-btn span { color: #555; font-size: 9px; }
-.layer-btn.active { background: #d67214; border-color: #d67214; }
-/* Pin form */
+.layer-btn.active { background: #ffe0b2; border-color: #d67214; }
 #pin-form {
     display: none; position: fixed; bottom: 16px; left: 50%;
     transform: translateX(-50%); background: #ffffff; border-radius: 20px;
     padding: 20px 18px 18px; width: 320px; max-width: calc(100vw - 24px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10); z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10); z-index: 1001;
 }
-#pin-form h3 { margin: 0 0 16px; font-size: 16px; font-weight: 700; color: #1a1a1a; letter-spacing: 0.01em; }
+#pin-form h3 { margin: 0 0 16px; font-size: 16px; font-weight: 700; color: #1a1a1a; }
 #pin-form select, #pin-form input[type="text"], #pin-form input[type="url"], #pin-form input[type="tel"], #pin-form textarea {
     width: 100%; margin-bottom: 10px; padding: 11px 13px; border-radius: 11px;
     border: 1.5px solid #e8e8e8; font-size: 14px; font-family: inherit; color: #1a1a1a;
     background: #f7f7f7; box-sizing: border-box; outline: none;
-    transition: border-color 0.15s, background 0.15s; -webkit-appearance: none; appearance: none;
+    -webkit-appearance: none; appearance: none;
 }
 #pin-form select:focus, #pin-form input[type="text"]:focus, #pin-form input[type="url"]:focus, #pin-form textarea:focus { border-color: #2d8a4e; background: #ffffff; }
 #pin-form textarea { height: 70px; resize: none; line-height: 1.4; }
 #pin-form input[type="file"] { width: 100%; margin-bottom: 10px; font-size: 13px; color: #555; box-sizing: border-box; }
 .form-buttons { display: flex; gap: 10px; margin-top: 4px; }
 .form-buttons button { flex: 1; padding: 12px; border-radius: 12px; border: none; font-size: 15px; font-family: inherit; font-weight: 600; cursor: pointer; }
-#save-btn { background: rgba(214, 114, 20, 0.75); color: white; box-shadow: 0 3px 10px rgba(214,114,20,0.25); }
+#save-btn { background: rgba(214, 114, 20, 0.75); color: white; }
 #cancel-btn { background: #f0f0f0; color: #444; }
-.emoji-icon { background: none; border: none; }
 </style>
 </head>
 <body>
 
-<!-- Nav bar -->
-<div class="topnav" id="myTopnav" style="position:fixed;top:0;left:0;right:0;z-index:1000;">
+<div class="topnav" id="myTopnav">
     <a href="index.html">Home</a>
     <a href="map.html" class="active">Meeka Map</a>
     <a href="https://parks.dpaw.wa.gov.au/" target="_blank">WA Parks</a>
     <a href="https://www.emergency.wa.gov.au/" target="_blank">DFES</a>
     <a href="https://www.bom.gov.au/wa/" target="_blank">BOM</a>
     <a href="https://zoom.earth/maps/satellite/#view=-27.71,132.96,5z/overlays=radar" target="_blank">Zoom Earth</a>
-    <a id="map-style-nav" href="javascript:void(0);" onclick="toggleMapStyleMenu()">Map ▾
-        <div class="map-style-dropdown" id="map-style-menu">
-            <a href="javascript:void(0);" onclick="setMapLayer(osmLayer)">Map</a>
-            <a href="javascript:void(0);" onclick="setMapLayer(stadiaOutdoors)">Topo</a>
-            <a href="javascript:void(0);" onclick="setMapLayer(stadiaSatellite)">Satellite</a>
-            <a href="javascript:void(0);" onclick="setMapLayer(stadiaDark)">Dark</a>
-        </div>
-    </a>
+    <a href="javascript:void(0);" onclick="toggleMapStyleMenu()">Map ▾</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 
+<div id="map-style-menu">
+    <a href="javascript:void(0);" onclick="setMapLayer(osmLayer)">Map</a>
+    <a href="javascript:void(0);" onclick="setMapLayer(stadiaOutdoors)">Topo</a>
+    <a href="javascript:void(0);" onclick="setMapLayer(stadiaSatellite)">Satellite</a>
+    <a href="javascript:void(0);" onclick="setMapLayer(stadiaDark)">Dark</a>
+</div>
+
 <div id="map"></div>
 
-<!-- Nature panel -->
 <div id="nature-panel" class="layer-panel">
     <div class="layer-panel-title">NATURE</div>
     <div style="display:flex;gap:8px;">
@@ -118,7 +117,6 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </div>
 </div>
 
-<!-- Travel panel -->
 <div id="travel-panel" class="layer-panel">
     <div class="layer-panel-title">TRAVEL</div>
     <div style="display:flex;gap:8px;">
@@ -141,7 +139,6 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </div>
 </div>
 
-<!-- Layer toggle buttons -->
 <div style="position:fixed;bottom:55px;right:10px;z-index:1001;display:flex;flex-direction:row;gap:6px;">
     <button onclick="togglePanel('nature')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
         <img src="icons/bird.png" style="width:32px;height:32px;display:block;">
@@ -151,13 +148,11 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </button>
 </div>
 
-<!-- Season bar -->
 <div id="season-bar" style="position:fixed;bottom:0;left:0;right:0;padding:6px 12px;font-size:13px;color:#f2f2f2;z-index:999;background:#333;display:flex;align-items:center;justify-content:center;">
     <span id="season-text" style="text-align:center;"></span>
     <span id="gps-indicator" style="display:inline-flex;align-items:center;margin-left:10px;"></span>
 </div>
 
-<!-- Pin form -->
 <div id="pin-form">
     <h3>Add Pin</h3>
     <input type="hidden" id="edit-index" value="-1">
@@ -202,6 +197,8 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 function togglePanel(type) {
     const nature = document.getElementById('nature-panel');
     const travel = document.getElementById('travel-panel');
+    const menu = document.getElementById('map-style-menu');
+    menu.style.display = 'none';
     if (type === 'nature') {
         travel.style.display = 'none';
         nature.style.display = nature.style.display === 'block' ? 'none' : 'block';
@@ -212,6 +209,8 @@ function togglePanel(type) {
 }
 function toggleMapStyleMenu() {
     const menu = document.getElementById('map-style-menu');
+    document.getElementById('nature-panel').style.display = 'none';
+    document.getElementById('travel-panel').style.display = 'none';
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 function setMapLayer(layer) {
