@@ -367,7 +367,7 @@ function fetchFauna(type) {
     btn.style.opacity = '0.5';
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 20000);
 
    fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&taxon_id=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
         .then(response => response.json())
@@ -399,8 +399,10 @@ function fetchFauna(type) {
                 );
                 faunaMarkers[type].push(marker);
             });
-        });
-}
+        })
+        .catch(function(err) { console.log('iNaturalist error:', err); })
+        .finally(function() { clearTimeout(timeout); btn.style.opacity = '1'; });
+    }
 document.getElementById('pin-photo').addEventListener('change', function(e) {
     const file = e.target.files[0];
     if (!file) return;
