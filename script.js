@@ -372,7 +372,6 @@ function fetchFauna(type) {
    fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&taxon_id=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
         .then(response => response.json())
         .then(data => {
-            const seen = new Set();
             data.results.forEach(function(o) {
                 if (!o.taxon || !o.location) return;
                 const parts = o.location.split(',');
@@ -380,8 +379,6 @@ function fetchFauna(type) {
                 const oLat = parseFloat(parts[0]);
                 const oLng = parseFloat(parts[1]);
                 const name = o.taxon.preferred_common_name || o.taxon.name;
-                if (seen.has(name)) return;
-                seen.add(name);
 
                 const icon = L.divIcon({
                     html: '<div style="width:12px;height:12px;background:' +
