@@ -7,54 +7,90 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f9f9f9;
         }
 
-        /* Navigation */
         .topnav {
             background-color: #333;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            height: 48px;
         }
-
-        .topnav a {
-            float: left;
+        .topnav-title {
             color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
             font-size: 17px;
+            text-decoration: none;
         }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+        .topnav-hamburger {
+            background: none;
+            border: none;
+            color: #f2f2f2;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 6px;
+            line-height: 1;
         }
-
-        .topnav a.active {
-            background-color: #d67214;
-            color: white;
-        }
-
-        .topnav .icon {
+        #nav-drawer {
             display: none;
+            background: #333;
+            border-top: 1px solid #444;
         }
+        .acc-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 16px;
+            color: #d67214;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            border-top: 0.5px solid #444;
+            cursor: pointer;
+            user-select: none;
+        }
+        .acc-heading .chevron { font-size: 12px; transition: transform 0.2s ease; color: #888; }
+        .acc-heading.open .chevron { transform: rotate(180deg); }
+        .acc-body { display: none; }
+        .acc-body.open { display: block; }
+        .acc-item {
+            display: block;
+            padding: 12px 16px 12px 28px;
+            color: #f2f2f2;
+            font-size: 15px;
+            text-decoration: none;
+            border-top: 0.5px solid #3e3e3e;
+            cursor: pointer;
+        }
+        .acc-item:hover { background: #3e3e3e; }
+        .acc-direct {
+            display: block;
+            padding: 13px 16px;
+            color: #f2f2f2;
+            font-size: 15px;
+            text-decoration: none;
+            border-top: 0.5px solid #444;
+            font-weight: 600;
+        }
+        .acc-direct:hover { background: #3e3e3e; }
 
         .hero {
-    width: 100%;
-    text-align: center;
-    background: #FFFFFF;
-}
+            width: 100%;
+            text-align: center;
+            background: #FFFFFF;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 937px;
+            height: auto;
+        }
+        .hero a img:hover { opacity: 0.85; }
 
-.hero img {
-    width: 100%;
-    max-width: 937px;
-    height: auto;
-}
-
-        /* Links section */
         .links-section {
             display: flex;
             justify-content: center;
@@ -64,76 +100,82 @@
             flex-wrap: wrap;
             background: white;
         }
-
         .link-card {
             text-align: center;
             text-decoration: none;
         }
+        .link-card img { display: block; object-fit: contain; }
+        .link-card:hover { opacity: 0.8; }
 
-        .link-card img {
-            display: block;
-            object-fit: contain;
-        }
-
-        .link-card:hover {
-            opacity: 0.8;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
             font-size: 12px;
-            color: #888;
             background: #333;
             color: #ccc;
         }
 
-        /* Mobile */
         @media screen and (max-width: 600px) {
-            .topnav a:not(:first-child) { display: none; }
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-            .topnav.responsive { position: relative; }
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-            .links-section {
-                flex-direction: column;
-                gap: 20px;
-            }
+            .links-section { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<div class="topnav" id="myTopnav">
-    <a href="index.html" class="active">Home</a>
-    <a href="map.html">Meeka Map</a>
-    <a href="https://parks.dpaw.wa.gov.au/" target="_blank">WA Parks</a>
-    <a href="https://www.emergency.wa.gov.au/" target="_blank">DFES</a>
-    <a href="https://www.bom.gov.au/wa/" target="_blank">BOM</a>
-    <a href="https://www.wa.gov.au/system/files/2021-06/ALT-map-LocalGovernmentAuthorityBoundaries_A4.pdf" target="_blank">LGA Map</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<!-- Top nav -->
+<div class="topnav">
+    <a href="index.html" class="topnav-title">Home</a>
+    <button class="topnav-hamburger" onclick="toggleDrawer()" aria-label="Menu">
         <i class="fa fa-bars"></i>
-    </a>
+    </button>
 </div>
 
-<!-- Hero Image -->
- <div class="hero">
+<!-- Accordion drawer -->
+<div id="nav-drawer">
+
+    <a class="acc-direct" href="map.html">Meeka Map</a>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Parks <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" href="https://parks.dpaw.wa.gov.au/" target="_blank" onclick="closeDrawer()">Explore Parks</a>
+            <a class="acc-item" href="https://parkstay.dpaw.wa.gov.au/" target="_blank" onclick="closeDrawer()">Park Stay</a>
+        </div>
+    </div>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Nature <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" href="https://www.inaturalist.org/observations?taxon_id=3&place_id=any&view=map" target="_blank" onclick="closeDrawer()">Birds</a>
+            <a class="acc-item" href="https://www.inaturalist.org/observations?taxon_id=47178&place_id=any&view=map" target="_blank" onclick="closeDrawer()">Fish</a>
+            <a class="acc-item" href="https://www.inaturalist.org/observations?taxon_id=47126&place_id=any&view=map" target="_blank" onclick="closeDrawer()">Plants</a>
+        </div>
+    </div>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Weather <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" href="https://www.bom.gov.au/wa/" target="_blank" onclick="closeDrawer()">BOM</a>
+            <a class="acc-item" href="https://zoom.earth/maps/satellite/#view=-27.71,132.96,5z/overlays=radar" target="_blank" onclick="closeDrawer()">Zoom Earth</a>
+            <a class="acc-item" href="https://www.emergency.wa.gov.au/" target="_blank" onclick="closeDrawer()">DFES</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Hero -->
+<div class="hero">
     <h1 style="font-family: Georgia, serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; margin: 20px 0 4px; letter-spacing: 0.02em;">Meeka</h1>
     <p style="font-family: Georgia, serif; font-size: clamp(0.9rem, 3vw, 1.3rem); color: #888; font-style: italic; margin: 0 0 16px; letter-spacing: 0.05em;">She knows the way.</p>
-    <img src="images/ach.jpg" alt="Meeka — Co-Rider">
+    <a href="map.html">
+        <img src="images/ach.jpg" alt="Meeka — Co-Rider">
+    </a>
 </div>
 
 <!-- Quick Links -->
@@ -151,16 +193,29 @@
 
 <!-- Footer -->
 <div class="footer">
-  Meeka — Co-Rider · Noongar Country · WA
+    Meeka — Co-Rider · Noongar Country · WA
 </div>
 
 <script>
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
+function toggleDrawer() {
+    const drawer = document.getElementById('nav-drawer');
+    drawer.style.display = drawer.style.display === 'block' ? 'none' : 'block';
+}
+
+function closeDrawer() {
+    document.getElementById('nav-drawer').style.display = 'none';
+}
+
+function toggleSection(heading) {
+    const body = heading.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.acc-body.open').forEach(function(b) {
+        b.classList.remove('open');
+        b.previousElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+        body.classList.add('open');
+        heading.classList.add('open');
     }
 }
 </script>
