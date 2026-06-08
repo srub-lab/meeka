@@ -139,6 +139,8 @@ let speechUnlocked = false;
 
 let longPressTimer = null;
 let longPressFired = false;
+let touchStartX = 0;
+let touchStartY = 0;
 
 map.getContainer().style.webkitUserSelect = 'none';
 map.getContainer().style.userSelect = 'none';
@@ -146,12 +148,12 @@ map.getContainer().style.userSelect = 'none';
 map.getContainer().addEventListener('touchstart', function(e) {
     longPressFired = false;
     const touch = e.touches[0];
-    const startX = touch.clientX;
-    const startY = touch.clientY;
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
     longPressTimer = setTimeout(function() {
         longPressFired = true;
         const rect = map.getContainer().getBoundingClientRect();
-        const latlng = map.containerPointToLatLng(L.point(startX - rect.left, startY - rect.top));
+        const latlng = map.containerPointToLatLng(L.point(touchStartX - rect.left, touchStartY - rect.top));
         if (!speechUnlocked) {
             const unlock = new SpeechSynthesisUtterance('');
             window.speechSynthesis.speak(unlock);
@@ -170,8 +172,14 @@ map.getContainer().addEventListener('touchend', function() {
     clearTimeout(longPressTimer);
 });
 
-map.getContainer().addEventListener('touchmove', function() {
-    clearTimeout(longPressTimer);
+map.getContainer().addEventListener('touchmove', function(e) {
+    const touch = e.touches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    if (Math.sqrt(dx * dx + dy * dy) > 10) {
+        clearTimeout(longPressTimer);
+        longPressFired = false;
+    }
 });
 
 map.getContainer().addEventListener('contextmenu', function(e) {
