@@ -135,18 +135,27 @@ function renderAllPins() {
 
 let speechUnlocked = false;
 
-map.on('click', function(e) {
-    if (!speechUnlocked) {
-        const unlock = new SpeechSynthesisUtterance('');
-        window.speechSynthesis.speak(unlock);
-        speechUnlocked = true;
-    }
-    pendingLat = e.latlng.lat.toFixed(5);
-    pendingLng = e.latlng.lng.toFixed(5);
-    document.getElementById('edit-index').value = '-1';
-    document.getElementById('pin-form').style.display = 'block';
-    document.getElementById('pin-form').querySelector('h3').textContent = 'Add Pin';
-    document.getElementById('pin-name').focus();
+let longPressTimer = null;
+
+map.on('mousedown touchstart', function(e) {
+    longPressTimer = setTimeout(function() {
+        if (!speechUnlocked) {
+            const unlock = new SpeechSynthesisUtterance('');
+            window.speechSynthesis.speak(unlock);
+            speechUnlocked = true;
+        }
+        const latlng = e.latlng || map.mouseEventToLatLng(e.originalEvent.touches[0]);
+        pendingLat = latlng.lat.toFixed(5);
+        pendingLng = latlng.lng.toFixed(5);
+        document.getElementById('edit-index').value = '-1';
+        document.getElementById('pin-form').style.display = 'block';
+        document.getElementById('pin-form').querySelector('h3').textContent = 'Add Pin';
+        document.getElementById('pin-name').focus();
+    }, 600);
+});
+
+map.on('mouseup touchend touchmove', function() {
+    clearTimeout(longPressTimer);
 });
 
 function editPin(index) {
