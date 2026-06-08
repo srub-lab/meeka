@@ -9,30 +9,82 @@
 <style>
 body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 #map { height: calc(100vh - 86px); width: 100%; margin-top: 48px; }
-.topnav { background-color: #333; overflow: visible; position:fixed;top:0;left:0;right:0;z-index:1000; }
-.topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px; }
-.topnav a:hover { background-color: #ddd; color: black; }
-.topnav a.active { background-color: #d67214; color: white; }
-.topnav .icon { display: none; }
-@media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) { display: none; }
-    .topnav a.icon { float: right; display: block; }
-    .topnav.responsive { position: fixed; }
-    .topnav.responsive .icon { position: absolute; right: 0; top: 0; }
-    .topnav.responsive a { float: none; display: block; text-align: left; }
+
+/* ── Top nav bar ── */
+.topnav {
+    background-color: #333;
+    overflow: visible;
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 48px;
 }
-#map-style-menu {
+.topnav-title {
+    color: #f2f2f2;
+    font-size: 17px;
+    text-decoration: none;
+}
+.topnav-hamburger {
+    background: none;
+    border: none;
+    color: #f2f2f2;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px;
+    line-height: 1;
+}
+
+/* ── Accordion drawer ── */
+#nav-drawer {
     display: none;
     position: fixed;
-    top: 38px;
-    left: 0;
-    right: 0;
-    background: #444;
-    z-index: 1999;
-    overflow: hidden;
+    top: 48px;
+    left: 0; right: 0;
+    background: #333;
+    z-index: 1500;
+    border-top: 1px solid #444;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
 }
-#map-style-menu a { float:left; color:#f2f2f2; padding:12px 16px; text-decoration:none; font-size:15px; }
-#map-style-menu a:hover { background:#555; }
+.acc-section {}
+.acc-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+    color: #d67214;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    border-top: 0.5px solid #444;
+    cursor: pointer;
+    user-select: none;
+}
+.acc-heading:first-child { border-top: none; }
+.acc-heading .chevron {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+    color: #888;
+}
+.acc-heading.open .chevron { transform: rotate(180deg); }
+.acc-body { display: none; }
+.acc-body.open { display: block; }
+.acc-item {
+    display: block;
+    padding: 12px 16px 12px 28px;
+    color: #f2f2f2;
+    font-size: 15px;
+    text-decoration: none;
+    border-top: 0.5px solid #3e3e3e;
+    cursor: pointer;
+}
+.acc-item:hover { background: #3e3e3e; }
+
+/* ── Layer panels (bottom right) ── */
 .layer-panel {
     display: none;
     position: fixed;
@@ -53,6 +105,8 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 }
 .layer-btn span { color: #555; font-size: 9px; }
 .layer-btn.active { background: #ffe0b2; border-color: #d67214; }
+
+/* ── Pin form ── */
 #pin-form {
     display: none; position: fixed; bottom: 16px; left: 50%;
     transform: translateX(-50%); background: #ffffff; border-radius: 20px;
@@ -60,13 +114,17 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10); z-index: 1001;
 }
 #pin-form h3 { margin: 0 0 16px; font-size: 16px; font-weight: 700; color: #1a1a1a; }
-#pin-form select, #pin-form input[type="text"], #pin-form input[type="url"], #pin-form input[type="tel"], #pin-form textarea {
+#pin-form select, #pin-form input[type="text"], #pin-form input[type="url"],
+#pin-form input[type="tel"], #pin-form textarea {
     width: 100%; margin-bottom: 10px; padding: 11px 13px; border-radius: 11px;
     border: 1.5px solid #e8e8e8; font-size: 14px; font-family: inherit; color: #1a1a1a;
     background: #f7f7f7; box-sizing: border-box; outline: none;
     -webkit-appearance: none; appearance: none;
 }
-#pin-form select:focus, #pin-form input[type="text"]:focus, #pin-form input[type="url"]:focus, #pin-form textarea:focus { border-color: #2d8a4e; background: #ffffff; }
+#pin-form select:focus, #pin-form input[type="text"]:focus,
+#pin-form input[type="url"]:focus, #pin-form textarea:focus {
+    border-color: #2d8a4e; background: #ffffff;
+}
 #pin-form textarea { height: 70px; resize: none; line-height: 1.4; }
 #pin-form input[type="file"] { width: 100%; margin-bottom: 10px; font-size: 13px; color: #555; box-sizing: border-box; }
 .form-buttons { display: flex; gap: 10px; margin-top: 4px; }
@@ -77,46 +135,86 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 </head>
 <body>
 
+<!-- Top nav -->
 <div class="topnav" id="myTopnav">
-    <a href="index.html">Home</a>
-    <a href="map.html" class="active">Meeka Map</a>
-    <a href="https://parks.dpaw.wa.gov.au/" target="_blank">WA Parks</a>
-    <a href="https://www.emergency.wa.gov.au/" target="_blank">DFES</a>
-    <a href="https://www.bom.gov.au/wa/" target="_blank">BOM</a>
-    <a href="https://zoom.earth/maps/satellite/#view=-27.71,132.96,5z/overlays=radar" target="_blank">Zoom Earth</a>
-    <a href="javascript:void(0);" onclick="toggleMapStyleMenu()">Map ▾</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <a href="index.html" class="topnav-title">Home</a>
+    <button class="topnav-hamburger" onclick="toggleDrawer()" aria-label="Menu">
         <i class="fa fa-bars"></i>
-    </a>
+    </button>
 </div>
 
-<div id="map-style-menu">
-    <a href="javascript:void(0);" onclick="setMapLayer(osmLayer)">Map</a>
-    <a href="javascript:void(0);" onclick="setMapLayer(stadiaOutdoors)">Topo</a>
-    <a href="javascript:void(0);" onclick="setMapLayer(stadiaSatellite)">Satellite</a>
-    <a href="javascript:void(0);" onclick="setMapLayer(stadiaDark)">Dark</a>
+<!-- Accordion drawer -->
+<div id="nav-drawer">
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Parks <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" href="https://parks.dpaw.wa.gov.au/" target="_blank" onclick="closeDrawer()">Explore Parks</a>
+            <a class="acc-item" href="https://parkstay.dpaw.wa.gov.au/" target="_blank" onclick="closeDrawer()">Park Stay</a>
+        </div>
+    </div>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Nature <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" onclick="openNature('birds')">Birds</a>
+            <a class="acc-item" onclick="openNature('fish')">Fish</a>
+            <a class="acc-item" onclick="openNature('plants')">Plants</a>
+        </div>
+    </div>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Weather <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" href="https://www.bom.gov.au/wa/" target="_blank" onclick="closeDrawer()">BOM</a>
+            <a class="acc-item" href="https://zoom.earth/maps/satellite/#view=-27.71,132.96,5z/overlays=radar" target="_blank" onclick="closeDrawer()">Zoom Earth</a>
+            <a class="acc-item" href="https://www.emergency.wa.gov.au/" target="_blank" onclick="closeDrawer()">DFES</a>
+        </div>
+    </div>
+
+    <div class="acc-section">
+        <div class="acc-heading" onclick="toggleSection(this)">
+            Styles <span class="chevron">▼</span>
+        </div>
+        <div class="acc-body">
+            <a class="acc-item" onclick="setMapLayer(stadiaOutdoors);closeDrawer()">Topo</a>
+            <a class="acc-item" onclick="setMapLayer(stadiaSatellite);closeDrawer()">Satellite</a>
+            <a class="acc-item" onclick="setMapLayer(stadiaDark);closeDrawer()">Dark</a>
+            <a class="acc-item" onclick="setMapLayer(osmLayer);closeDrawer()">Map (OSM)</a>
+        </div>
+    </div>
+
 </div>
 
+<!-- Map -->
 <div id="map"></div>
 
-<div id="nature-panel" class="layer-panel">
-    <div class="layer-panel-title">NATURE</div>
+<!-- Explore panel (bottom right) -->
+<div id="explore-panel" class="layer-panel">
+    <div class="layer-panel-title">EXPLORE</div>
     <div style="display:flex;gap:8px;">
-        <button id="btn-birds" class="layer-btn" onclick="toggleLayer('birds')">
+        <button id="btn-birds" class="layer-btn" onclick="openNature('birds')">
             <img src="icons/bird.png" style="width:28px;height:28px;">
             <span>Birds</span>
         </button>
-        <button id="btn-fish" class="layer-btn" onclick="toggleLayer('fish')">
+        <button id="btn-fish" class="layer-btn" onclick="openNature('fish')">
             <img src="icons/fish.png" style="width:28px;height:28px;">
             <span>Fish</span>
         </button>
-        <button id="btn-plants" class="layer-btn" onclick="toggleLayer('plants')">
+        <button id="btn-plants" class="layer-btn" onclick="openNature('plants')">
             <img src="icons/plant.png" style="width:28px;height:28px;">
             <span>Plants</span>
         </button>
     </div>
 </div>
 
+<!-- Travel panel (bottom right) -->
 <div id="travel-panel" class="layer-panel">
     <div class="layer-panel-title">TRAVEL</div>
     <div style="display:flex;gap:8px;">
@@ -139,8 +237,9 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </div>
 </div>
 
+<!-- Panel toggle buttons -->
 <div style="position:fixed;bottom:55px;right:10px;z-index:1001;display:flex;flex-direction:row;gap:6px;">
-    <button onclick="togglePanel('nature')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+    <button onclick="togglePanel('explore')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
         <img src="icons/bird.png" style="width:32px;height:32px;display:block;">
     </button>
     <button onclick="togglePanel('travel')" style="background:white;border:1px solid #ddd;border-radius:8px;padding:6px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);">
@@ -148,11 +247,13 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
     </button>
 </div>
 
+<!-- Season / GPS bar -->
 <div id="season-bar" style="position:fixed;bottom:0;left:0;right:0;padding:6px 12px;font-size:13px;color:#f2f2f2;z-index:999;background:#333;display:flex;align-items:center;justify-content:center;">
     <span id="season-text" style="text-align:center;"></span>
     <span id="gps-indicator" style="display:inline-flex;align-items:center;margin-left:10px;"></span>
 </div>
 
+<!-- Pin form -->
 <div id="pin-form">
     <h3>Add Pin</h3>
     <input type="hidden" id="edit-index" value="-1">
@@ -194,46 +295,83 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script src="script.js"></script>
 <script>
-function togglePanel(type) {
-    const nature = document.getElementById('nature-panel');
-    const travel = document.getElementById('travel-panel');
-    const menu = document.getElementById('map-style-menu');
-    menu.style.display = 'none';
-    if (type === 'nature') {
-        travel.style.display = 'none';
-        nature.style.display = nature.style.display === 'block' ? 'none' : 'block';
-    } else {
-        nature.style.display = 'none';
-        travel.style.display = travel.style.display === 'block' ? 'none' : 'block';
+
+/* ── Drawer / accordion ── */
+function toggleDrawer() {
+    const drawer = document.getElementById('nav-drawer');
+    const isOpen = drawer.style.display === 'block';
+    drawer.style.display = isOpen ? 'none' : 'block';
+    if (isOpen) return;
+    // Close layer panels when drawer opens
+    document.getElementById('explore-panel').style.display = 'none';
+    document.getElementById('travel-panel').style.display = 'none';
+}
+
+function closeDrawer() {
+    document.getElementById('nav-drawer').style.display = 'none';
+}
+
+function toggleSection(heading) {
+    const body = heading.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    // Close all open sections first
+    document.querySelectorAll('.acc-body.open').forEach(function(b) {
+        b.classList.remove('open');
+        b.previousElementSibling.classList.remove('open');
+    });
+    // Open the tapped one if it was closed
+    if (!isOpen) {
+        body.classList.add('open');
+        heading.classList.add('open');
     }
 }
-function toggleMapStyleMenu() {
-    const menu = document.getElementById('map-style-menu');
-    document.getElementById('nature-panel').style.display = 'none';
-    document.getElementById('travel-panel').style.display = 'none';
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
+
+/* ── Map layer switching ── */
 function setMapLayer(layer) {
     if (typeof currentLayer !== 'undefined') map.removeLayer(currentLayer);
     layer.addTo(map);
     currentLayer = layer;
-    document.getElementById('map-style-menu').style.display = 'none';
-    var x = document.getElementById("myTopnav");
-    x.className = "topnav";
 }
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
+
+/* ── Panel toggles (bottom right) ── */
+function togglePanel(type) {
+    const explore = document.getElementById('explore-panel');
+    const travel  = document.getElementById('travel-panel');
+    closeDrawer();
+    if (type === 'explore') {
+        travel.style.display = 'none';
+        explore.style.display = explore.style.display === 'block' ? 'none' : 'block';
     } else {
-        x.className = "topnav";
+        explore.style.display = 'none';
+        travel.style.display = travel.style.display === 'block' ? 'none' : 'block';
     }
 }
+
+/* ── iNaturalist open in new tab, centred on current GPS ── */
+function openNature(type) {
+    closeDrawer();
+    const taxonMap = {
+        birds:  3,
+        fish:   47178,
+        plants: 47126
+    };
+    const taxonId = taxonMap[type];
+    let url = 'https://www.inaturalist.org/observations?taxon_id=' + taxonId + '&place_id=any&view=map';
+    // Centre on user's location if available
+    if (typeof userMarker !== 'undefined' && userMarker) {
+        const ll = userMarker.getLatLng();
+        url += '&lat=' + ll.lat.toFixed(4) + '&lng=' + ll.lng.toFixed(4) + '&radius=50';
+    }
+    window.open(url, '_blank');
+}
+
+/* ── Close panels when tapping the map ── */
 document.getElementById('map').addEventListener('click', function() {
-    document.getElementById('nature-panel').style.display = 'none';
-    document.getElementById('travel-panel').style.display = 'none';
-    document.getElementById('map-style-menu').style.display = 'none';
+    document.getElementById('explore-panel').style.display = 'none';
+    document.getElementById('travel-panel').style.display  = 'none';
+    closeDrawer();
 });
+
 </script>
 </body>
 </html>

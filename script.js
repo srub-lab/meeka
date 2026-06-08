@@ -49,8 +49,6 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const pinsRef = db.ref('pins');
 
-let faunaMarkers = { birds: [], fish: [], plants: [] };
-let activeLayers = { birds: false, fish: false, plants: false };
 let savedPins = [];
 let markers = [];
 let pendingLat, pendingLng;
@@ -344,65 +342,7 @@ function getWeather(lat, lng) {
 }
 
 
-function toggleLayer(type) {
-    if (activeLayers[type]) {
-        faunaMarkers[type].forEach(function(m) { map.removeLayer(m); });
-        faunaMarkers[type] = [];
-        activeLayers[type] = false;
-        document.getElementById('btn-' + type).style.background = 'white';
-        document.getElementById('btn-' + type).style.opacity = '1';
-    } else {
-        activeLayers[type] = true;
-        document.getElementById('btn-' + type).style.background = '#e0f0e0';
-        fetchFauna(type);
-    }
-}
 
-function fetchFauna(type) {
-    const centre = map.getCenter();
-    const lat = centre.lat.toFixed(5);
-    const lng = centre.lng.toFixed(5);
-    const taxon = type === 'birds' ? 'Aves' : type === 'fish' ? 'Actinopterygii' : 'Plantae';
-    const btn = document.getElementById('btn-' + type);
-    btn.style.opacity = '0.5';
-
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20000);
-
-   fetch('https://api.inaturalist.org/v1/observations?lat=' + lat + '&lng=' + lng + '&radius=50&iconic_taxa[]=' + taxon + '&per_page=100&order_by=observed_on', { signal: controller.signal })
-        .then(response => response.json())
-        .then(data => {
-            data.results.forEach(function(o) {
-                if (!o.taxon || !o.location) return;
-                const parts = o.location.split(',');
-                if (parts.length < 2) return;
-                const oLat = parseFloat(parts[0]);
-                const oLng = parseFloat(parts[1]);
-                const name = o.taxon.preferred_common_name || o.taxon.name;
-
-                const icon = L.divIcon({
-                    html: '<div style="width:12px;height:12px;background:' +
-                          (type === 'birds' ? '#2d8a4e' : type === 'fish' ? '#1a6dd8' : '#7b3fa0') +
-                          ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>',
-                    className: '',
-                    iconSize: [12, 12],
-                    iconAnchor: [6, 6]
-                });
-
-                const marker = L.marker([oLat, oLng], { icon }).addTo(map);
-                marker.bindPopup(
-                    '<b>' + (type === 'birds' ? '🐦' : type === 'fish' ? '🐟' : '🌿') + ' ' + name + '</b><br>' +
-                    '<small><i>' + o.taxon.name + '</i></small><br><br>' +
-                    (o.observed_on ? 'Recorded: ' + o.observed_on + '<br>' : '') +
-                    (o.photos && o.photos.length > 0 ? '<img src="' + o.photos[0].url.replace('square', 'small') + '" style="width:100%;border-radius:8px;margin-top:6px;"><br>' : '') +
-                    '<small>iNaturalist</small>'
-                );
-                faunaMarkers[type].push(marker);
-            });
-        })
-        .catch(function(err) { console.log('iNaturalist error:', err); })
-        .finally(function() { clearTimeout(timeout); btn.style.opacity = '1'; });
-    }
 document.getElementById('pin-photo').addEventListener('change', function(e) {
     const file = e.target.files[0];
     if (!file) return;
@@ -631,7 +571,6 @@ window.cancelPin = cancelPin;
 window.editPin = editPin;
 window.deletePin = deletePin;
 window.speakPin = speakPin;
-window.toggleLayer = toggleLayer;
 window.toggleDFES = toggleDFES;
 window.toggleWACamps = toggleWACamps;
 window.toggleFuel = toggleFuel;
