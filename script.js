@@ -178,7 +178,33 @@ map.getContainer().addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-map.on('mouseup touchend touchmove', function() {
+map.on('mousedown', function(e) {
+    if (e.originalEvent.button !== 0) return;
+    longPressFired = false;
+    const startLatLng = e.latlng;
+    longPressTimer = setTimeout(function() {
+        longPressFired = true;
+        map.dragging.disable();
+        if (!speechUnlocked) {
+            const unlock = new SpeechSynthesisUtterance('');
+            window.speechSynthesis.speak(unlock);
+            speechUnlocked = true;
+        }
+        pendingLat = startLatLng.lat.toFixed(5);
+        pendingLng = startLatLng.lng.toFixed(5);
+        document.getElementById('edit-index').value = '-1';
+        document.getElementById('pin-form').style.display = 'block';
+        document.getElementById('pin-form').querySelector('h3').textContent = 'Add Pin';
+        document.getElementById('pin-name').focus();
+    }, 600);
+});
+
+map.on('mouseup', function() {
+    clearTimeout(longPressTimer);
+    map.dragging.enable();
+});
+
+map.on('mousemove', function() {
     clearTimeout(longPressTimer);
 });
 
