@@ -135,16 +135,28 @@ function renderAllPins() {
 
 let speechUnlocked = false;
 
-let longPressTimer = null;
 
-map.on('mousedown touchstart', function(e) {
+
+let longPressTimer = null;
+let longPressFired = false;
+
+map.getContainer().style.webkitUserSelect = 'none';
+map.getContainer().style.userSelect = 'none';
+
+map.getContainer().addEventListener('touchstart', function(e) {
+    longPressFired = false;
+    const touch = e.touches[0];
+    const startX = touch.clientX;
+    const startY = touch.clientY;
     longPressTimer = setTimeout(function() {
+        longPressFired = true;
+        const rect = map.getContainer().getBoundingClientRect();
+        const latlng = map.containerPointToLatLng(L.point(startX - rect.left, startY - rect.top));
         if (!speechUnlocked) {
             const unlock = new SpeechSynthesisUtterance('');
             window.speechSynthesis.speak(unlock);
             speechUnlocked = true;
         }
-        const latlng = e.latlng || map.mouseEventToLatLng(e.originalEvent.touches[0]);
         pendingLat = latlng.lat.toFixed(5);
         pendingLng = latlng.lng.toFixed(5);
         document.getElementById('edit-index').value = '-1';
@@ -152,6 +164,18 @@ map.on('mousedown touchstart', function(e) {
         document.getElementById('pin-form').querySelector('h3').textContent = 'Add Pin';
         document.getElementById('pin-name').focus();
     }, 600);
+}, { passive: false });
+
+map.getContainer().addEventListener('touchend', function() {
+    clearTimeout(longPressTimer);
+});
+
+map.getContainer().addEventListener('touchmove', function() {
+    clearTimeout(longPressTimer);
+});
+
+map.getContainer().addEventListener('contextmenu', function(e) {
+    e.preventDefault();
 });
 
 map.on('mouseup touchend touchmove', function() {
