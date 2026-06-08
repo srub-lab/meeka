@@ -632,6 +632,52 @@ map.on('moveend', function() {
     if (waterActive) { waterMarkers.forEach(m => map.removeLayer(m)); waterMarkers.length = 0; fetchOSMLayer('amenity=drinking_water', waterMarkers, '#1a6dd8', 'Drinking Water'); }
 });
 
+// Lighthouse layer
+let lighthouseMarkers = [];
+let lighthousesActive = false;
+let lighthouseData = null;
+
+function toggleLighthouses() {
+    const btn = document.getElementById('btn-lighthouses');
+    if (lighthousesActive) {
+        lighthouseMarkers.forEach(m => map.removeLayer(m));
+        lighthouseMarkers = [];
+        lighthousesActive = false;
+        btn.classList.remove('active');
+    } else {
+        lighthousesActive = true;
+        btn.classList.add('active');
+        if (lighthouseData) {
+            renderLighthouses();
+        } else {
+            fetch('lighthouses.geojson')
+                .then(r => r.json())
+                .then(data => { lighthouseData = data; renderLighthouses(); })
+                .catch(function() { console.log('Could not load lighthouse data'); });
+        }
+    }
+}
+
+function renderLighthouses() {
+    lighthouseData.features.forEach(function(f) {
+        const p = f.properties;
+        const icon = L.divIcon({
+            html: '<img src="icons/lighthouse.png" style="width:36px;height:36px;object-fit:contain;">',
+            className: 'emoji-icon',
+            iconSize: [36, 36],
+            iconAnchor: [18, 36]
+        });
+        const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
+        marker.bindPopup(
+            '<b>🔦 ' + p.name + '</b><br>' +
+            '<small>Established ' + p.established + '</small><br><br>' +
+            'Status: ' + p.status +
+            (p.remarks ? '<br><small>' + p.remarks + '</small>' : '')
+        );
+        lighthouseMarkers.push(marker);
+    });
+}
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -642,3 +688,4 @@ window.toggleDFES = toggleDFES;
 window.toggleWACamps = toggleWACamps;
 window.toggleFuel = toggleFuel;
 window.toggleWater = toggleWater;
+window.toggleLighthouses = toggleLighthouses;
