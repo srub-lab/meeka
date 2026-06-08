@@ -218,6 +218,8 @@ function setMapLayer(layer) {
     layer.addTo(map);
     currentLayer = layer;
     document.getElementById('map-style-menu').style.display = 'none';
+    var x = document.getElementById("myTopnav");
+    x.className = "topnav";
 }
 function myFunction() {
     var x = document.getElementById("myTopnav");
