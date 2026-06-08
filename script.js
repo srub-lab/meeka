@@ -664,8 +664,8 @@ function renderLighthouses() {
         const icon = L.divIcon({
             html: '<img src="icons/lighthouse.png" style="width:36px;height:36px;object-fit:contain;">',
             className: 'emoji-icon',
-            iconSize: [36, 36],
-            iconAnchor: [18, 36]
+            iconSize: [24, 24],
+            iconAnchor: [12, 24]
         });
         const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
         marker.bindPopup(

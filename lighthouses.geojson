@@ -1,0 +1,170 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [123.1574, -15.5101] },
+      "properties": { "name": "Adele Island Lighthouse", "established": 1951, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7400, -32.0566] },
+      "properties": { "name": "Arthur Head Lighthouse", "established": 1851, "status": "demolished 1902", "remarks": "Demolished" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.1118, -21.6362] },
+      "properties": { "name": "Bessieres Island Lighthouse", "established": 1913, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [118.0573, -35.0642] },
+      "properties": { "name": "Breaksea Island Lighthouse", "established": 1858, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.6330, -33.3191] },
+      "properties": { "name": "Casuarina Point Lighthouse", "established": 1870, "status": "active", "remarks": "Bunbury" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [123.2858, -16.0461] },
+      "properties": { "name": "Caffarelli Island Lighthouse", "established": 1967, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [121.6227, -18.7137] },
+      "properties": { "name": "Cape Bossut Lighthouse", "established": 1913, "status": "demolished c.1980", "remarks": "Demolished" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.1362, -34.3750] },
+      "properties": { "name": "Cape Leeuwin Lighthouse", "established": 1896, "status": "active", "remarks": "Automated 1992" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.9282, -16.3949] },
+      "properties": { "name": "Cape Leveque Lighthouse", "established": 1911, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.01889, -33.53750] },
+      "properties": { "name": "Cape Naturaliste Lighthouse", "established": 1903, "status": "active", "remarks": "Struck by ball lightning in 1907" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.6309, -24.8760] },
+      "properties": { "name": "Babbage Island Lighthouse", "established": 1965, "status": "active", "remarks": "Carnarvon" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.8990, -35.1202] },
+      "properties": { "name": "Cave Point Lighthouse", "established": 1976, "status": "deactivated 1994", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.9720, -25.4818] },
+      "properties": { "name": "Cape Inscription Lighthouse", "established": 1910, "status": "active", "remarks": "Dirk Hartog Island. Automated 1917" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.1979, -16.9024] },
+      "properties": { "name": "East Island Lighthouse", "established": 1968, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.8847, -35.1821] },
+      "properties": { "name": "Eclipse Island Lighthouse", "established": 1926, "status": "active", "remarks": "Replaced with beacon. Automated 1976" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.9864, -30.3334] },
+      "properties": { "name": "Escape Island Lighthouse", "established": 1930, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7245, -32.0538] },
+      "properties": { "name": "North Mole Lighthouse", "established": 1906, "status": "active", "remarks": "Fremantle" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7325, -32.0558] },
+      "properties": { "name": "South Mole Lighthouse", "established": 1903, "status": "active", "remarks": "Fremantle" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.1775, -17.9741] },
+      "properties": { "name": "Gantheaume Point Lighthouse", "established": 1905, "status": "active", "remarks": "Broome. Automated 1922" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.5793, -28.7827] },
+      "properties": { "name": "Point Moore Lighthouse", "established": 1878, "status": "active", "remarks": "Geraldton. Automated 1985" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.4921, -31.3394] },
+      "properties": { "name": "Guilderton Lighthouse", "established": 1983, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7336, -31.8235] },
+      "properties": { "name": "Hillarys Lighthouse", "established": 1986, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.2174, -20.6585] },
+      "properties": { "name": "Jarman Island Lighthouse", "established": 1888, "status": "deactivated 1985", "remarks": "Automated 1917" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.8427, -20.3584] },
+      "properties": { "name": "Legendre Island Lighthouse", "established": 1927, "status": "active", "remarks": "Automated 1989" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.76097, -32.01708] },
+      "properties": { "name": "Buckland Hill Lighthouse", "established": 1970, "status": "active", "remarks": "Mosman Park" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.1534, -21.8156] },
+      "properties": { "name": "North West Cape Light", "established": 1967, "status": "active", "remarks": "On radio tower" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.9623, -28.9854] },
+      "properties": { "name": "Pelsart Island Lighthouse", "established": 1974, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.6808, -22.7090] },
+      "properties": { "name": "Point Cloates Lighthouse", "established": 1910, "status": "deactivated 1936", "remarks": "Ruins, heritage listed" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.9189, -35.0354] },
+      "properties": { "name": "Point King Lighthouse", "established": 1858, "status": "deactivated 1911", "remarks": "Ruins, heritage listed" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.4181, -24.4797] },
+      "properties": { "name": "Quobba Point Light", "established": 1950, "status": "active", "remarks": "" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.5406, -31.9893] },
+      "properties": { "name": "Bathurst Lighthouse", "established": 1900, "status": "active", "remarks": "Rottnest Island. Automated 1986" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.5041, -32.0072] },
+      "properties": { "name": "Wadjemup Lighthouse", "established": 1851, "status": "active", "remarks": "Rottnest Island. Australia's first rotating beam lighthouse" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7697, -32.1309] },
+      "properties": { "name": "Woodman Point Light", "established": 1902, "status": "active", "remarks": "Automated 1955" }
+    }
+  ]
+}
