@@ -4,164 +4,418 @@
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [123.1574, -15.5101] },
-      "properties": { "name": "Adele Island Lighthouse", "established": 1951, "status": "active", "remarks": "Adele Island is an uninhabited small island located in the Indian Ocean approximately 104 kilometres (65 mi) north of Ardyaloon off the Kimberley coast " }
+      "properties": {
+        "name": "Adele Island Lighthouse",
+        "established": 1951,
+        "construction": "Steel Lattice",
+        "height": "31m",
+        "status": "Active",
+        "access": "Nature Reserve",
+        "remarks": "King Sound, roughly 82 kilometres northwest of Cockatoo Island and 200 kilometres north-north-west of Derby in the Kimberley region"
+      }
     },
-    
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.1118, -21.6362] },
-      "properties": { "name": "Bessieres Island Lighthouse", "established": 1913, "status": "active", "remarks": "Bessieres Island is a small island off the Pilbara coast of north-west Australia.[1] It is uninhabited, however it does contain a lighthouse." }
+      "properties": {
+        "name": "Bessieres Island Lighthouse",
+        "established": 1913,
+        "construction": "Steel Lattice",
+        "height": "20m",
+        "status": "Active",
+        "access": "No — Nature Reserve",
+        "remarks": "Bessieres Island is a small island off the Pilbara coast of north-west Australia"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [118.0573, -35.0642] },
-      "properties": { "name": "Breaksea Island Lighthouse", "established": 1858, "status": "active", "remarks": "King George Sound in the Great Southern region of Western Australia is 12 kilometres (7 mi) south-east of Albany" }
+      "properties": {
+        "name": "Breaksea Island Lighthouse",
+        "established": 1858,
+        "construction": "Granite Stone",
+        "height": "20m",
+        "status": "Active",
+        "access": "No — Nature Reserve",
+        "remarks": "King George Sound in the Great Southern"
+      }
     },
-
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.6330, -33.3191] },
-      "properties": { "name": "Casuarina Point Lighthouse", "established": 1870, "status": "active", "remarks": "Not open to public. " }
+      "properties": {
+        "name": "Casuarina Point Lighthouse",
+        "established": 1870,
+        "construction": "Concrete",
+        "height": "27m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Marlston Drive, Bunbury"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [123.2858, -16.0461] },
-      "properties": { "name": "Caffarelli Island Lighthouse", "established": 1967, "status": "active", "remarks": "Caffarelli Island Lighthouse is an unmanned light at the west end of the island. It was established in 1967, and is a 6-metre-tall (20 ft), white round metal tower, that sits on the 68-metre (223 ft) summit of the island" }
+      "properties": {
+        "name": "Caffarelli Island Lighthouse",
+        "established": 1967,
+        "construction": "Metal",
+        "height": "6m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Buccaneer Archipelago, off the Kimberley coast"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [121.6227, -18.7137] },
-      "properties": { "name": "Cape Bossut Lighthouse", "established": 1913, "status": "demolished c.1980", "remarks": "Demolished" }
+      "properties": {
+        "name": "Cape Bossut Lighthouse",
+        "established": 1913,
+        "construction": "Metal",
+        "height": "12m",
+        "status": "Demolished c.1980",
+        "access": "None",
+        "remarks": "Formerly located on the remote coastal headland of Cape Bossut, southwest of Broome"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.1362, -34.3750] },
-      "properties": { "name": "Cape Leeuwin Lighthouse", "established": 1896, "status": "active", "remarks": "Automated 1992" }
+      "properties": {
+        "name": "Cape Leeuwin Lighthouse",
+        "established": 1896,
+        "construction": "Limestone",
+        "height": "39m",
+        "status": "Active",
+        "access": "Guided Tour",
+        "remarks": "Spectacularly positioned on the windswept headland of Cape Leeuwin"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [122.9282, -16.3949] },
-      "properties": { "name": "Cape Leveque Lighthouse", "established": 1911, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Cape Leveque Lighthouse",
+        "established": 1911,
+        "construction": "Cast Iron",
+        "height": "13.3m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Dramatically positioned on a rocky outcrop at the northern tip of the Dampier Peninsula along the Broome-Cape Leveque Road"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.01889, -33.53750] },
-      "properties": { "name": "Cape Naturaliste Lighthouse", "established": 1903, "status": "active", "remarks": "Struck by ball lightning in 1907" }
+      "properties": {
+        "name": "Cape Naturaliste Lighthouse",
+        "established": 1903,
+        "construction": "Limestone",
+        "height": "20m",
+        "status": "Active",
+        "access": "Guided Tour",
+        "remarks": "Positioned on a 100-metre high bluff at the northern tip of the Leeuwin-Naturaliste National Park. Struck by ball lightning in 1907"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [113.6309, -24.8760] },
-      "properties": { "name": "Babbage Island Lighthouse", "established": 1965, "status": "active", "remarks": "Carnarvon" }
+      "properties": {
+        "name": "Babbage Island Lighthouse",
+        "established": 1965,
+        "construction": "Steel",
+        "height": "18m",
+        "status": "Inactive",
+        "access": "Grounds and Museum",
+        "remarks": "Annear Place on Babbage Island at the mouth of the Gascoyne River, Carnarvon"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [117.8990, -35.1202] },
-      "properties": { "name": "Cave Point Lighthouse", "established": 1976, "status": "deactivated 1994", "remarks": "" }
+      "properties": {
+        "name": "Cave Point Lighthouse",
+        "established": 1976,
+        "construction": "Concrete",
+        "height": "12m",
+        "status": "Inactive",
+        "access": "External",
+        "remarks": "Coastal cliffs of Torndirrup National Park near Cable Beach, Albany"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [112.9720, -25.4818] },
-      "properties": { "name": "Cape Inscription Lighthouse", "established": 1910, "status": "active", "remarks": "Dirk Hartog Island. Automated 1917" }
+      "properties": {
+        "name": "Cape Inscription Lighthouse",
+        "established": 1910,
+        "construction": "Concrete",
+        "height": "16.5m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Isolated at the northern tip of Dirk Hartog Island within the Shark Bay World Heritage Area, approximately 35 kilometres off the Gascoyne coast"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [122.1979, -16.9024] },
-      "properties": { "name": "East Island Lighthouse", "established": 1968, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "East Island Lighthouse",
+        "established": 1968,
+        "construction": "Metal",
+        "height": "23m",
+        "status": "Active",
+        "access": "No — Nature Reserve",
+        "remarks": "Located in the Buccaneer Archipelago off the Kimberley coast"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [117.8847, -35.1821] },
-      "properties": { "name": "Eclipse Island Lighthouse", "established": 1926, "status": "active", "remarks": "Replaced with beacon. Automated 1976" }
+      "properties": {
+        "name": "Eclipse Island Lighthouse",
+        "established": 1926,
+        "construction": "Concrete",
+        "height": "14m",
+        "status": "Active",
+        "access": "No Access",
+        "remarks": "Isolated on the windswept summit of Eclipse Island approximately 17 kilometres south of Albany"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [114.9864, -30.3334] },
-      "properties": { "name": "Escape Island Lighthouse", "established": 1930, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Escape Island Lighthouse",
+        "established": 1930,
+        "construction": "Steel",
+        "height": "24m",
+        "status": "Active",
+        "access": "No — Nature Reserve",
+        "remarks": "Escape Island at the southern entrance to Jurien Bay, within the Shire of Dandaragan"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.7245, -32.0538] },
-      "properties": { "name": "North Mole Lighthouse", "established": 1906, "status": "active", "remarks": "Fremantle" }
+      "properties": {
+        "name": "North Mole Lighthouse",
+        "established": 1906,
+        "construction": "Cast Iron",
+        "height": "18m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "North Mole breakwater on North Mole Drive in North Fremantle"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.7325, -32.0558] },
-      "properties": { "name": "South Mole Lighthouse", "established": 1903, "status": "active", "remarks": "Fremantle" }
+      "properties": {
+        "name": "South Mole Lighthouse",
+        "established": 1903,
+        "construction": "Cast Iron",
+        "height": "18m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Originally designed by Western Australia's famed Engineer-in-Chief, C.Y. O'Connor"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [122.1775, -17.9741] },
-      "properties": { "name": "Gantheaume Point Lighthouse", "established": 1905, "status": "active", "remarks": "Broome. Automated 1922" }
+      "properties": {
+        "name": "Gantheaume Point Lighthouse",
+        "established": 1905,
+        "construction": "Steel Tower",
+        "height": "27m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Situated atop the striking red sandstone cliffs of Gantheaume Point, roughly seven kilometres southwest of Broome"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [114.5793, -28.7827] },
-      "properties": { "name": "Point Moore Lighthouse", "established": 1878, "status": "active", "remarks": "Geraldton. Automated 1985" }
+      "properties": {
+        "name": "Point Moore Lighthouse",
+        "established": 1878,
+        "construction": "Cast Iron",
+        "height": "34m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Oldest surviving commonwealth-controlled lighthouse in Western Australia and the first all-metal tower constructed on the Australian mainland"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.4921, -31.3394] },
-      "properties": { "name": "Guilderton Lighthouse", "established": 1983, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Guilderton Lighthouse",
+        "established": 1983,
+        "construction": "Clay Bricks",
+        "height": "32m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Positioned on the sandhills of Wreck Point near the mouth of the Moore River"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.7336, -31.8235] },
-      "properties": { "name": "Hillarys Lighthouse", "established": 1986, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Hillarys Lighthouse",
+        "established": 1986,
+        "construction": "Steel — Cast Iron",
+        "height": "20m",
+        "status": "Inactive",
+        "access": "Exterior",
+        "remarks": "The Hillarys Boat Harbour Lighthouse, also known as the North Breakwater Light"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [117.2174, -20.6585] },
-      "properties": { "name": "Jarman Island Lighthouse", "established": 1888, "status": "deactivated 1985", "remarks": "Automated 1917" }
+      "properties": {
+        "name": "Jarman Island Lighthouse",
+        "established": 1927,
+        "construction": "Steel",
+        "height": "13m",
+        "status": "Inactive",
+        "access": "Exterior",
+        "remarks": "Visible from Point Samson and Cossack, one of the Pilbara's most important historic landmarks"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [116.8427, -20.3584] },
-      "properties": { "name": "Legendre Island Lighthouse", "established": 1927, "status": "active", "remarks": "Automated 1989" }
+      "properties": {
+        "name": "Legendre Island Lighthouse",
+        "established": 1888,
+        "construction": "Cast Iron",
+        "height": "13m",
+        "status": "Active Light Only",
+        "access": "Exterior",
+        "remarks": "Located on the western end of Legendre Island in the Dampier Archipelago — historic but largely dismantled lightstation"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.76097, -32.01708] },
-      "properties": { "name": "Buckland Hill Lighthouse", "established": 1970, "status": "active", "remarks": "Mosman Park" }
+      "properties": {
+        "name": "Buckland Hill Lighthouse",
+        "established": 1878,
+        "construction": "Limestone",
+        "height": "33m",
+        "status": "Active",
+        "access": "Public",
+        "remarks": "Historic navigational beacon and World War II memorial located in Mosman Park"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [114.1534, -21.8156] },
-      "properties": { "name": "North West Cape Light", "established": 1967, "status": "active", "remarks": "On radio tower" }
+      "properties": {
+        "name": "Vlamingh Head Lighthouse",
+        "established": 1912,
+        "construction": "Shuttered Stone",
+        "height": "61m",
+        "status": "Deactivated 1963",
+        "access": "Exterior Only",
+        "remarks": "Situated 17 kilometres north of Exmouth on the North West Cape"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [113.9623, -28.9854] },
-      "properties": { "name": "Pelsart Island Lighthouse", "established": 1974, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Pelsaert Island Lighthouse",
+        "established": 1974,
+        "construction": "Steel",
+        "height": "20m",
+        "status": "Active",
+        "access": "Public",
+        "remarks": "South end of the Abrolhos Islands, Western Australia, Indian Ocean"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [113.6808, -22.7090] },
-      "properties": { "name": "Point Cloates Lighthouse", "established": 1910, "status": "deactivated 1936", "remarks": "Ruins, heritage listed" }
+      "properties": {
+        "name": "Point Cloates Lighthouse",
+        "established": 1910,
+        "construction": "Stone",
+        "height": "41m",
+        "status": "Deactivated 1936",
+        "access": "Exterior",
+        "remarks": "Peninsula approximately 100 kilometres south-southwest of North West Cape in the Pilbara region. Ruins, heritage listed"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [117.9189, -35.0354] },
-      "properties": { "name": "Point King Lighthouse", "established": 1858, "status": "deactivated 1911", "remarks": "Ruins, heritage listed" }
+      "properties": {
+        "name": "Point King Lighthouse",
+        "established": 1858,
+        "construction": "Mixed",
+        "height": "9m",
+        "status": "Inactive",
+        "access": "Exterior",
+        "remarks": "Ruins, heritage listed"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [113.4181, -24.4797] },
-      "properties": { "name": "Quobba Point Light", "established": 1950, "status": "active", "remarks": "" }
+      "properties": {
+        "name": "Quobba Point Light",
+        "established": 1950,
+        "construction": "Concrete",
+        "height": "12.5m",
+        "status": "Active",
+        "access": "Exterior Only",
+        "remarks": "Ideal visit window April to October — cooler weather and chance to spot humpback whales migrating along the coast"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.5406, -31.9893] },
-      "properties": { "name": "Bathurst Lighthouse", "established": 1900, "status": "active", "remarks": "Rottnest Island. Automated 1986" }
+      "properties": {
+        "name": "Bathurst Lighthouse",
+        "established": 1900,
+        "construction": "Limestone",
+        "height": "19.2m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Serves as the rear light in the pair of Kingston Reef leading lights, guiding ships departing from Fremantle. Rottnest Island"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.5041, -32.0072] },
-      "properties": { "name": "Wadjemup Lighthouse", "established": 1851, "status": "active", "remarks": "Rottnest Island. Australia's first rotating beam lighthouse" }
+      "properties": {
+        "name": "Wadjemup Lighthouse",
+        "established": 1849,
+        "construction": "Stone",
+        "height": "20m",
+        "status": "Active",
+        "access": "Exterior",
+        "remarks": "Rottnest Island. Australia's first rotating beam lighthouse"
+      }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.7697, -32.1309] },
-      "properties": { "name": "Woodman Point Light", "established": 1902, "status": "active", "remarks": "Automated 1955" }
+      "properties": {
+        "name": "Woodman Point Lighthouse",
+        "established": 1902,
+        "construction": "Limestone",
+        "height": "9.8m",
+        "status": "Active",
+        "access": "No",
+        "remarks": "Grounds holds cottages in private hands"
+      }
     }
   ]
 }
