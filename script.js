@@ -146,7 +146,10 @@ map.getContainer().style.webkitUserSelect = 'none';
 map.getContainer().style.userSelect = 'none';
 
 map.getContainer().addEventListener('touchstart', function(e) {
-    if (e.touches.length > 1) return;
+    if (e.touches.length > 1) {
+        clearTimeout(longPressTimer);
+        return;
+    }
     longPressFired = false;
     const touch = e.touches[0];
     touchStartX = touch.clientX;
@@ -174,6 +177,7 @@ map.getContainer().addEventListener('touchend', function() {
 });
 
 map.getContainer().addEventListener('touchmove', function(e) {
+    if (longPressFired) return;
     const touch = e.touches[0];
     const dx = touch.clientX - touchStartX;
     const dy = touch.clientY - touchStartY;
@@ -181,6 +185,11 @@ map.getContainer().addEventListener('touchmove', function(e) {
         clearTimeout(longPressTimer);
         longPressFired = false;
     }
+});
+
+map.getContainer().addEventListener('touchcancel', function() {
+    clearTimeout(longPressTimer);
+    longPressFired = false;
 });
 
 map.getContainer().addEventListener('contextmenu', function(e) {
@@ -664,7 +673,7 @@ function renderLighthouses() {
     lighthouseData.features.forEach(function(f) {
         const p = f.properties;
         const icon = L.divIcon({
-            html: '<img src="icons/lighthouse.png" style="width:36px;height:36px;object-fit:contain;">',
+            html: '<img src="icons/lighthouse.png" style="width:24px;height:24px;object-fit:contain;">',
             className: 'emoji-icon',
             iconSize: [24, 24],
             iconAnchor: [12, 24]
@@ -673,7 +682,10 @@ function renderLighthouses() {
         marker.bindPopup(
             '<b>🔦 ' + p.name + '</b><br>' +
             '<small>Established ' + p.established + '</small><br><br>' +
-            'Status: ' + p.status +
+            (p.construction ? 'Construction: ' + p.construction + '<br>' : '') +
+            (p.height ? 'Height: ' + p.height + '<br>' : '') +
+            'Status: ' + p.status + '<br>' +
+            (p.access ? 'Access: ' + p.access + '<br>' : '') +
             (p.remarks ? '<br><small>' + p.remarks + '</small>' : '')
         );
         lighthouseMarkers.push(marker);
