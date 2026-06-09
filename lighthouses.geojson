@@ -4,32 +4,29 @@
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [123.1574, -15.5101] },
-      "properties": { "name": "Adele Island Lighthouse", "established": 1951, "status": "active", "remarks": "" }
+      "properties": { "name": "Adele Island Lighthouse", "established": 1951, "status": "active", "remarks": "Adele Island is an uninhabited small island located in the Indian Ocean approximately 104 kilometres (65 mi) north of Ardyaloon off the Kimberley coast " }
     },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [115.7400, -32.0566] },
-      "properties": { "name": "Arthur Head Lighthouse", "established": 1851, "status": "demolished 1902", "remarks": "Demolished" }
-    },
+    
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.1118, -21.6362] },
-      "properties": { "name": "Bessieres Island Lighthouse", "established": 1913, "status": "active", "remarks": "" }
+      "properties": { "name": "Bessieres Island Lighthouse", "established": 1913, "status": "active", "remarks": "Bessieres Island is a small island off the Pilbara coast of north-west Australia.[1] It is uninhabited, however it does contain a lighthouse." }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [118.0573, -35.0642] },
-      "properties": { "name": "Breaksea Island Lighthouse", "established": 1858, "status": "active", "remarks": "" }
+      "properties": { "name": "Breaksea Island Lighthouse", "established": 1858, "status": "active", "remarks": "King George Sound in the Great Southern region of Western Australia is 12 kilometres (7 mi) south-east of Albany" }
     },
+
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [115.6330, -33.3191] },
-      "properties": { "name": "Casuarina Point Lighthouse", "established": 1870, "status": "active", "remarks": "Bunbury" }
+      "properties": { "name": "Casuarina Point Lighthouse", "established": 1870, "status": "active", "remarks": "Not open to public. " }
     },
     {
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [123.2858, -16.0461] },
-      "properties": { "name": "Caffarelli Island Lighthouse", "established": 1967, "status": "active", "remarks": "" }
+      "properties": { "name": "Caffarelli Island Lighthouse", "established": 1967, "status": "active", "remarks": "Caffarelli Island Lighthouse is an unmanned light at the west end of the island. It was established in 1967, and is a 6-metre-tall (20 ft), white round metal tower, that sits on the 68-metre (223 ft) summit of the island" }
     },
     {
       "type": "Feature",

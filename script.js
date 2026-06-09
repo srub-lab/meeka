@@ -146,6 +146,7 @@ map.getContainer().style.webkitUserSelect = 'none';
 map.getContainer().style.userSelect = 'none';
 
 map.getContainer().addEventListener('touchstart', function(e) {
+    if (e.touches.length > 1) return;
     longPressFired = false;
     const touch = e.touches[0];
     touchStartX = touch.clientX;
@@ -187,6 +188,7 @@ map.getContainer().addEventListener('contextmenu', function(e) {
 });
 
 map.on('mousedown', function(e) {
+    if (e.originalEvent.touches && e.originalEvent.touches.length > 1) return;
     if (e.originalEvent.button !== 0) return;
     longPressFired = false;
     const startLatLng = e.latlng;
