@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+<name>
+<![CDATA[
+Trevor's Trail
+]]>
+</name>
+<visibility>1</visibility>
+<Style id="lineStyle">
+<LineStyle>
+<color>ff854e85</color>
+<width>2</width>
+</LineStyle>
+</Style>
+<Folder>
+<name>
+<![CDATA[
+Tracks
+]]>
+</name>
+<visibility>1</visibility>
+<Placemark id="50861">
+<name>
+<![CDATA[
+Trevor's Trail
+]]>
+</name>
+<visibility>1</visibility>
+<styleUrl>#lineStyle</styleUrl>
+<ExtendedData>
+<Data name="trailid"><value>50861</value></Data>
+<Data name="url"><value>https://www.trailforks.com/trails/trevor-s-trail-50861/</value></Data>
+<Data name="closed"><value>0</value></Data>
+<Data name="archived"><value>0</value></Data>
+<Data name="planned"><value>0</value></Data>
+<Data name="difficulty"><value>Access Trail or Doubletrack</value></Data>
+<Data name="difficulty_id"><value>1</value></Data>
+<Data name="direction"><value>Both Directions</value></Data>
+<Data name="direction_id"><value>3</value></Data>
+<Data name="activitytype"><value>Mountain Bike</value></Data>
+<Data name="activitytype_id"><value>1</value></Data>
+<Data name="activitytypes_ids"><value>1, 2, 6, 5</value></Data>
+<Data name="trailtype"><value>Doubletrack</value></Data>
+<Data name="trailtype_id"><value>3</value></Data>
+<Data name="usage"><value>Multi-use</value></Data>
+<Data name="usage_id"><value>3</value></Data>
+<Data name="climb_difficulty"><value>Blue</value></Data>
+<Data name="climb_difficulty_id"><value>4</value></Data>
+<Data name="physical_rating"><value>Moderate</value></Data>
+<Data name="physical_rating_id"><value>2</value></Data>
+<Data name="biketype"><value>AM, XC, Fat, Gravel, Adaptive MTB</value></Data>
+<Data name="ebike"><value>yes</value></Data>
+<Data name="wet_weather_friendly"><value>1</value></Data>
+<Data name="global_rank"><value>0</value></Data>
+<Data name="popularity_score"><value>60</value></Data>
+<Data name="distance"><value>1020</value></Data>
+<Data name="alt_climb"><value>74</value></Data>
+<Data name="alt_descent"><value>-48</value></Data>
+<Data name="avg_time"><value>675</value></Data>
+</ExtendedData>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+116.02569,-34.44223,90 116.02561,-34.442,101 116.02553,-34.4418,115 116.02546,-34.44161,115 116.02539,-34.44115,121 116.02538,-34.44085,122 116.02545,-34.44054,128 116.0255,-34.44043,128 116.02563,-34.44039,133 116.02598,-34.44031,140 116.0262,-34.44025,140 116.02654,-34.44021,146 116.02677,-34.44015,146 116.02695,-34.44008,149 116.02719,-34.43998,154 116.02738,-34.43991,156 116.02773,-34.43978,156 116.02805,-34.43961,159 116.02823,-34.43956,159 116.02849,-34.43948,160 116.02877,-34.4394,163 116.02912,-34.43935,166 116.02947,-34.43934,170 116.02961,-34.43929,174 116.02984,-34.43926,174 116.03009,-34.43922,176 116.03051,-34.43919,178 116.03067,-34.43924,178 116.03088,-34.4392,177 116.0312,-34.43917,173 116.03168,-34.43912,164 116.03238,-34.43914,153 116.03287,-34.43914,150 116.03339,-34.43914,137 116.03372,-34.43914,131 116.03397,-34.43918,126 116.03408,-34.43922,118 </coordinates>
+</LineString>
+</Placemark>
+</Folder>
+</Document>
+</kml>

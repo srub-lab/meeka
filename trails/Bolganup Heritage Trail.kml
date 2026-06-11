@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
-	<name>Osprey Kayak Trail.kml</name>
+	<name>bolganup_heritage_trail.kml</name>
 	<Style id="s_ylw-pushpin_hl">
 		<IconStyle>
 			<scale>1.3</scale>
@@ -11,6 +11,7 @@
 			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
 		</IconStyle>
 		<LineStyle>
+			<color>ff00ffff</color>
 			<width>2</width>
 		</LineStyle>
 	</Style>
@@ -33,16 +34,17 @@
 			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
 		</IconStyle>
 		<LineStyle>
+			<color>ff00ffff</color>
 			<width>2</width>
 		</LineStyle>
 	</Style>
 	<Placemark>
-		<name>Osprey Kayak Trail</name>
+		<name>Bolganup Heritage Trail</name>
 		<styleUrl>#m_ylw-pushpin</styleUrl>
 		<LineString>
 			<tessellate>1</tessellate>
 			<coordinates>
-				113.8392682163195,-22.23766487265952,0 113.8352476401899,-22.23781865177187,0 113.8315589655198,-22.23947708052324,0 113.8291823592726,-22.24198890029223,0 113.8291812836101,-22.24653994803824,0 113.8337450323945,-22.24117870858948,0 113.8354422275755,-22.23825721538818,0 113.8392682163195,-22.23766487265952,0 
+				117.8710291764499,-34.67537047917845,0 117.8702877062125,-34.67499623541551,0 117.8699709966163,-34.67476090571761,0 117.8697597826478,-34.67437428719766,0 117.86977034842,-34.67405489588679,0 117.8700109689218,-34.67371188027097,0 117.8700315793966,-34.67370583324174,0 117.87074769465,-34.67337726735328,0 117.8712389068429,-34.6733622247237,0 117.8715268103844,-34.67366317238574,0 117.8717051422137,-34.67398419572708,0 117.8717753324885,-34.67440235845763,0 117.8716621658328,-34.67474658793741,0 117.8715922071979,-34.67505549623959,0 117.871455381323,-34.67532698169655,0 
 			</coordinates>
 		</LineString>
 	</Placemark>

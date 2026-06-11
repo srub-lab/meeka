@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Sir_John.kml</name>
+	<Style id="multiTrack_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>8</width>
+		</LineStyle>
+	</Style>
+	<Style id="multiTrack_n">
+		<IconStyle>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>6</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="multiTrack">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#multiTrack_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#multiTrack_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Running 8/8/17 4:32 pm</name>
+		<styleUrl>#multiTrack</styleUrl>
+		<gx:Track>
+			<when>2017-08-08T08:32:33Z</when>
+			<when>2017-08-08T08:32:45Z</when>
+			<when>2017-08-08T08:32:52Z</when>
+			<when>2017-08-08T08:32:59Z</when>
+			<when>2017-08-08T08:33:04Z</when>
+			<when>2017-08-08T08:33:10Z</when>
+			<when>2017-08-08T08:33:19Z</when>
+			<when>2017-08-08T08:33:30Z</when>
+			<when>2017-08-08T08:33:40Z</when>
+			<when>2017-08-08T08:33:52Z</when>
+			<when>2017-08-08T08:34:07Z</when>
+			<when>2017-08-08T08:34:25Z</when>
+			<when>2017-08-08T08:34:41Z</when>
+			<when>2017-08-08T08:34:54Z</when>
+			<when>2017-08-08T08:35:06Z</when>
+			<when>2017-08-08T08:35:21Z</when>
+			<when>2017-08-08T08:35:30Z</when>
+			<when>2017-08-08T08:35:41Z</when>
+			<when>2017-08-08T08:35:57Z</when>
+			<when>2017-08-08T08:36:15Z</when>
+			<when>2017-08-08T08:36:30Z</when>
+			<when>2017-08-08T08:36:38Z</when>
+			<when>2017-08-08T08:36:51Z</when>
+			<when>2017-08-08T08:37:02Z</when>
+			<when>2017-08-08T08:37:53Z</when>
+			<when>2017-08-08T08:38:18Z</when>
+			<when>2017-08-08T08:38:30Z</when>
+			<when>2017-08-08T08:40:05Z</when>
+			<gx:coord>126.210594 -17.528556 201.7</gx:coord>
+			<gx:coord>126.210666 -17.528607 201.6</gx:coord>
+			<gx:coord>126.21075 -17.52865 201.5</gx:coord>
+			<gx:coord>126.210827 -17.528716 201.4</gx:coord>
+			<gx:coord>126.210884 -17.528788 201.4</gx:coord>
+			<gx:coord>126.210963 -17.528838 201.4</gx:coord>
+			<gx:coord>126.211049 -17.528898 201.1</gx:coord>
+			<gx:coord>126.211127 -17.528977 200.8</gx:coord>
+			<gx:coord>126.211202 -17.529044 200.5</gx:coord>
+			<gx:coord>126.211275 -17.529107 200.2</gx:coord>
+			<gx:coord>126.211326 -17.529191 199.8</gx:coord>
+			<gx:coord>126.211295 -17.529278 199.4</gx:coord>
+			<gx:coord>126.211286 -17.529382 198.8</gx:coord>
+			<gx:coord>126.211376 -17.529432 198.3</gx:coord>
+			<gx:coord>126.211447 -17.529501 197.7</gx:coord>
+			<gx:coord>126.211526 -17.529556 197.3</gx:coord>
+			<gx:coord>126.211586 -17.52963 196.8</gx:coord>
+			<gx:coord>126.211582 -17.529731 196.4</gx:coord>
+			<gx:coord>126.211676 -17.529755 196</gx:coord>
+			<gx:coord>126.211746 -17.529823 195.7</gx:coord>
+			<gx:coord>126.211775 -17.52991 195.5</gx:coord>
+			<gx:coord>126.211814 -17.530008 195.2</gx:coord>
+			<gx:coord>126.211859 -17.530089 195</gx:coord>
+			<gx:coord>126.211913 -17.530174 195</gx:coord>
+			<gx:coord>126.211812 -17.530218 195</gx:coord>
+			<gx:coord>126.2118 -17.530309 195</gx:coord>
+			<gx:coord>126.211876 -17.530363 194.9</gx:coord>
+			<gx:coord>126.211905 -17.530421 194.7</gx:coord>
+		</gx:Track>
+	</Placemark>
+</Document>
+</kml>

@@ -692,94 +692,113 @@ function renderLighthouses() {
     });
 }
 
-// 2x2 trail layer
-let trails2x2Pins = [];
-let trails2x2Lines = {};
-let trails2x2Active = false;
+// ── Trail layers (walk, 2x2, paddle) ──
+let trailPins = { walk: [], paddle: [], '2x2': [] };
+let trailLines = { walk: {}, paddle: {}, '2x2': {} };
+let trailActive = { walk: false, paddle: false, '2x2': false };
+let trailIndex = null;
 
-const trails2x2Files = [
-    'trails/Great-Ocean-Drive-2x2.kml'
-];
+const trailConfig = {
+    'walk':   { color: '#2d8a4e', label: '🥾 Walk',   type: 'Walking Trail' },
+    'paddle': { color: '#1a6dd8', label: '🚣 Paddle', type: 'Paddle Trail'   },
+    '2x2':    { color: '#7b2d8b', label: '🚙 2x2',    type: '2x2 Track'      }
+};
 
-function toggle2x2() {
-    const btn = document.getElementById('btn-2x2');
-    if (trails2x2Active) {
-        trails2x2Pins.forEach(function(m) { map.removeLayer(m); });
-        trails2x2Pins = [];
-        Object.values(trails2x2Lines).forEach(function(l) { map.removeLayer(l); });
-        trails2x2Lines = {};
-        trails2x2Active = false;
-        btn.classList.remove('active');
+function cleanTrailName(filename) {
+    return filename
+        .split('/').pop()
+        .replace('.kml', '')
+        .replace(/ Trail$/, '')
+        .replace(/ Paddle$/, '')
+        .replace(/ 2x2$/, '')
+        .trim();
+}
+
+function toggleTrailLayer(category) {
+    const btn = document.getElementById('btn-' + category);
+    if (trailActive[category]) {
+        trailPins[category].forEach(function(m) { map.removeLayer(m); });
+        trailPins[category] = [];
+        Object.values(trailLines[category]).forEach(function(l) { map.removeLayer(l); });
+        trailLines[category] = {};
+        trailActive[category] = false;
+        if (btn) btn.classList.remove('active');
     } else {
-        trails2x2Active = true;
-        btn.classList.add('active');
-        load2x2Pins();
+        trailActive[category] = true;
+        if (btn) btn.classList.add('active');
+        if (trailIndex) {
+            loadTrailPins(category);
+        } else {
+            fetch('trails-index.json')
+                .then(r => r.json())
+                .then(function(data) {
+                    trailIndex = data;
+                    loadTrailPins(category);
+                })
+                .catch(function(err) { console.log('Trail index error:', err); });
+        }
     }
 }
 
-function load2x2Pins() {
-    trails2x2Files.forEach(function(file) {
+function loadTrailPins(category) {
+    const files = trailIndex[category] || [];
+    const cfg = trailConfig[category];
+    files.forEach(function(file) {
         fetch(file)
             .then(r => r.text())
-            .then(kmlText => {
+            .then(function(kmlText) {
                 const parser = new DOMParser();
                 const kml = parser.parseFromString(kmlText, 'text/xml');
                 const coordNodes = kml.getElementsByTagName('coordinates');
-                const nameEl = kml.getElementsByTagName('name')[0];
-                const name = nameEl ? nameEl.textContent.trim() : file.split('/').pop().replace('.kml','').replace(/-/g,' ');
                 if (!coordNodes.length) return;
-                // Parse all latlngs from first coordinate block
-                const raw = coordNodes[0].textContent.trim().split(/\s+/);
+                const name = cleanTrailName(file);
+                const raw = coordNodes[0].textContent.trim().split(/[\s]+/);
                 const latlngs = raw.map(function(c) {
                     const parts = c.split(',');
                     return [parseFloat(parts[1]), parseFloat(parts[0])];
                 }).filter(function(ll) { return !isNaN(ll[0]) && !isNaN(ll[1]); });
                 if (latlngs.length < 2) return;
-                // Drop pin at start of trail
-                const startLL = latlngs[0];
                 const pinIcon = L.divIcon({
-                    html: '<img src="icons/2x2.png" style="width:28px;height:28px;object-fit:contain;">',
-                    className: 'emoji-icon',
-                    iconSize: [28, 28],
-                    iconAnchor: [14, 28]
+                    html: '<div style="width:14px;height:14px;background:' + cfg.color + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>',
+                    className: '',
+                    iconSize: [14, 14],
+                    iconAnchor: [7, 7]
                 });
-                const marker = L.marker(startLL, { icon: pinIcon }).addTo(map);
-                const fileKey = file;
+                const marker = L.marker(latlngs[0], { icon: pinIcon }).addTo(map);
                 const popupDiv = document.createElement('div');
-                popupDiv.innerHTML = '<b>🚙 ' + name + '</b><br><small>2x2 Track</small><br><br>';
+                popupDiv.innerHTML = '<b>' + cfg.label + ' — ' + name + '</b><br><small>' + cfg.type + '</small><br><br>';
                 const routeBtn = document.createElement('button');
                 routeBtn.textContent = 'Show Route';
-                routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:#d67214;color:white;font-size:13px;font-weight:600;cursor:pointer;';
-                routeBtn.addEventListener('click', function() { show2x2Route(fileKey); });
+                routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:' + cfg.color + ';color:white;font-size:13px;font-weight:600;cursor:pointer;';
+                routeBtn.addEventListener('click', function() { showTrailRoute(category, file, latlngs); });
                 popupDiv.appendChild(routeBtn);
                 marker.bindPopup(popupDiv);
-                // Store latlngs against file key for later drawing
                 marker._trailLatlngs = latlngs;
-                marker._trailName = name;
-                marker._trailKey = fileKey;
-                trails2x2Pins.push(marker);
+                marker._trailKey = file;
+                trailPins[category].push(marker);
             })
-            .catch(function(err) { console.log('2x2 load error:', file, err); });
+            .catch(function(err) { console.log('Trail load error:', file, err); });
     });
 }
 
-function show2x2Route(fileKey) {
-    if (trails2x2Lines[fileKey]) {
-        map.removeLayer(trails2x2Lines[fileKey]);
-        delete trails2x2Lines[fileKey];
+function showTrailRoute(category, fileKey, latlngs) {
+    if (trailLines[category][fileKey]) {
+        map.removeLayer(trailLines[category][fileKey]);
+        delete trailLines[category][fileKey];
         return;
     }
-    // Find the marker with this key to get latlngs
-    const marker = trails2x2Pins.find(function(m) { return m._trailKey === fileKey; });
-    if (!marker) return;
-    const line = L.polyline(marker._trailLatlngs, {
-        color: '#d67214',
+    const line = L.polyline(latlngs, {
+        color: trailConfig[category].color,
         weight: 3,
         opacity: 0.85
     }).addTo(map);
-    trails2x2Lines[fileKey] = line;
+    trailLines[category][fileKey] = line;
     map.fitBounds(line.getBounds(), { padding: [40, 40] });
 }
+
+function toggle2x2() { toggleTrailLayer('2x2'); }
+function show2x2Route() {}
+
 
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
@@ -794,3 +813,4 @@ window.toggleWater = toggleWater;
 window.toggleLighthouses = toggleLighthouses;
 window.toggle2x2 = toggle2x2;
 window.show2x2Route = show2x2Route;
+window.toggleTrailLayer = toggleTrailLayer;

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Wongan_Wildflower_Walk.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Wongan Wildflower Walk</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				116.7253531768074,-30.88996222297602,0 116.7262146455199,-30.88953634490523,0 116.7268986592962,-30.89044971511305,0 116.7279274503876,-30.88998912702982,0 116.7279782517192,-30.89059767862184,0 116.7280864384735,-30.89100802199335,0 116.7283959277713,-30.89163051279339,0 116.728128886205,-30.89174585454581,0 116.7273336394578,-30.89198726377362,0 116.7270486095625,-30.89203358077792,0 116.7269482440012,-30.89198597319387,0 116.7269194328249,-30.89189855736269,0 116.7269148917848,-30.89187642870503,0 116.7268959278685,-30.89166083923642,0 116.7268797720445,-30.89164359786318,0 116.7268719204229,-30.89155021833043,0 116.7268727675797,-30.8915266327019,0 116.7268856605602,-30.89148493315134,0 116.7268946793893,-30.89139549531055,0 116.7273367959516,-30.89118646439771,0 116.7268971601877,-30.89049278195077,0 116.7265823399697,-30.89005433316842,0 116.7262824433469,-30.89024877977759,0 116.7260811398526,-30.89029595619678,0 116.7259293752917,-30.89029512024405,0 116.7259226567336,-30.89028750711212,0 116.7258485962372,-30.89021077123389,0 116.725697345099,-30.89023294527295,0 116.7255561342343,-30.89029231247826,0 116.7255491442986,-30.89028460957125,0 116.7253392315939,-30.89001749824382,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

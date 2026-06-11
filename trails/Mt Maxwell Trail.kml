@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>mt_maxwell_trail.kml</name>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff55</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff55</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Mt Maxwell</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				119.3207902494017,-34.19675682750991,0 119.3208543424908,-34.1967747750229,0 119.3208955954078,-34.19675990957767,0 119.3209272554346,-34.1967709463756,0 119.3209685914851,-34.19678211408832,0 119.3210002080581,-34.19676711569063,0 119.3210779802969,-34.19673185278731,0 119.3211193315929,-34.19671142399472,0 119.321156782364,-34.19669612281383,0 119.3211943771141,-34.19668055461512,0 119.3212335387931,-34.19671365705749,0 119.3212665364855,-34.19674076754009,0 119.3213010132453,-34.19674137331073,0 119.3213774423655,-34.19676883923754,0 119.3214377425121,-34.19684195163889,0 119.3214417934964,-34.19688705629917,0 119.3214448926508,-34.19692156242735,0 119.3214710406903,-34.19695114865129,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

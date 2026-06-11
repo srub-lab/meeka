@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>The Window Trail Purnululu NP.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0b00ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0b00ff</color>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>The Window Trail Purnululu NP</name>
+		<visibility>0</visibility>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				128.3751574621186,-17.48893379260096,0 128.3751960020055,-17.48886139429838,0 128.3752086956717,-17.4885600983739,0 128.3754558509585,-17.48830786797867,0 128.375700868885,-17.48807526727712,0 128.3758868111053,-17.48779756338911,0 128.3759247813459,-17.48700038790791,0 128.375992980269,-17.48667417033921,0 128.3761707128361,-17.48640426026037,0 128.3762251850223,-17.48623992680345,0 128.3761755609406,-17.48591982054016,0 128.3766401649971,-17.48532699838828,0 128.3772039328345,-17.48513077420644,0 128.3773465853706,-17.48518990527661,0 128.3775631981795,-17.48516529511434,0 128.377893010528,-17.48547737935371,0 128.3780874094922,-17.48570258936003,0 128.3783966490764,-17.48577850097452,0 128.3799204026458,-17.48417064556006,0 128.3810299767084,-17.48256717462091,0 128.3807594553292,-17.48170481954299,0 128.3809131005166,-17.48066659781647,0 128.3814048349063,-17.48048161441785,0 128.3820752455287,-17.48064862056971,0 128.3838042909871,-17.48139673257699,0 128.3851388211839,-17.48126067205827,0 128.3853461403298,-17.4810858106402,0 128.3854620211161,-17.48057574106702,0 128.3857436326329,-17.48005228394736,0 128.3863346684175,-17.47993870485411,0 128.3869928482133,-17.48010868277133,0 128.3876250768178,-17.48018359744657,0 128.3884264105577,-17.48009449535269,0 128.3886564165155,-17.48032845907746,0 128.3887613805084,-17.4804001559565,0 128.3887875914,-17.48056154872834,0 128.3888075274388,-17.4806728569668,0 
+			</coordinates>
+		</LineString>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Placemark>
+</Document>
+</kml>

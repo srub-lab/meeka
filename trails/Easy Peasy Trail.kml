@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+<name>
+<![CDATA[
+Easy Peasy
+]]>
+</name>
+<visibility>1</visibility>
+<Style id="lineStyle">
+<LineStyle>
+<color>ff14b446</color>
+<width>2</width>
+</LineStyle>
+</Style>
+<Folder>
+<name>
+<![CDATA[
+Tracks
+]]>
+</name>
+<visibility>1</visibility>
+<Placemark id="54147">
+<name>
+<![CDATA[
+Easy Peasy
+]]>
+</name>
+<visibility>1</visibility>
+<styleUrl>#lineStyle</styleUrl>
+<ExtendedData>
+<Data name="trailid"><value>54147</value></Data>
+<Data name="url"><value>https://www.trailforks.com/trails/easy-peasy-54147/</value></Data>
+<Data name="closed"><value>0</value></Data>
+<Data name="archived"><value>0</value></Data>
+<Data name="planned"><value>0</value></Data>
+<Data name="difficulty"><value>Green</value></Data>
+<Data name="difficulty_id"><value>3</value></Data>
+<Data name="direction"><value>Both Directions</value></Data>
+<Data name="direction_id"><value>3</value></Data>
+<Data name="activitytype"><value>Mountain Bike</value></Data>
+<Data name="activitytype_id"><value>1</value></Data>
+<Data name="activitytypes_ids"><value>1, 6, 5</value></Data>
+<Data name="trailtype"><value>Singletrack</value></Data>
+<Data name="trailtype_id"><value>1</value></Data>
+<Data name="usage"><value>Multi-use</value></Data>
+<Data name="usage_id"><value>3</value></Data>
+<Data name="climb_difficulty"><value>Green</value></Data>
+<Data name="climb_difficulty_id"><value>3</value></Data>
+<Data name="physical_rating"><value>Easy</value></Data>
+<Data name="physical_rating_id"><value>1</value></Data>
+<Data name="biketype"><value>XC</value></Data>
+<Data name="ebike"><value>unknown</value></Data>
+<Data name="wet_weather_friendly"><value>1</value></Data>
+<Data name="global_rank"><value>116098</value></Data>
+<Data name="popularity_score"><value>65</value></Data>
+<Data name="distance"><value>427</value></Data>
+<Data name="alt_climb"><value>5</value></Data>
+<Data name="alt_descent"><value>-19</value></Data>
+<Data name="avg_time"><value>111</value></Data>
+</ExtendedData>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+116.01828,-34.44392,157 116.01847,-34.44398,157 116.01872,-34.44403,163 116.01885,-34.44415,164 116.01894,-34.44418,164 116.01906,-34.44414,163 116.01929,-34.44415,163 116.01949,-34.4442,161 116.01965,-34.44427,157 116.01978,-34.44428,157 116.01986,-34.44426,157 116.01997,-34.44421,157 116.02023,-34.44421,154 116.02029,-34.44424,154 116.02033,-34.4444,156 116.02032,-34.4445,156 116.02026,-34.44454,156 116.02038,-34.44458,156 116.0207,-34.44468,158 116.02093,-34.44467,158 116.02106,-34.44467,159 116.02122,-34.44469,159 116.02138,-34.44477,156 116.02148,-34.44478,156 116.02162,-34.4447,151 116.02171,-34.44464,151 116.02181,-34.4446,146 116.02189,-34.44458,146 116.02194,-34.44458,146 116.02201,-34.44457,146 116.02221,-34.4446,140 </coordinates>
+</LineString>
+</Placemark>
+</Folder>
+</Document>
+</kml>

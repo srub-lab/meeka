@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Demboong.kml</name>
+	<Style id="multiTrack_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>8</width>
+		</LineStyle>
+	</Style>
+	<Style id="multiTrack_n">
+		<IconStyle>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>6</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="multiTrack">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#multiTrack_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#multiTrack_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Running 7/27/17 3:21 pm</name>
+		<styleUrl>#multiTrack</styleUrl>
+		<gx:Track>
+			<when>2017-07-27T07:21:48Z</when>
+			<when>2017-07-27T07:21:55Z</when>
+			<when>2017-07-27T07:22:05Z</when>
+			<when>2017-07-27T07:22:18Z</when>
+			<when>2017-07-27T07:22:28Z</when>
+			<when>2017-07-27T07:22:52Z</when>
+			<when>2017-07-27T07:23:01Z</when>
+			<when>2017-07-27T07:23:13Z</when>
+			<when>2017-07-27T07:23:25Z</when>
+			<when>2017-07-27T07:23:35Z</when>
+			<when>2017-07-27T07:23:49Z</when>
+			<when>2017-07-27T07:23:57Z</when>
+			<when>2017-07-27T07:24:06Z</when>
+			<when>2017-07-27T07:24:10Z</when>
+			<when>2017-07-27T07:24:30Z</when>
+			<when>2017-07-27T07:24:41Z</when>
+			<when>2017-07-27T07:24:51Z</when>
+			<when>2017-07-27T07:25:22Z</when>
+			<when>2017-07-27T07:25:31Z</when>
+			<when>2017-07-27T07:25:42Z</when>
+			<when>2017-07-27T07:25:49Z</when>
+			<when>2017-07-27T07:26:01Z</when>
+			<when>2017-07-27T07:26:13Z</when>
+			<when>2017-07-27T07:26:39Z</when>
+			<gx:coord>128.751872 -15.764378 83.5</gx:coord>
+			<gx:coord>128.751823 -15.764393 83.59999999999999</gx:coord>
+			<gx:coord>128.751728 -15.764399 83.5</gx:coord>
+			<gx:coord>128.75163 -15.764424 83.3</gx:coord>
+			<gx:coord>128.75158 -15.764501 83.09999999999999</gx:coord>
+			<gx:coord>128.751519 -15.764575 82.8</gx:coord>
+			<gx:coord>128.751441 -15.764626 82.8</gx:coord>
+			<gx:coord>128.751388 -15.764701 82.5</gx:coord>
+			<gx:coord>128.751373 -15.764797 82</gx:coord>
+			<gx:coord>128.751332 -15.764878 81.3</gx:coord>
+			<gx:coord>128.751288 -15.764959 80.5</gx:coord>
+			<gx:coord>128.751235 -15.76504 79.90000000000001</gx:coord>
+			<gx:coord>128.751147 -15.76508 79.40000000000001</gx:coord>
+			<gx:coord>128.751092 -15.765156 79</gx:coord>
+			<gx:coord>128.751008 -15.765197 78.7</gx:coord>
+			<gx:coord>128.750914 -15.765186 78.5</gx:coord>
+			<gx:coord>128.750812 -15.765179 78.2</gx:coord>
+			<gx:coord>128.750719 -15.765214 77.90000000000001</gx:coord>
+			<gx:coord>128.750619 -15.76526 77.59999999999999</gx:coord>
+			<gx:coord>128.750519 -15.765271 77.59999999999999</gx:coord>
+			<gx:coord>128.750464 -15.765354 77.59999999999999</gx:coord>
+			<gx:coord>128.750362 -15.765341 77.5</gx:coord>
+			<gx:coord>128.750286 -15.765399 77.40000000000001</gx:coord>
+			<gx:coord>128.750244 -15.76541 77.3</gx:coord>
+		</gx:Track>
+	</Placemark>
+</Document>
+</kml>

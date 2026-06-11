@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Osmand Lookout Trail</name>
+	<gx:CascadingStyle kml:id="__managed_style_2B0DF52B6C3A39251F34">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff007cf5</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_15996F8AE23A39251F34">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff007cf5</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0237FCADE63A39251F34">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_15996F8AE23A39251F34</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2B0DF52B6C3A39251F34</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0D1462FE9B3A39251F2F">
+		<name>Osmand Lookout</name>
+		<styleUrl>#__managed_style_0237FCADE63A39251F34</styleUrl>
+		<ExtendedData>
+			<SchemaData schemaUrl="blob:https://earth.google.com/9b4fd2df-7fb3-4fb1-a95f-66f6370df8ca#PNP_Trails">
+				<SimpleData name="type">TRACK</SimpleData>
+				<SimpleData name="tident">Osmond</SimpleData>
+				<SimpleData name="ident">T1342</SimpleData>
+				<SimpleData name="Latitude">-17.32300962</SimpleData>
+				<SimpleData name="Longitude">128.41316588</SimpleData>
+				<SimpleData name="y_proj">-17.32300962</SimpleData>
+				<SimpleData name="x_proj">128.41316588</SimpleData>
+				<SimpleData name="altitude">308.24</SimpleData>
+				<SimpleData name="depth">0.00</SimpleData>
+				<SimpleData name="temp">0.00</SimpleData>
+				<SimpleData name="model">garmin GPSMap60CX S</SimpleData>
+			</SchemaData>
+		</ExtendedData>
+		<LineString>
+			<coordinates>
+				128.4126549613397,-17.32323863900853,308.239868 128.4127176599981,-17.32321139327422,308.9608765 128.4128013350482,-17.32322111071649,309.32138075 128.4128237070953,-17.32318272433405,309.501632875 128.4129006644133,-17.3231306903675,309.5917589375001 128.4129703651865,-17.32313541017077,309.6368219687501 128.4130778430307,-17.32310939985979,309.6593534843751 128.4130986150323,-17.32302318945648,309.6706192421876 128.4131931951329,-17.32298758085711,309.6762521210938 128.4132438250866,-17.32296469684254,309.6790685605469 128.41327644,-17.32293888,309.681885 128.413299825,-17.322901329,309.681885 128.413388506,-17.322830083,309.201172 128.413403258,-17.322806194,310.162476 128.4134555102398,-17.32274611246774,311.1238405 128.413529824,-17.322697314,312.085205 128.4135045722327,-17.32266954912672,312.085205 128.4135363297509,-17.32261444302409,312.085205 128.4135560714912,-17.32255377794316,311.604492 128.4135047232161,-17.32248226661913,307.759277 128.4134635084656,-17.32244946535938,308.720459 128.413412260718,-17.3223924781795,308.720459 128.4133818327914,-17.32237572472052,308.239868 128.4134202623391,-17.32231133179667,306.557556 128.4134157361143,-17.32224059121975,304.875244 128.4134831198951,-17.32218799272566,305.355957 128.413555557,-17.322199512,305.83667 128.413569136,-17.322222814,307.278564 128.4136499247252,-17.32226625498076,311.123779 128.41377466,-17.322242344,315.449829 128.4138405617265,-17.32224219201006,315.93042 128.4138948836385,-17.32218752392129,319.295044 128.4138809572969,-17.32217131036782,319.0546874999999 128.4139238165531,-17.32211247164212,318.814331 128.4140025573329,-17.32208505928517,319.0546874999999 128.4140645862353,-17.32206997017915,319.17486575 128.4141237114194,-17.32202088457615,319.295044 128.4141139187457,-17.32199923968225,318.5740355 128.4141205794114,-17.32197174216517,318.21353125 128.4141086486056,-17.32193642097013,318.033279125 128.4140854243689,-17.3219303019074,317.853027 128.4140655947922,-17.32188425326092,318.814331 128.4140405959114,-17.32186169569311,318.814331 128.4140252306774,-17.32183480930958,321.698364 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

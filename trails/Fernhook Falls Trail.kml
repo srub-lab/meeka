@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+    <Document>
+        <name><![CDATA[Fernhook Falls Trail]]></name>
+        
+                                    
+        <description><![CDATA[<br/><p> </p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]></description>
+        <visibility>1</visibility>
+        <open>1</open>
+        
+                <Style id="red">
+            <LineStyle>
+            <color>C81400FF</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_red">
+            <LineStyle>
+            <color>961400FF</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="green">
+            <LineStyle>
+            <color>C878FF00</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_green">
+            <LineStyle>
+            <color>9678FF00</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="blue">
+            <LineStyle>
+            <color>C8FF7800</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_blue">
+            <LineStyle>
+            <color>96FF7800</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="cyan">
+            <LineStyle>
+            <color>C8F0FF14</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_cyan">
+            <LineStyle>
+            <color>96F0FF14</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="orange">
+            <LineStyle>
+            <color>C81478FF</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_orange">
+            <LineStyle>
+            <color>961478FF</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="dark_green">
+            <LineStyle>
+            <color>C8008C14</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_dark_green">
+            <LineStyle>
+            <color>96008C14</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="purple">
+            <LineStyle>
+            <color>C8FF7878</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_purple">
+            <LineStyle>
+            <color>96FF7878</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="pink">
+            <LineStyle>
+            <color>C8A078F0</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_pink">
+            <LineStyle>
+            <color>96A078F0</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="brown">
+            <LineStyle>
+            <color>C8143C96</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_brown">
+            <LineStyle>
+            <color>96143C96</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+                <Style id="dark_blue">
+            <LineStyle>
+            <color>C8F01414</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="route_dark_blue">
+            <LineStyle>
+            <color>96F01414</color>
+            <width>4</width>
+            </LineStyle>
+        </Style>
+        
+                        
+        <Folder>
+            <name>Routes</name>
+            <description>A list of routes</description>
+            <visibility>1</visibility>            
+            <open>0</open>
+
+                                                                                                
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 1</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592121,-34.817318 116.592302,-34.817355                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 2</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592302,-34.817355 116.592472,-34.817455                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 3</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592472,-34.817455 116.592475,-34.817551                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 4</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592475,-34.817551 116.592654,-34.817460                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 5</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592654,-34.817460 116.592774,-34.817491                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 6</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592774,-34.817491 116.592907,-34.817530                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_purple</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 7</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592907,-34.817530 116.593034,-34.817531                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_pink</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 8</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593034,-34.817531 116.593181,-34.817524                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_brown</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 9</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593181,-34.817524 116.593311,-34.817518                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 10</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593311,-34.817518 116.593492,-34.817473                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 11</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593492,-34.817473 116.593651,-34.817452                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 12</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593651,-34.817452 116.593664,-34.817541                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 13</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593664,-34.817541 116.593779,-34.817419                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 14</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593779,-34.817419 116.593947,-34.817331                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 15</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593947,-34.817331 116.594074,-34.817333                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 16</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594074,-34.817333 116.594136,-34.817397                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_purple</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 17</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594136,-34.817397 116.594127,-34.817540                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_pink</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 18</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594127,-34.817540 116.594140,-34.817688                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_brown</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 19</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594140,-34.817688 116.594169,-34.817809                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 20</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594169,-34.817809 116.593999,-34.817790                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 21</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593999,-34.817790 116.593966,-34.818009                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 22</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593966,-34.818009 116.594134,-34.818143                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 23</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594134,-34.818143 116.594228,-34.818279                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 24</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594228,-34.818279 116.594285,-34.818361                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 25</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594285,-34.818361 116.594252,-34.818437                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 26</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594252,-34.818437 116.594207,-34.818543                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_purple</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 27</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594207,-34.818543 116.594113,-34.818597                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_pink</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 28</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.594113,-34.818597 116.593936,-34.818651                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_brown</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 29</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593936,-34.818651 116.593838,-34.818561                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 30</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593838,-34.818561 116.593692,-34.818502                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 31</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593692,-34.818502 116.593513,-34.818472                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 32</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593513,-34.818472 116.593313,-34.818464                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 33</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593313,-34.818464 116.593094,-34.818440                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 34</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.593094,-34.818440 116.592913,-34.818426                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 35</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592913,-34.818426 116.592745,-34.818551                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 36</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592745,-34.818551 116.592621,-34.818699                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_purple</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 37</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592621,-34.818699 116.592554,-34.818848                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_pink</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 38</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592554,-34.818848 116.592453,-34.819024                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_brown</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 39</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592453,-34.819024 116.592385,-34.819094                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 40</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592385,-34.819094 116.592141,-34.819083                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 41</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.592141,-34.819083 116.591869,-34.819041                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 42</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591869,-34.819041 116.591619,-34.818943                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 43</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591619,-34.818943 116.591452,-34.818871                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 44</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591452,-34.818871 116.591372,-34.818657                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 45</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591372,-34.818657 116.591304,-34.818437                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 46</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591304,-34.818437 116.591238,-34.818216                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_purple</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 47</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591238,-34.818216 116.591221,-34.817980                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_pink</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 48</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591221,-34.817980 116.591247,-34.817759                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_brown</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 49</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591247,-34.817759 116.591297,-34.817509                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_dark_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 50</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591297,-34.817509 116.591294,-34.817508                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_red</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 51</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591294,-34.817508 116.591390,-34.817292                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_green</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 52</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591390,-34.817292 116.591424,-34.817194                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_blue</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 53</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591424,-34.817194 116.591671,-34.817235                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_cyan</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 54</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591671,-34.817235 116.591886,-34.817278                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                                                                                        
+            <Placemark>
+                <visibility>0</visibility>            
+                <open>0</open> 
+                <styleUrl>#route_orange</styleUrl>
+
+                                
+                <name>Straight line</name>
+                <description>Between New waypoint and New waypoint
+ - Route no. 55</description>
+                <LineString>
+                    <extrude>true</extrude>
+                    <tessellate>true</tessellate>
+                    <altitudeMode>clampToGround</altitudeMode> 
+                    <coordinates>
+                        116.591886,-34.817278 116.592055,-34.817307                         
+                    </coordinates>
+                </LineString>
+            </Placemark>
+                            
+        </Folder>
+        
+                
+        <LookAt>
+            <longitude>116.592753</longitude>            
+            <latitude>-34.818144</latitude>             
+            <altitude>0</altitude>               
+            <heading>0</heading>               
+            <tilt>45</tilt>
+            <range>175</range>                    
+            <altitudeMode>clampToGround</altitudeMode> 
+        </LookAt>
+    </Document>
+</kml>

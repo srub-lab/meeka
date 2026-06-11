@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Pupalong_Loop_Walk</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>116.004519777719,-34.8385010677667 116.004466989186,-34.8385352825566</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates>116.004519833333,-34.838503 116.004544166667,-34.838411 116.004529333333,-34.8383133333333 116.004433333333,-34.8382246666667 116.004335166667,-34.838167 116.0042255,-34.8381195 116.004056,-34.8380515 116.003912833333,-34.837983 116.003775833333,-34.8379223333333 116.003644833333,-34.8379266666667 116.003671,-34.8380171666667 116.003568666667,-34.8380596666667 116.003472666667,-34.8381148333333 116.003567666667,-34.8382146666667 116.0036455,-34.838312 116.003640166667,-34.8384256666667 116.003565666667,-34.8385375 116.003540666667,-34.8386568333333 116.00363,-34.8387423333333 116.003759333333,-34.8388093333333 116.003889666667,-34.83883 116.004169,-34.8388128333333 116.004293,-34.8387445 116.0043615,-34.838633 116.0044645,-34.8385381666667</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><coordinates></coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
