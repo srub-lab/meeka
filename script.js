@@ -699,7 +699,7 @@ let trailActive = { walk: false, paddle: false, '2x2': false };
 let trailIndex = null;
 
 const trailConfig = {
-    'walk':   { color: '#2d8a4e', label: '🥾 Walk',   type: 'Walking Trail' },
+    'walk':   { color: '#8B4513', label: '🥾 Walk',   type: 'Walking Trail' },
     'paddle': { color: '#1a6dd8', label: '🚣 Paddle', type: 'Paddle Trail'   },
     '2x2':    { color: '#7b2d8b', label: '🚙 2x2',    type: '2x2 Track'      }
 };
