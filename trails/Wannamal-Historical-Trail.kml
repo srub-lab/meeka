@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Wannamal Historical Walk</name>
+	<gx:CascadingStyle kml:id="__managed_style_22466666A6223995B007">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1A418EAD1D223995B007">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_04831E61D7223995B007">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1A418EAD1D223995B007</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_22466666A6223995B007</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="01D934CFF8223995AFF7">
+		<name>Start</name>
+		<LookAt>
+			<longitude>116.0554069526231</longitude>
+			<latitude>-31.16328942975306</latitude>
+			<altitude>172.122747884989</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1304.534306672285</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_04831E61D7223995B007</styleUrl>
+		<Point>
+			<coordinates>116.0579483710639,-31.1647930640624,176.7615302569885</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DE919676E2239A06F6D">
+		<name>Wannamal Historical Walk</name>
+		<LookAt>
+			<longitude>116.0575737703261</longitude>
+			<latitude>-31.16190850210292</latitude>
+			<altitude>186.0901213483579</altitude>
+			<heading>-4.126298156802399</heading>
+			<tilt>0.2628266320577796</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1284.068857279199</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_04831E61D7223995B007</styleUrl>
+		<LineString>
+			<coordinates>
+				116.0579187454875,-31.16479770009091,176.4657514153101 116.0570656713807,-31.16361870750437,175.3033159563306 116.0558949017312,-31.16352322348971,172.7385296926265 116.0556751670104,-31.16327825041899,172.3334353428589 116.0552445275553,-31.16333741817343,171.8370775305711 116.0545349139256,-31.15965158134017,167.4973499821811 116.0529775673042,-31.15385426854462,167.5311141721483 116.0534015409341,-31.15363073988772,170.405800624914 116.0532119828319,-31.15286172292931,170.1151754602366 116.0533619309658,-31.15282203403718,170.8713576413825 116.0536446301742,-31.1536825124493,171.2749539803508 116.0532876216768,-31.15375814878406,169.6969345834371 116.0533372913492,-31.15414329183486,168.6878764298747 116.0536515751131,-31.1555787747652,169.6717862048565 116.0538456923681,-31.15617525689487,170.2350706282843 116.0543632475127,-31.15791747607868,170.1372631762747 116.0552936554167,-31.15777206203101,176.2248390069834 116.0548438604366,-31.15612273962644,177.2149506995692 116.0550841377468,-31.1561724583828,177.75918164104 116.055643170958,-31.15843127592544,178.592011960779 116.0559768971974,-31.15971161016338,180.5488352789838 116.0555232732511,-31.15987628981632,175.4895090954777 116.0549275754541,-31.15999413189336,169.3959927077005 116.055231188714,-31.16185283237794,171.1653712539534 116.0557318669416,-31.16225617066458,173.0695968342059 116.0564554864112,-31.1630920395319,173.7604900860767 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Oak Grove Walk, Golden Valley Tree Park</name>
+	<open>1</open>
+	<LookAt>
+		<gx:TimeSpan>
+			<begin>2008-04-14T03:50:31Z</begin>
+			<end>2008-04-14T04:25:54Z</end>
+		</gx:TimeSpan>
+		<longitude>115.994767</longitude>
+		<latitude>-33.799333</latitude>
+		<altitude>0</altitude>
+		<range>1300</range>
+		<tilt>0</tilt>
+		<heading>0</heading>
+	</LookAt>
+	<Style>
+		<ListStyle>
+			<listItemType>checkHideChildren</listItemType>
+			<bgColor>00ffffff</bgColor>
+			<maxSnippetLines>2</maxSnippetLines>
+		</ListStyle>
+	</Style>
+	<Style id="sh_3780273662_d4ddd4ed4b_o0">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2445/3780273662_d4ddd4ed4b_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o2">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.2</scale>
+		</IconStyle>
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_3780273662_d4ddd4ed4b_o0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780273662_d4ddd4ed4b_o</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780273662_d4ddd4ed4b_o</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_3780421700_ff65252da3_o0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_3780273662_d4ddd4ed4b_o">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780273662_d4ddd4ed4b_o0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780273662_d4ddd4ed4b_o0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_3780421700_ff65252da3_o2">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="waypoint_n">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o0">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o0">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.2</scale>
+		</IconStyle>
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_3780273662_d4ddd4ed4b_o">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2445/3780273662_d4ddd4ed4b_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_3780273662_d4ddd4ed4b_o0">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2445/3780273662_d4ddd4ed4b_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o1">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="lineStyle">
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>6</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_3780273662_d4ddd4ed4b_o">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2445/3780273662_d4ddd4ed4b_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="waypoint_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="waypoint">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#waypoint_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#waypoint_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_3780421700_ff65252da3_o1">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>Oak Grove Walk, Golden Valley Tree Park</name>
+		<description><![CDATA[<table>
+            <tr><td><b>Distance</b> 1.7 km </td></tr>
+            <tr><td><b>Min Alt</b> 115.000 meters </td></tr>
+            <tr><td><b>Max Alt</b> 266.000 meters </td></tr>
+            <tr><td><b>Max Speed</b> 5.8 km/hour </td></tr>
+            <tr><td><b>Avg Speed</b> 2.8 km/hour </td></tr>
+          </table>]]></description>
+		<styleUrl>#msn_ylw-pushpin0</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+115.994317,-33.800583,266 115.994583,-33.800617,138 115.99485,-33.800517,136 115.994983,-33.800383,135 115.995117,-33.8003,132 115.995417,-33.800183,135 115.995717,-33.800133,137 115.995917,-33.80015,136 115.99655,-33.800017,139 115.9968,-33.79995,141 115.99725,-33.800017,147 115.997567,-33.799933,149 115.9979,-33.799767,150 115.9979608006166,-33.79967332405195,149 115.9977583617153,-33.79961613288481,141 115.9976652334786,-33.79928642073951,146 115.9974587504974,-33.79940081539424,149 115.9971996332159,-33.79942437072911,139 115.9969769546945,-33.79943783166889,138 115.9966854490781,-33.79946475053966,133 115.996426333227,-33.7994983973169,129 115.9960538553975,-33.79956905215389,120 115.9955275270934,-33.79962961269407,117 115.9949566632224,-33.79945129755271,119 115.9945963302517,-33.79927298042276,124 115.9943777027465,-33.79910475717821,128 115.994231950602,-33.79895672005219,132 115.9940983438986,-33.79885914901169,133 115.9938189824606,-33.79879185452609,144 115.993511279316,-33.79875147445992,142 115.993283,-33.798717,131 115.99305,-33.798717,129 115.9927744331774,-33.79865726634061,130 115.9926286917654,-33.79835446612134,131 115.9925679693255,-33.79812904871439,133 115.9923372041853,-33.79792381279164,130 115.9921226324385,-33.79776904299152,130 115.9919722553106,-33.79762993169774,130 115.9917704091581,-33.79753688483163,119 115.9915720190168,-33.79769837083339,115 115.9914181626608,-33.79784976453681,115 115.9911387945496,-33.79805498480042,118 115.9912197574733,-33.79831068533166,121 115.9914383782012,-33.79852938118376,120 115.9915922208471,-33.79869760742916,119 115.9917946495194,-33.7988389192744,118 115.9920659123334,-33.79882883367664,117 115.9923452677112,-33.79887930726452,117 115.9925031622741,-33.79897351464,118 115.9926124722676,-33.79909463588892,118 115.9927622693174,-33.7992090290417,118 115.9928756309327,-33.79923594691243,123 115.993001140924,-33.79919894075582,122 115.9931306980709,-33.7992056719505,118 115.9932926410756,-33.79933688723825,121 115.993373609637,-33.79953202471146,123 115.9934019457776,-33.79972043286649,125 115.9933412092594,-33.79995930629616,129 115.9934788594001,-33.80026883392627,126 115.9938553855066,-33.8004976192283,130 115.994065916673,-33.80064229128758,131 115.9941995208222,-33.80090471660979,127 115.994517,-33.801017,124 115.994733,-33.801,121 115.994917,-33.801017,124 </coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

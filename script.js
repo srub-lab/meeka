@@ -692,6 +692,95 @@ function renderLighthouses() {
     });
 }
 
+// 2x2 trail layer
+let trails2x2Pins = [];
+let trails2x2Lines = {};
+let trails2x2Active = false;
+
+const trails2x2Files = [
+    'trails/Great-Ocean-Drive-2x2.kml'
+];
+
+function toggle2x2() {
+    const btn = document.getElementById('btn-2x2');
+    if (trails2x2Active) {
+        trails2x2Pins.forEach(function(m) { map.removeLayer(m); });
+        trails2x2Pins = [];
+        Object.values(trails2x2Lines).forEach(function(l) { map.removeLayer(l); });
+        trails2x2Lines = {};
+        trails2x2Active = false;
+        btn.classList.remove('active');
+    } else {
+        trails2x2Active = true;
+        btn.classList.add('active');
+        load2x2Pins();
+    }
+}
+
+function load2x2Pins() {
+    trails2x2Files.forEach(function(file) {
+        fetch(file)
+            .then(r => r.text())
+            .then(kmlText => {
+                const parser = new DOMParser();
+                const kml = parser.parseFromString(kmlText, 'text/xml');
+                const coordNodes = kml.getElementsByTagName('coordinates');
+                const nameEl = kml.getElementsByTagName('name')[0];
+                const name = nameEl ? nameEl.textContent.trim() : file.split('/').pop().replace('.kml','').replace(/-/g,' ');
+                if (!coordNodes.length) return;
+                // Parse all latlngs from first coordinate block
+                const raw = coordNodes[0].textContent.trim().split(/\s+/);
+                const latlngs = raw.map(function(c) {
+                    const parts = c.split(',');
+                    return [parseFloat(parts[1]), parseFloat(parts[0])];
+                }).filter(function(ll) { return !isNaN(ll[0]) && !isNaN(ll[1]); });
+                if (latlngs.length < 2) return;
+                // Drop pin at start of trail
+                const startLL = latlngs[0];
+                const pinIcon = L.divIcon({
+                    html: '<img src="icons/2x2.png" style="width:28px;height:28px;object-fit:contain;">',
+                    className: 'emoji-icon',
+                    iconSize: [28, 28],
+                    iconAnchor: [14, 28]
+                });
+                const marker = L.marker(startLL, { icon: pinIcon }).addTo(map);
+                const fileKey = file;
+                const popupDiv = document.createElement('div');
+                popupDiv.innerHTML = '<b>🚙 ' + name + '</b><br><small>2x2 Track</small><br><br>';
+                const routeBtn = document.createElement('button');
+                routeBtn.textContent = 'Show Route';
+                routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:#d67214;color:white;font-size:13px;font-weight:600;cursor:pointer;';
+                routeBtn.addEventListener('click', function() { show2x2Route(fileKey); });
+                popupDiv.appendChild(routeBtn);
+                marker.bindPopup(popupDiv);
+                // Store latlngs against file key for later drawing
+                marker._trailLatlngs = latlngs;
+                marker._trailName = name;
+                marker._trailKey = fileKey;
+                trails2x2Pins.push(marker);
+            })
+            .catch(function(err) { console.log('2x2 load error:', file, err); });
+    });
+}
+
+function show2x2Route(fileKey) {
+    if (trails2x2Lines[fileKey]) {
+        map.removeLayer(trails2x2Lines[fileKey]);
+        delete trails2x2Lines[fileKey];
+        return;
+    }
+    // Find the marker with this key to get latlngs
+    const marker = trails2x2Pins.find(function(m) { return m._trailKey === fileKey; });
+    if (!marker) return;
+    const line = L.polyline(marker._trailLatlngs, {
+        color: '#d67214',
+        weight: 3,
+        opacity: 0.85
+    }).addTo(map);
+    trails2x2Lines[fileKey] = line;
+    map.fitBounds(line.getBounds(), { padding: [40, 40] });
+}
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -703,3 +792,5 @@ window.toggleWACamps = toggleWACamps;
 window.toggleFuel = toggleFuel;
 window.toggleWater = toggleWater;
 window.toggleLighthouses = toggleLighthouses;
+window.toggle2x2 = toggle2x2;
+window.show2x2Route = show2x2Route;
