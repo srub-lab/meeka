@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Bilya_Djena_Koorliny_River_Walk_Beverley.kml</name>
+	<Style id="inline0">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline2">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Bilya Djena Koorliny - River Walk</name>
+		<styleUrl>#inline4</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				116.837724072142,-32.21757666274009,0 116.8379110328888,-32.21782407235227,0 116.838121963221,-32.21809987273669,0 116.8384767168326,-32.2183026689838,0 116.8388362641641,-32.21855819040451,0 116.8390627362807,-32.21888760286738,0 116.8393051153107,-32.21910680598519,0 116.8393636174763,-32.21946035885034,0 116.8393301824374,-32.2197078463922,0 116.8396143560204,-32.21982098432181,0 116.8396561876102,-32.22019146682504,0 116.8396338793602,-32.22066323892745,0 116.8395669610243,-32.22094630371736,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Cossack Heritage Walk Trail_2025.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>Cossack Heritage Walk Trail_2025</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				117.1889156597186,-20.67966306964525,0 117.1891142554098,-20.67949078072005,0 117.1890623764547,-20.67926339736943,0 117.1891448049602,-20.67917850535543,0 117.1892078260236,-20.67909695994997,0 117.1891269416606,-20.67901593430788,0 117.1892039932677,-20.67893969983303,0 117.1892777676315,-20.67884083920169,0 117.189276912045,-20.67871067417964,0 117.189175142973,-20.67858355438025,0 117.1892247109736,-20.67855954588731,0 117.1893046953951,-20.67865397893019,0 117.1893219810638,-20.67875370214658,0 117.1892213231696,-20.67889585072353,0 117.1890606434432,-20.6790748535964,0 117.1890095755537,-20.67912120744629,0 117.1888782677667,-20.67893402505506,0 117.1887293524769,-20.67872337438981,0 117.1885807371901,-20.67850825408365,0 117.1885153833586,-20.67841019324336,0 117.1886273727677,-20.67831357775876,0 117.1887181549829,-20.67824712343572,0 117.1886444472387,-20.67813062455981,0 117.1885467885544,-20.67822808212648,0 117.1884542064796,-20.67832135105864,0 117.1883306528643,-20.67816154285223,0 117.1882303835353,-20.67801207571512,0 117.1881217601274,-20.67784417007558,0 117.1880067932513,-20.67791368997141,0 117.1879151774553,-20.67777819050393,0 117.1878307155464,-20.67767900516568,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

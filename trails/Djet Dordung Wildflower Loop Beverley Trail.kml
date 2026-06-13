@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Djet Dordung - Wildflower Loop.kml</name>
+	<StyleMap id="inline">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline1">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline3">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>Djet Dordung - Wildflower Loop</name>
+		<styleUrl>#inline</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				116.8377579572326,-32.21759647222432,0 116.8382331300011,-32.21789786526581,0 116.8384807536174,-32.2179910505038,0 116.8387871532589,-32.2179975581868,0 116.8390503942121,-32.21808512776892,0 116.8391124787985,-32.21782095182686,0 116.8390374918795,-32.2176622611934,0 116.8388134285497,-32.21747114466597,0 116.8384920010057,-32.21749389101127,0 116.8381955703849,-32.21744898559585,0 116.8379714929735,-32.21759201886675,0 116.8377344934488,-32.21753407323796,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

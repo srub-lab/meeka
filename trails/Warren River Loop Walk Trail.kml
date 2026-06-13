@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Warren River Loop Walk</name>
+	<open>1</open>
+	<LookAt>
+		<gx:TimeSpan>
+			<begin>2008-03-14T02:35:20Z</begin>
+			<end>2008-03-14T05:40:07Z</end>
+		</gx:TimeSpan>
+		<longitude>115.955792</longitude>
+		<latitude>-34.5021</latitude>
+		<altitude>0</altitude>
+		<range>5496.613684</range>
+		<tilt>0</tilt>
+		<heading>0</heading>
+	</LookAt>
+	<Style>
+		<ListStyle>
+			<listItemType>checkHideChildren</listItemType>
+			<bgColor>00ffffff</bgColor>
+			<maxSnippetLines>2</maxSnippetLines>
+		</ListStyle>
+	</Style>
+	<Style id="track-8_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-8.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_3780399058_8b4a7827fc_o">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780399058_8b4a7827fc_o</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780399058_8b4a7827fc_o</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-12_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-12_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="waypoint">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#waypoint_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#waypoint_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-1_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-1_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-13_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-13.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="track-14">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-14_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-14_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_3780421700_ff65252da3_o2">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-0_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-12_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-12.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-6_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-6_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-6_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-6.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o0">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-10_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-10.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-none_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-2_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-2.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-none_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-13">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-13_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-13_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-10_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-10_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-2_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-2.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-15_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-15.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-14_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-14.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-3_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-3.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-8_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-8_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-11_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-11_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin0">
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="lineStyle">
+		<LineStyle>
+			<color>99ffac59</color>
+			<width>6</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-12_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-12.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-4_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-4.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_3780421700_ff65252da3_o1">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-5_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-5.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-8_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-8.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-3_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-3.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-4_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-4.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-7_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-7_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-11_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-11.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-9">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-9_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-9_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_3780421700_ff65252da3_o0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-15_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-15.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_3780421700_ff65252da3_o2">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-0_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-0_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-15">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-15_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-15_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-6_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-6.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="waypoint_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-2_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-2_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="sn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-7_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-7.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin2">
+		<LineStyle>
+			<color>990000ff</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="waypoint_n">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_3780399058_8b4a7827fc_o">
+		<IconStyle>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2559/3780399058_8b4a7827fc_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-3_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-3_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-9_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-9.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-11_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-11.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-0_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-7_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-7.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-5_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-5_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-9_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-9.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="track-none">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-none_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-none_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="track-4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#track-4_n</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#track-4_h</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_3780421700_ff65252da3_o0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2467/3780421700_ff65252da3_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-10_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-10.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-1_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-1.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="track-1_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-1.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-5_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-5.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_3780399058_8b4a7827fc_o">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>http://farm3.static.flickr.com/2559/3780399058_8b4a7827fc_o.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_3780421700_ff65252da3_o1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_3780421700_ff65252da3_o1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_3780421700_ff65252da3_o2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="track-14_n">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-14.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="track-13_h">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://earth.google.com/images/kml-icons/track-directional/track-13.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>Path</name>
+		<description>Distance 10.6 km 
+Min Alt 1.0 meters 
+Max Alt 187.0 meters 
+Max Speed 14.0 km/hour 
+Avg Speed 3.4 km/hour</description>
+		<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+115.97505,-34.496083,137 115.9751,-34.49625,151 115.975067,-34.4964,147 115.974933,-34.496567,129 115.9748,-34.49665,102 115.974433,-34.496833,79 115.97425,-34.496917,68 115.97395,-34.49705,56 115.9737,-34.497117,50 115.973467,-34.497233,55.00000000000001 115.9733,-34.497217,66.00000000000001 115.9731,-34.497267,61.00000000000001 115.972683,-34.497283,57.00000000000001 115.972333,-34.49735,47 115.972067,-34.497383,45.00000000000001 115.97175,-34.49735,54.00000000000001 115.971433,-34.497367,71 115.971117,-34.497383,84.00000000000001 115.9707,-34.497267,98.00000000000003 115.970417,-34.497233,102 115.970217,-34.497217,101 115.96955,-34.4971,102 115.969183,-34.497067,97 115.968817,-34.497017,97 115.96845,-34.4969,95.00000000000003 115.96815,-34.496767,94 115.967767,-34.4966,81.00000000000001 115.967633,-34.4965,77 115.967417,-34.4963,79 115.96725,-34.49615,72.00000000000001 115.96715,-34.496033,69.00000000000001 115.9669,-34.4959,57.00000000000001 115.966633,-34.495817,75.00000000000001 115.966483,-34.496,64 115.96615,-34.495917,59 115.9658,-34.49585,54.00000000000001 115.965267,-34.495783,54.00000000000001 115.964833,-34.4958,58.00000000000001 115.964683,-34.495783,60.00000000000001 115.964333,-34.495767,44 115.9641,-34.495767,50 115.963833,-34.49575,45.00000000000001 115.963633,-34.49575,36.00000000000001 115.9635,-34.49585,33.00000000000001 115.96325,-34.495767,33.00000000000001 115.963,-34.495717,34 115.9628,-34.4957,19 115.9625,-34.495767,0 115.962217,-34.495767,0 115.96205,-34.49575,0 115.961483,-34.495617,7 115.96125,-34.495567,13 115.961083,-34.495533,17 115.960783,-34.4954,38 115.960567,-34.495333,46.00000000000001 115.960267,-34.49525,33.00000000000001 115.960117,-34.495017,39.00000000000001 115.960033,-34.494833,40.00000000000001 115.959917,-34.494717,40.00000000000001 115.959817,-34.49445,41 115.959783,-34.494217,39.00000000000001 115.959667,-34.494033,50 115.959533,-34.4938,58.00000000000001 115.959367,-34.493733,58.00000000000001 115.959117,-34.493683,58.00000000000001 115.958867,-34.493717,49.00000000000001 115.958683,-34.4937,57.00000000000001 115.958533,-34.493733,44 115.95835,-34.49385,32 115.958233,-34.493983,42.00000000000001 115.95795,-34.494017,51.00000000000001 115.957633,-34.494,73 115.957333,-34.4939,99 115.9572,-34.493867,104 115.956933,-34.49385,103 115.956383,-34.49385,97 115.956033,-34.4938,96 115.955667,-34.493783,92.00000000000003 115.9555,-34.493767,104 115.9552,-34.493767,114 115.95495,-34.493833,110 115.954767,-34.493817,119 115.954733,-34.49365,110 115.954567,-34.493533,115 115.9544,-34.49345,124 115.9543,-34.49335,126 115.954067,-34.493217,131 115.953867,-34.49305,123 115.953767,-34.492867,130 115.953633,-34.4927,148 115.953533,-34.492483,143 115.95345,-34.49235,141 115.953233,-34.492133,135 115.953083,-34.492017,133 115.953,-34.4919,138 115.9529,-34.491733,168 115.952767,-34.49195,166 115.952867,-34.492083,164 115.95305,-34.4923,167 115.95315,-34.492533,166 115.953233,-34.4927,169 115.9533,-34.49285,177 115.95345,-34.493117,184 115.9535,-34.493233,187 115.953517,-34.493367,183 115.95355,-34.493667,182 115.9536,-34.493883,173 115.9536,-34.49405,170 115.953667,-34.494283,169 115.953633,-34.494467,161 115.953483,-34.494733,156 115.95335,-34.4949,142 115.9533,-34.49505,136 115.95315,-34.495183,127 115.953083,-34.4954,125 115.952967,-34.49555,121 115.952883,-34.495683,119 115.952883,-34.495883,120 115.95305,-34.4961,129 115.953217,-34.496233,131 115.953383,-34.49635,130 115.95345,-34.4965,123 115.953233,-34.49665,119 115.953067,-34.4968,113 115.952917,-34.496917,113 115.952733,-34.496933,107 115.952583,-34.497017,107 115.9524,-34.497117,106 115.95225,-34.497233,106 115.952033,-34.497367,106 115.951867,-34.4975,107 115.95175,-34.4976,105 115.951483,-34.4978,105 115.951283,-34.4979,105 115.951017,-34.498067,105 115.950833,-34.4982,105 115.950633,-34.498267,105 115.950483,-34.498367,105 115.950333,-34.498467,105 115.95015,-34.49855,105 115.95,-34.49865,117 115.949767,-34.498733,116 115.949483,-34.498883,117 115.949283,-34.499,119 115.949133,-34.499117,120 115.948983,-34.499283,120 115.948783,-34.499417,120 115.948783,-34.49975,120 115.94855,-34.499883,120 115.948417,-34.5,120 115.948233,-34.500133,120 115.948217,-34.500333,120 115.948233,-34.5006,120 115.948183,-34.500817,120 115.948267,-34.50115,120 115.948,-34.501133,116 115.947817,-34.501033,118 115.947633,-34.50105,118 115.947433,-34.501083,118 115.947267,-34.501133,118 115.947083,-34.5013,118 115.946817,-34.501483,118 115.9467,-34.501617,118 115.94655,-34.501767,118 115.946433,-34.5019,118 115.946317,-34.502017,118 115.946233,-34.502267,118 115.946117,-34.50245,118 115.946083,-34.502617,118 115.945917,-34.502717,118 115.94575,-34.502883,118 115.94555,-34.502883,118 115.94555,-34.503233,118 115.945533,-34.50345,118 115.94535,-34.503433,118 115.945067,-34.503467,118 115.945033,-34.503767,118 115.9449,-34.50395,118 115.94485,-34.50435,118 115.9448,-34.504517,118 115.94475,-34.504867,118 115.94475,-34.50515,118 115.9447,-34.505433,118 115.944517,-34.505633,118 115.94445,-34.505983,118 115.944417,-34.506183,118 115.9444,-34.506483,118 115.944283,-34.506567,118 115.9441,-34.506567,118 115.943833,-34.506617,118 115.943733,-34.506767,118 115.943533,-34.506917,118 115.943317,-34.5069,118 115.943183,-34.506983,118 115.942983,-34.50675,118 115.94275,-34.506667,118 115.94255,-34.506667,118 115.942383,-34.50675,118 115.942217,-34.506917,118 115.942067,-34.507033,118 115.941883,-34.5071,118 115.941533,-34.507083,118 115.941367,-34.507183,118 115.941183,-34.507217,118 115.940967,-34.5072,118 115.940883,-34.50705,118 115.940667,-34.507083,118 115.940567,-34.507217,118 115.940333,-34.50715,118 115.940067,-34.50705,118 115.9399,-34.5071,118 115.939717,-34.507233,118 115.939517,-34.507233,118 115.939367,-34.507167,118 115.939217,-34.50705,118 115.93905,-34.506967,118 115.938917,-34.506767,118 115.938767,-34.506867,118 115.938583,-34.506867,118 115.938383,-34.506933,118 115.938167,-34.506833,118 115.938067,-34.506667,118 115.9379,-34.506483,118 115.937717,-34.50635,118 115.937617,-34.506233,118 115.9375,-34.5061,118 115.937283,-34.50605,118 115.9371,-34.506,118 115.9368,-34.50595,118 115.936633,-34.505933,118 115.936483,-34.505983,118 115.936583,-34.506133,118 115.936733,-34.506217,118 115.936717,-34.50635,118 115.9367,-34.506483,118 115.936567,-34.506617,118 115.93655,-34.506783,118 115.936483,-34.506967,118 115.936533,-34.507217,118 115.936717,-34.50745,118 115.936883,-34.507717,118 115.937067,-34.507817,118 115.9372,-34.5079,108 115.937417,-34.508,81.00000000000001 115.937583,-34.508083,81.00000000000001 115.937767,-34.5082,81.00000000000001 115.9381,-34.50825,81.00000000000001 115.938417,-34.508267,81.00000000000001 115.93875,-34.508283,82 115.939217,-34.508333,82 115.939417,-34.508367,90.00000000000001 115.939683,-34.508433,90.00000000000001 115.9399,-34.508483,89.00000000000003 115.9401,-34.50855,87.00000000000001 115.940383,-34.508583,65 115.940567,-34.508667,60.00000000000001 115.9406,-34.508867,56 115.940583,-34.509033,57.00000000000001 115.94065,-34.509233,57.00000000000001 115.940733,-34.5094,44 115.940967,-34.509433,40.00000000000001 115.94115,-34.509483,47 115.941333,-34.509483,46.00000000000001 115.941767,-34.50945,49.00000000000001 115.941933,-34.509433,48 115.942133,-34.509383,49.00000000000001 115.942317,-34.509433,66.00000000000001 115.94265,-34.509383,69.00000000000001 115.942933,-34.5094,84.00000000000001 115.94315,-34.50935,79 115.943467,-34.509283,79 115.943617,-34.509367,79 115.943833,-34.509567,79 115.94395,-34.5097,45.00000000000001 115.944067,-34.509767,48 115.944217,-34.509917,44 115.944317,-34.510117,44 115.944583,-34.51025,39.00000000000001 115.9447,-34.510433,37 115.944817,-34.51055,36.00000000000001 115.9449,-34.510733,41 115.944833,-34.51095,36.00000000000001 115.94495,-34.5111,41 115.945067,-34.511267,42.00000000000001 115.945083,-34.511433,44 115.94515,-34.511567,32 115.945367,-34.51155,31 115.945583,-34.5117,32 115.94575,-34.51175,33.00000000000001 115.94595,-34.511867,33.00000000000001 115.946117,-34.511983,31 115.9463,-34.512017,25 115.946483,-34.51205,24 115.946633,-34.5122,28 115.946767,-34.512317,32 115.946867,-34.5124,41 115.947067,-34.512467,54.00000000000001 115.947483,-34.512467,48 115.947783,-34.512367,47 115.947933,-34.512267,48 115.948183,-34.5122,44 115.948417,-34.512183,50 115.948667,-34.512133,52.00000000000001 115.948867,-34.5121,54.00000000000001 115.949133,-34.512,54.00000000000001 115.949383,-34.511833,55.00000000000001 115.949583,-34.511683,55.00000000000001 115.949783,-34.5116,58.00000000000001 115.949933,-34.511517,59 115.950233,-34.511333,64 115.9505,-34.51125,66.00000000000001 115.950717,-34.511167,67 115.950867,-34.511033,64 115.951083,-34.510917,63.00000000000001 115.951267,-34.510767,66.00000000000001 115.951417,-34.51065,64 115.95155,-34.510533,63.00000000000001 115.951633,-34.510433,65 115.951733,-34.5103,68 115.951917,-34.510217,65 115.952133,-34.510117,65 115.952417,-34.510017,64 115.952733,-34.5101,59 115.952933,-34.5102,63.00000000000001 115.9533,-34.510217,58.00000000000001 115.9536,-34.510217,48 115.953833,-34.510183,42.00000000000001 115.954033,-34.510233,40.00000000000001 115.954333,-34.5103,23 115.954533,-34.51035,20 115.954783,-34.510417,25 115.955217,-34.5105,0 115.955433,-34.51055,0 115.9557,-34.510567,0 115.956017,-34.510617,0 115.95645,-34.510567,0 115.956817,-34.510533,0 115.957067,-34.510533,0 115.957417,-34.5105,0 115.9577,-34.51045,0 115.9583,-34.510283,0 115.958533,-34.51025,0 115.9587,-34.510183,0 115.9589,-34.510017,0 115.959117,-34.5099,0 115.959417,-34.50985,0 115.959583,-34.509817,2 115.9599,-34.5098,0 115.96015,-34.509817,1 115.9604,-34.509817,0 115.960583,-34.509817,0 115.960883,-34.509783,0 115.961033,-34.509717,4 115.961183,-34.509583,0 115.9614,-34.509533,0 115.961367,-34.509383,0 115.961317,-34.509283,11 115.96125,-34.5091,38 115.9612,-34.508933,56 115.961183,-34.508767,56 115.961383,-34.508467,22 115.96155,-34.50835,14 115.961567,-34.5082,16 115.9615,-34.50805,16 115.961683,-34.507983,18 115.961917,-34.507917,21 115.96225,-34.507717,0 115.962467,-34.507633,0 115.96255,-34.5075,0 115.9627,-34.5074,0 115.962867,-34.50715,0 115.963067,-34.507083,0 115.963233,-34.506933,0 115.9634,-34.506817,0 115.963533,-34.50665,1 115.9637,-34.506567,0 115.963833,-34.506467,0 115.964167,-34.5063,10 115.964383,-34.506167,4 115.964533,-34.50605,2 115.964717,-34.505933,3 115.964933,-34.50585,2 115.96515,-34.505717,12 115.965583,-34.505533,12 115.96595,-34.5054,11 115.966217,-34.505217,0 115.96645,-34.50515,12 115.96675,-34.504967,8 115.967117,-34.504867,15 115.96785,-34.504567,19 115.96815,-34.504517,21 115.968317,-34.504467,28 115.968533,-34.504333,31 115.968683,-34.504167,34 115.968833,-34.504133,55.00000000000001 115.968683,-34.50405,53 115.96855,-34.503933,72.00000000000001 115.968533,-34.503717,62 115.968583,-34.503517,67 115.9686,-34.503367,64 115.9686,-34.502917,78.00000000000001 115.96865,-34.502783,83.00000000000003 115.9687,-34.502617,87.00000000000001 115.968767,-34.502467,87.00000000000001 115.968783,-34.502117,84.00000000000001 115.968833,-34.501967,87.00000000000001 115.9689,-34.501783,84.00000000000001 115.969,-34.5016,81.00000000000001 115.969083,-34.501433,83.00000000000003 115.969183,-34.501267,85 115.9694,-34.501,81.00000000000001 115.9696,-34.50075,68 115.96975,-34.500617,55.00000000000001 115.969833,-34.5005,55.00000000000001 115.969967,-34.500417,62 115.9702,-34.500283,73 115.970417,-34.50015,83.00000000000003 115.970867,-34.499933,96 115.971117,-34.499717,100 115.971283,-34.499383,102 115.97145,-34.499283,107 115.971783,-34.498933,116 115.971883,-34.498767,113 115.972,-34.49865,116 115.972083,-34.498467,115 115.972183,-34.498333,114 115.972283,-34.498183,116 115.97235,-34.498033,120 115.972433,-34.4979,123 115.97255,-34.497733,123 115.972683,-34.497617,122 115.97315,-34.4974,117 115.973433,-34.497283,118 115.973683,-34.497183,122 115.973933,-34.49705,123 115.974283,-34.496933,124 115.974533,-34.49685,145 115.97475,-34.496783,140 115.975,-34.496667,128 115.975017,-34.496533,124 115.975033,-34.496383,129 115.975,-34.496217,141 115.974967,-34.496083,148 115.974817,-34.496033,144 115.974667,-34.495883,142 </coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Placemark>
+	<name>Lorikeet Stroll</name>
+	<Style>
+		<LineStyle>
+			<color>ff0b0085</color>
+			<width>1</width>
+		</LineStyle>
+	</Style>
+	<LineString>
+		<tessellate>1</tessellate>
+		<coordinates>
+			115.9751383,-34.4961317,0 115.9751533,-34.49631,0 115.9751733,-34.4964833,0 115.974975,-34.4965667,0 115.97477,-34.4965583,0 115.97471,-34.4964033,0 115.9748133,-34.496255,0 115.9748567,-34.4960833,0 115.97504,-34.496025,0 
+		</coordinates>
+	</LineString>
+</Placemark>
+</kml>

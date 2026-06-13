@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>greenhills_heritage_trail_showing_bothe_sections_and_vehicular_link_route.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>greenhills_heritage_trail_showing_bothe_sections_and_vehicular_link_route</name>
+		<open>1</open>
+		<Placemark>
+			<name>greenhills_heritage_trail_york_present_day_townsite</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					116.9629218985242,-31.92135323371395,0 116.9651964812051,-31.91974615805656,0 116.9659068176531,-31.91943720517098,0 116.965417015389,-31.91948829999967,0 116.9655291177876,-31.91921150334885,0 116.9655521398144,-31.91899285405075,0 116.9654725700542,-31.91881362560959,0 116.9647009849119,-31.91749798277608,0 116.9644226860323,-31.9171219482704,0 116.9642106592435,-31.91706875802283,0 116.9640932843804,-31.9169968256246,0 116.9641391942755,-31.9170825903884,0 116.9643792006593,-31.91716324860081,0 116.9646613981213,-31.91750798753544,0 116.9654232242265,-31.91880099229418,0 116.9654997715323,-31.91900020182196,0 116.9654794914224,-31.91920535975585,0 116.965373896099,-31.9194895057786,0 116.9651489636189,-31.91973412068251,0 116.9629218985242,-31.92135323371395,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>greenhills_heritage_trail_york_old_townsite_section</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					116.979272099105,-31.94471776159818,0 116.9790707302852,-31.94483517859914,0 116.9775038623343,-31.94481713136033,0 116.9773173822776,-31.94490502549036,0 116.9770893089483,-31.94483427330255,0 116.9765767469792,-31.94514567859765,0 116.9761193178625,-31.94515742819752,0 116.9755997396556,-31.94484580175889,0 116.9754467598926,-31.94475154953759,0 116.976112380878,-31.94511038318363,0 116.9765698193276,-31.94509276477179,0 116.9770685667314,-31.94479896915538,0 116.9773036106228,-31.94485214306673,0 116.9775177003233,-31.94478191724182,0 116.979029054072,-31.94480591576024,0 116.9792095730123,-31.94474127710967,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>greenhills_heritage_trail_york_recommended_vehicle_link</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					116.9629267423828,-31.92131479277241,0 116.9654443710391,-31.91970580869732,0 116.9657907702518,-31.91975438837433,0 116.9660593324558,-31.91987457222213,0 116.9660698718208,-31.91988370957281,0 116.9662517175883,-31.92009345062447,0 116.9674710154615,-31.92216669770291,0 116.9679769886891,-31.92308094080777,0 116.9684661642883,-31.92393377926729,0 116.9695792470062,-31.92759442356196,0 116.9697237691626,-31.92817523914903,0 116.9707025444431,-31.9299019978852,0 116.9736172383115,-31.93501226298545,0 116.9744107262759,-31.93632166290435,0 116.9770788856678,-31.94092751268016,0 116.9778780941731,-31.94237928715375,0 116.97903592784,-31.94424874868268,0 116.9790763775324,-31.94449303757249,0 116.9791608474657,-31.94474265243365,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

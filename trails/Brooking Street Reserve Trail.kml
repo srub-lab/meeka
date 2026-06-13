@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Brooking Street Reserve.kml</name>
+	<Style id="s_ylw-pushpin_hl1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>Brooking Street Reserve</name>
+		<open>1</open>
+		<Placemark>
+			<name>Brooking Street Bushland Walk Trail</name>
+			<LookAt>
+				<longitude>116.9353985994034</longitude>
+				<latitude>-32.10721561279529</latitude>
+				<altitude>0</altitude>
+				<heading>14.45644485295514</heading>
+				<tilt>45.0432490389416</tilt>
+				<range>99.79299588870913</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>116.9354114423925,-32.10715401603854,0</coordinates>
+			</Point>
+		</Placemark>
+		<Document>
+			<name>Brooking_Street_Reserve_Cowslip_Loop.kmz</name>
+			<open>1</open>
+			<StyleMap id="msn_ylw-pushpin">
+				<Pair>
+					<key>normal</key>
+					<styleUrl>#sn_ylw-pushpin</styleUrl>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<styleUrl>#sh_ylw-pushpin</styleUrl>
+				</Pair>
+			</StyleMap>
+			<Style id="sn_ylw-pushpin">
+				<IconStyle>
+					<scale>1.1</scale>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+					<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+				</IconStyle>
+				<BalloonStyle>
+				</BalloonStyle>
+				<LineStyle>
+					<color>ff000062</color>
+				</LineStyle>
+			</Style>
+			<Style id="sh_ylw-pushpin">
+				<IconStyle>
+					<scale>1.3</scale>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+					<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+				</IconStyle>
+				<BalloonStyle>
+				</BalloonStyle>
+				<LineStyle>
+					<color>ff000062</color>
+				</LineStyle>
+			</Style>
+			<Placemark>
+				<name>Cowslip Orchid loop</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						116.935411761796,-32.10714155323793,0 116.9355553707124,-32.10710623666768,0 116.9356015215483,-32.10721372106939,0 116.9356512376584,-32.1072894990256,0 116.9355935033089,-32.10738316813551,0 116.9356937273613,-32.10746818145514,0 116.9358546626166,-32.10742399657516,0 116.9360681482863,-32.1073293385894,0 116.9361554385933,-32.10721854153212,0 116.9361019688658,-32.10707714845371,0 116.9355668692339,-32.10710113403923,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Document>
+		<Document>
+			<name>Brooking_Street_Reserve_Fringed_Mantis_Loop.kmz</name>
+			<open>1</open>
+			<StyleMap id="msn_ylw-pushpin0">
+				<Pair>
+					<key>normal</key>
+					<styleUrl>#sn_ylw-pushpin0</styleUrl>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<styleUrl>#sh_ylw-pushpin0</styleUrl>
+				</Pair>
+			</StyleMap>
+			<Style id="sn_ylw-pushpin0">
+				<IconStyle>
+					<scale>1.1</scale>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+					<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+				</IconStyle>
+				<BalloonStyle>
+				</BalloonStyle>
+				<LineStyle>
+					<color>ff70704a</color>
+				</LineStyle>
+			</Style>
+			<Style id="sh_ylw-pushpin0">
+				<IconStyle>
+					<scale>1.3</scale>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+					<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+				</IconStyle>
+				<BalloonStyle>
+				</BalloonStyle>
+				<LineStyle>
+					<color>ff70704a</color>
+				</LineStyle>
+			</Style>
+			<Placemark>
+				<name>Fringe Mantis Loop</name>
+				<styleUrl>#msn_ylw-pushpin0</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						116.9354178704766,-32.10713616615634,0 116.9356090428193,-32.10708445143014,0 116.936196761115,-32.10704810031181,0 116.9361789564063,-32.10691275533559,0 116.9359631243547,-32.10646865879244,0 116.9358251261909,-32.10655635006689,0 116.9356614979302,-32.10671356654845,0 116.935402189973,-32.10667199004315,0 116.9353537357108,-32.10678246753307,0 116.9354549003787,-32.10684722966268,0 116.9355522489358,-32.10708721450363,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Document>
+	</Folder>
+</Document>
+</kml>

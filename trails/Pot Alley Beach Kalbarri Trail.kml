@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Pot_Alley_Beach_Trail_Kalbarri" id="Pot_Alley_Beach_Trail_Kalbarri">
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="TRL_TRAIL_TYPE" type="string"></SimpleField>
+	<SimpleField name="TRL_NAME" type="string"></SimpleField>
+	<SimpleField name="TRL_LOCN" type="string"></SimpleField>
+	<SimpleField name="Shape_Length" type="float"></SimpleField>
+	<SimpleField name="length_km" type="float"></SimpleField>
+</Schema>
+<Folder><name>Pot_Alley_Beach_Trail_Kalbarri</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Pot_Alley_Beach_Trail_Kalbarri">
+		<SimpleData name="OBJECTID">9284</SimpleData>
+		<SimpleData name="TRL_TRAIL_TYPE">Walk Trail</SimpleData>
+		<SimpleData name="TRL_NAME">Pot Alley Beach</SimpleData>
+		<SimpleData name="TRL_LOCN">Kalbarri National Park</SimpleData>
+		<SimpleData name="Shape_Length">0.00225709308816</SimpleData>
+		<SimpleData name="length_km">0.232710403348253</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><LineString><coordinates>114.133302306348,-27.7636627839612 114.133438806553,-27.7636162811534 114.133656403523,-27.7635510922842 114.133809006297,-27.7635448812843 114.133946798245,-27.7634782945049 114.134009102778,-27.7633742825322 114.134119608838,-27.7632717923376 114.134190707844,-27.7631056881564 114.134261700686,-27.7630194951782 114.134312609562,-27.762957385272 114.134394201791,-27.7629426806146 114.134425805286,-27.7629247908371 114.134432122444,-27.7628972749109 114.134416391473,-27.7628658483627 114.134369251653,-27.7628316436812 114.134327650409,-27.7628307235371 114.13429344573,-27.7628418183852 114.134264797318,-27.7628279454058 114.134225956515,-27.7628251672729 114.134195450114,-27.7628020574363 114.134127500821,-27.7627330818274 114.134063409065,-27.7626491892245 114.134048509765,-27.7626119940641 114.134017012439,-27.7626057830758 114.133951398905,-27.7625681809306 114.133906400195,-27.7625381876896 114.133873752684,-27.7625145646944 114.133818508496,-27.762483598222</coordinates></LineString></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

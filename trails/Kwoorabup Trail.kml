@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Kwoorabup Walk Trail.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>Kwoorabup Walk Trail</name>
+		<open>1</open>
+		<Placemark>
+			<name>Trail Start/Finish</name>
+			<LookAt>
+				<longitude>117.3640514695505</longitude>
+				<latitude>-34.95436845426892</latitude>
+				<altitude>0</altitude>
+				<heading>1.743246065668285</heading>
+				<tilt>0</tilt>
+				<range>2590.480077731378</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>117.3612567793236,-34.95626528255331,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Kwoorabup Walk Trail</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					117.3612171101282,-34.95628208593578,0 117.3615485746378,-34.95591298327284,0 117.3609975066934,-34.95566618897419,0 117.3609999423966,-34.9555882719122,0 117.3603383876939,-34.95547707077467,0 117.3600727648327,-34.95542884356021,0 117.3600194021079,-34.95510250849646,0 117.3602960303594,-34.95483780729239,0 117.3604931932674,-34.95460916791308,0 117.3612581179851,-34.95451358814535,0 117.3617125485376,-34.95429022163783,0 117.3619459251025,-34.95397020712189,0 117.3622782444174,-34.95358651842735,0 117.3622009928231,-34.95304764438647,0 117.3621203490433,-34.95262609274506,0 117.3619701807466,-34.95236006953727,0 117.3618514199802,-34.95205547514252,0 117.3616350573859,-34.95181382567214,0 117.3614831925447,-34.9515604999514,0 117.3614784950626,-34.95123196361299,0 117.3614907766362,-34.95085081313609,0 117.3615773312374,-34.95057540677377,0 117.3615836418994,-34.95031074732476,0 117.3614611151866,-34.95006912442597,0 117.3614661058318,-34.9498566873859,0 117.3609527293215,-34.94980424295644,0 117.36049000412,-34.94961989928848,0 117.3598567208882,-34.94942119517489,0 117.3595629648716,-34.94901671836305,0 117.359429819979,-34.94866979709641,0 117.3595025750457,-34.94827151911317,0 117.3595395564349,-34.94782785107449,0 117.3595175787345,-34.94738557342533,0 117.3596875997114,-34.94705493104279,0 117.3600044082677,-34.94663183345138,0 117.3604978608622,-34.94633413681928,0 117.3609575836317,-34.94611616149805,0 117.3612639625384,-34.94617734936244,0 117.3615380900332,-34.94625215619497,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

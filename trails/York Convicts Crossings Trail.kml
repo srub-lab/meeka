@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>york_walks_convicts_and_crossings_with_alternative_seasonal_routes.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>york_walks_convicts_and_crossings_with_alternative_seasonal_routes</name>
+		<open>1</open>
+		<Placemark>
+			<name>york_walks_convicts_and_crossings</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					116.7682518552178,-31.89145234114158,0 116.768496719247,-31.88995613857955,0 116.7685301543031,-31.88852557973026,0 116.7703697884833,-31.88841381678759,0 116.7702614324544,-31.88681477062938,0 116.7710801910333,-31.88683888280574,0 116.7729401840561,-31.88680092500356,0 116.772703467683,-31.88620573205713,0 116.7727546681098,-31.88523795649056,0 116.7729259289424,-31.88485315833415,0 116.7709996106465,-31.88464244944031,0 116.7700493142404,-31.88470851222403,0 116.7703005578011,-31.88675308967616,0 116.7714137272316,-31.88678611339354,0 116.7719407916898,-31.88840049420935,0 116.7716299234213,-31.88862329228694,0 116.7721107132302,-31.88838116441495,0 116.7735594107514,-31.89116425056704,0 116.7744902539136,-31.8927639311169,0 116.7754125043539,-31.89242743521299,0 116.7754466780447,-31.89280524153363,0 116.7753133405463,-31.89250031111036,0 116.7744384466923,-31.89282624955808,0 116.7735261093615,-31.89125219848033,0 116.7712337828233,-31.89224319111965,0 116.7686296009152,-31.89342882157164,0 116.7687279837104,-31.89369611477423,0 116.7685486701668,-31.89353776335615,0 116.7683764723831,-31.8933254848727,0 116.7683942124824,-31.8916561586053,0 116.7682518552178,-31.89145234114158,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>convicts_and_crossings_winter_route</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					116.7704413429326,-31.88678657433707,0 116.7729721738679,-31.88676809206061,0 116.7727028812602,-31.8862507276874,0 116.7727254783095,-31.88537908195057,0 116.772817184109,-31.8850498906186,0 116.7727945166278,-31.88545886319973,0 116.772745218142,-31.88612333210486,0 116.7730534083414,-31.88675174747289,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>york_walks_grand_designs.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>york_walks_grand_designs</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				116.7682392610778,-31.8913885380507,0 116.7682589254937,-31.89146457426465,0 116.7682689412556,-31.89107448696033,0 116.7684082418543,-31.89008023992759,0 116.7684153051805,-31.88987643855036,0 116.7684162841239,-31.88908895889413,0 116.7683604719782,-31.88887503209672,0 116.7680964446835,-31.88881867357513,0 116.7683774406468,-31.88878723823281,0 116.7683783410986,-31.88809465976938,0 116.7683514128202,-31.88782303022717,0 116.7683396699178,-31.88758523310422,0 116.7683601367204,-31.88744800155284,0 116.7682838516618,-31.88622593510117,0 116.7682504247287,-31.8850491857387,0 116.7684193217121,-31.88505195471205,0 116.7685092183225,-31.88591926993549,0 116.768521091524,-31.88626177225013,0 116.7689023123989,-31.88626722984818,0 116.7685204081956,-31.88633891334825,0 116.7685155424753,-31.88674088148666,0 116.7685405665342,-31.88711111846827,0 116.7685371866854,-31.8873074877316,0 116.7685338646246,-31.88742633585714,0 116.7685462083149,-31.8879284932594,0 116.7685601881567,-31.88820044937954,0 116.7685611947504,-31.88845985340118,0 116.7685620425066,-31.88865644680983,0 116.7685673550609,-31.88903387266157,0 116.7685712543585,-31.88905762276814,0 116.7686004919725,-31.88948986347915,0 116.7685861226786,-31.88968791415342,0 116.7685968284252,-31.89004426683006,0 116.7684831821764,-31.89088484012761,0 116.7684444972018,-31.89124617092106,0 116.7684147543852,-31.89140348937285,0 116.7682928845711,-31.89147207464134,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
