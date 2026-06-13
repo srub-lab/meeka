@@ -740,11 +740,133 @@ function toggleTrailLayer(category) {
     }
 }
 
+// ── Trail notes (stored in Firebase under trailNotes/<safeKey>) ──
+let trailNotesCache = {};
+
+function trailKeyToFirebaseKey(fileKey) {
+    return fileKey.replace(/[.#$\/\[\]]/g, '_');
+}
+
+function buildTrailPopup(category, file, name, latlngs, marker) {
+    const cfg = trailConfig[category];
+    const popupDiv = document.createElement('div');
+    popupDiv.style.minWidth = '220px';
+
+    const header = document.createElement('div');
+    header.innerHTML = '<b>' + cfg.label + ' — ' + name + '</b><br><small>' + cfg.type + '</small>';
+    popupDiv.appendChild(header);
+
+    const notesDiv = document.createElement('div');
+    notesDiv.style.cssText = 'margin-top:8px;font-size:13px;color:#333;';
+    popupDiv.appendChild(notesDiv);
+
+    const btnRow = document.createElement('div');
+    btnRow.style.cssText = 'display:flex;gap:8px;margin-top:10px;';
+
+    const routeBtn = document.createElement('button');
+    routeBtn.textContent = 'Show Route';
+    routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:' + cfg.color + ';color:white;font-size:13px;font-weight:600;cursor:pointer;';
+    routeBtn.addEventListener('click', function() { showTrailRoute(category, file, latlngs); });
+    btnRow.appendChild(routeBtn);
+
+    const notesBtn = document.createElement('button');
+    notesBtn.textContent = 'Add Notes';
+    notesBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:1.5px solid ' + cfg.color + ';background:white;color:' + cfg.color + ';font-size:13px;font-weight:600;cursor:pointer;';
+    notesBtn.addEventListener('click', function() { openTrailNotesForm(file, name, cfg.color, notesDiv); });
+    btnRow.appendChild(notesBtn);
+
+    popupDiv.appendChild(btnRow);
+
+    function renderNotes(notes) {
+        if (!notes) { notesDiv.innerHTML = ''; notesBtn.textContent = 'Add Notes'; return; }
+        notesBtn.textContent = 'Edit Notes';
+        let html = '';
+        if (notes.length) html += '<b>Length:</b> ' + notes.length + '<br>';
+        if (notes.difficulty) html += '<b>Difficulty:</b> ' + notes.difficulty + '<br>';
+        if (notes.estTime) html += '<b>Est. time:</b> ' + notes.estTime + '<br>';
+        if (notes.blurb) html += '<div style="margin-top:4px;">' + notes.blurb + '</div>';
+        notesDiv.innerHTML = html;
+    }
+
+    const fbKey = trailKeyToFirebaseKey(file);
+    if (trailNotesCache[fbKey] !== undefined) {
+        renderNotes(trailNotesCache[fbKey]);
+    } else {
+        db.ref('trailNotes/' + fbKey).once('value').then(function(snap) {
+            const notes = snap.val();
+            trailNotesCache[fbKey] = notes;
+            renderNotes(notes);
+        }).catch(function() {});
+    }
+
+    marker._renderTrailNotes = renderNotes;
+}
+
+function openTrailNotesForm(file, name, color, notesDiv) {
+    const fbKey = trailKeyToFirebaseKey(file);
+    const existing = trailNotesCache[fbKey] || {};
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:3000;display:flex;align-items:center;justify-content:center;';
+
+    const form = document.createElement('div');
+    form.style.cssText = 'background:white;border-radius:16px;padding:20px;width:300px;max-width:calc(100vw - 32px);box-shadow:0 8px 32px rgba(0,0,0,0.25);';
+
+    form.innerHTML =
+        '<h3 style="margin:0 0 12px;font-size:16px;">' + name + '</h3>' +
+        '<input id="tn-length" type="text" placeholder="Length (e.g. 4.5km)" style="width:100%;margin-bottom:8px;padding:9px 11px;border-radius:8px;border:1.5px solid #e8e8e8;font-size:14px;box-sizing:border-box;" value="' + (existing.length || '') + '">' +
+        '<input id="tn-difficulty" type="text" placeholder="Difficulty (e.g. Easy, Class 3)" style="width:100%;margin-bottom:8px;padding:9px 11px;border-radius:8px;border:1.5px solid #e8e8e8;font-size:14px;box-sizing:border-box;" value="' + (existing.difficulty || '') + '">' +
+        '<input id="tn-time" type="text" placeholder="Est. time (e.g. 1.5 hrs)" style="width:100%;margin-bottom:8px;padding:9px 11px;border-radius:8px;border:1.5px solid #e8e8e8;font-size:14px;box-sizing:border-box;" value="' + (existing.estTime || '') + '">' +
+        '<textarea id="tn-blurb" placeholder="Notes..." style="width:100%;height:70px;margin-bottom:10px;padding:9px 11px;border-radius:8px;border:1.5px solid #e8e8e8;font-size:14px;box-sizing:border-box;resize:none;">' + (existing.blurb || '') + '</textarea>' +
+        '<div style="display:flex;gap:8px;">' +
+        '<button id="tn-save" style="flex:1;padding:11px;border-radius:10px;border:none;background:' + color + ';color:white;font-weight:600;cursor:pointer;">Save</button>' +
+        '<button id="tn-cancel" style="flex:1;padding:11px;border-radius:10px;border:none;background:#f0f0f0;color:#444;font-weight:600;cursor:pointer;">Cancel</button>' +
+        '</div>';
+
+    overlay.appendChild(form);
+    document.body.appendChild(overlay);
+
+    form.querySelector('#tn-cancel').addEventListener('click', function() {
+        overlay.remove();
+    });
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) overlay.remove();
+    });
+
+    form.querySelector('#tn-save').addEventListener('click', function() {
+        const notes = {
+            length: form.querySelector('#tn-length').value.trim(),
+            difficulty: form.querySelector('#tn-difficulty').value.trim(),
+            estTime: form.querySelector('#tn-time').value.trim(),
+            blurb: form.querySelector('#tn-blurb').value.trim()
+        };
+        const isEmpty = !notes.length && !notes.difficulty && !notes.estTime && !notes.blurb;
+        const ref = db.ref('trailNotes/' + fbKey);
+        const save = isEmpty ? ref.remove() : ref.set(notes);
+        save.then(function() {
+            trailNotesCache[fbKey] = isEmpty ? null : notes;
+            if (notesDiv) {
+                let html = '';
+                if (notes.length) html += '<b>Length:</b> ' + notes.length + '<br>';
+                if (notes.difficulty) html += '<b>Difficulty:</b> ' + notes.difficulty + '<br>';
+                if (notes.estTime) html += '<b>Est. time:</b> ' + notes.estTime + '<br>';
+                if (notes.blurb) html += '<div style="margin-top:4px;">' + notes.blurb + '</div>';
+                notesDiv.innerHTML = isEmpty ? '' : html;
+            }
+            overlay.remove();
+        }).catch(function(err) {
+            alert('Could not save notes: ' + err.message);
+        });
+    });
+}
+
 function loadTrailPins(category) {
-    const files = trailIndex[category] || [];
+    const categoryKey = category === 'walk' ? 'trails' : category;
+    const files = trailIndex[categoryKey] || [];
+    console.log('Loading', category, files.length, 'files');
     const cfg = trailConfig[category];
     files.forEach(function(file) {
-        fetch(file)
+        fetch(encodeURI(file))
             .then(r => r.text())
             .then(function(kmlText) {
                 const parser = new DOMParser();
@@ -765,14 +887,7 @@ function loadTrailPins(category) {
                     iconAnchor: [7, 7]
                 });
                 const marker = L.marker(latlngs[0], { icon: pinIcon }).addTo(map);
-                const popupDiv = document.createElement('div');
-                popupDiv.innerHTML = '<b>' + cfg.label + ' — ' + name + '</b><br><small>' + cfg.type + '</small><br><br>';
-                const routeBtn = document.createElement('button');
-                routeBtn.textContent = 'Show Route';
-                routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:' + cfg.color + ';color:white;font-size:13px;font-weight:600;cursor:pointer;';
-                routeBtn.addEventListener('click', function() { showTrailRoute(category, file, latlngs); });
-                popupDiv.appendChild(routeBtn);
-                marker.bindPopup(popupDiv);
+                buildTrailPopup(category, file, name, latlngs, marker);
                 marker._trailLatlngs = latlngs;
                 marker._trailKey = file;
                 trailPins[category].push(marker);
