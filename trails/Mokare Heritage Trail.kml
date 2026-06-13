@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Mokare Heritage Trail.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7fffff</color>
+			<width>1.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7fffff</color>
+			<width>1.5</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Mokare Heritage Trail </name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				117.3569638907365,-34.96001394054861,0 117.3579767296557,-34.96085930225581,0 117.3589428164013,-34.96147435338369,0 117.359856277465,-34.96197738964034,0 117.360640411978,-34.96237551165981,0 117.3610520420297,-34.96306383122444,0 117.3610500133481,-34.9636049317125,0 117.3611124056105,-34.96401443497331,0 117.3613756582681,-34.96455200994448,0 117.3614970792314,-34.96502743890966,0 117.3613582987653,-34.9655124463434,0 117.3615154553296,-34.96607761922749,0 117.3618343506617,-34.96639773192109,0 117.3621464055616,-34.9667012057206,0 117.3624444870288,-34.9671257713699,0 117.3628293906595,-34.96758174824856,0 117.3632793580236,-34.9679525051638,0 117.3638759911673,-34.96834992024502,0 117.3646051836341,-34.96870071280584,0 117.3657436048681,-34.96894585314004,0 117.3660303023354,-34.9682579287843,0 117.3647376748149,-34.96792644729539,0 117.3638123963004,-34.96748242673129,0 117.3632421833622,-34.96669315825113,0 117.3628042053616,-34.96607130426348,0 117.3625133674217,-34.96555165880038,0 117.3623498265523,-34.9641335390387,0 117.3619362149853,-34.96312478281161,0 117.3614501590217,-34.96204126820548,0 117.3603702653279,-34.96137161581834,0 117.3593381828458,-34.96072962434248,0 117.3582576764068,-34.96020561057027,0 117.3575418267272,-34.95975633208779,0 117.3567345853487,-34.95880122607737,0 117.3561982193649,-34.95923251842733,0 117.3568786209952,-34.9599135170674,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

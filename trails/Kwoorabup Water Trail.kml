@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Kwoorabup WATER WALK.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>Kwoorabup WATER WALK</name>
+		<description>Waterways | Love Stories of Place
+https://waterwaysgreatsouthern.art/</description>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				117.3580295706041,-34.96083668332923,0 117.3583848459303,-34.96112703149196,0 117.3586495388182,-34.96116087326322,0 117.3590300760435,-34.96141343144379,0 117.3592458502045,-34.96151034159326,0 117.3596041969126,-34.96165677066531,0 117.3607465239897,-34.9623884766031,0 117.3611684728132,-34.96282310182389,0 117.3609596875987,-34.9641340017938,0 117.3608533870486,-34.96439139771127,0 117.3607664671437,-34.96447052029399,0 117.3609938840918,-34.96473154340546,0 117.3610934904443,-34.96489293252397,0 117.3614614642129,-34.96606896608264,0 117.3616076314974,-34.96657521435077,0 117.3625767217318,-34.96758382540119,0 117.3640178066163,-34.96845833197959,0 117.3652439055146,-34.96901652271347,0 117.3656495469319,-34.96901650233985,0 117.3657745279279,-34.96907168935875,0 117.3658848516943,-34.96932939727512,0 117.3663686689839,-34.96946920109943,0 117.3677295945929,-34.96984810804039,0 117.3681503367691,-34.96995652512875,0 117.3684908508082,-34.96991256711917,0 117.3687891417972,-34.96995066758568,0 117.3690633606221,-34.97003293146654,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

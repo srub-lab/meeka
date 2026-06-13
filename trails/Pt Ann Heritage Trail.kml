@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Pt Ann Heritage Trail.kml</name>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Pt Ann Heritage Trail</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				119.579586916725,-34.17072943529486,0 119.5799926895849,-34.17124186372879,0 119.5805096482766,-34.17183490419767,0 119.5811458911943,-34.1723690984932,0 119.5820069062673,-34.17277488766045,0 119.5836270217014,-34.17222926230006,0 119.5857873717321,-34.17153329648663,0 119.5864278591384,-34.17112523150422,0 119.5860561987216,-34.17097430928053,0 119.5855671654478,-34.17095564301461,0 119.58525278245,-34.17087956145856,0 119.5848924498868,-34.17071630750391,0 119.5846248682878,-34.17062917148866,0 119.5844381244425,-34.17070694449795,0 119.5842657610198,-34.17071673892859,0 119.58401067402,-34.17052214354884,0 119.5836657671234,-34.17048310619638,0 119.5832385474942,-34.17042428646376,0 119.582911833747,-34.17040474779702,0 119.5826972604328,-34.17040488955097,0 119.5823716286533,-34.17048396557676,0 119.5819986995878,-34.17062119247385,0 119.5815372408729,-34.17094883606919,0 119.5812013147433,-34.17103446133177,0 119.5807754685851,-34.17081543408776,0 119.5804603612715,-34.17066107143084,0 119.5799896130752,-34.17061272072382,0 119.57961066968,-34.17067130455563,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
