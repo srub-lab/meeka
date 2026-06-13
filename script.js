@@ -538,10 +538,9 @@ function fetchWACamps() {
     if (!waCampsActive) return;
     waCampMarkers.forEach(m => map.removeLayer(m));
     waCampMarkers = [];
-    const centre = map.getCenter();
-    const lat = centre.lat.toFixed(5);
-    const lng = centre.lng.toFixed(5);
-    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[tourism=camp_site](around:50000,' + lat + ',' + lng + ');out;')
+    const b = map.getBounds();
+    const bbox = b.getSouth() + ',' + b.getWest() + ',' + b.getNorth() + ',' + b.getEast();
+    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[tourism=camp_site](' + bbox + ');out;')
         .then(r => r.json())
         .then(data => {
             data.elements.forEach(function(e) {
@@ -554,17 +553,7 @@ function fetchWACamps() {
                     iconAnchor: [6, 6]
                 });
                 const marker = L.marker([e.lat, e.lon], { icon }).addTo(map);
-                marker.bindPopup(
-                    '<b>' + name + '</b><br>' +
-                    '<small>WA Campsite</small><br><br>' +
-                    (e.tags.fee ? 'Fee: ' + e.tags.fee + '<br>' : '') +
-                    (e.tags.toilets ? 'Toilets: ' + e.tags.toilets + '<br>' : '') +
-                    (e.tags.shower ? 'Shower: ' + e.tags.shower + '<br>' : '') +
-                    (e.tags.water ? 'Water: ' + e.tags.water + '<br>' : '') +
-                    (e.tags.caravans ? 'Caravans: ' + e.tags.caravans + '<br>' : '') +
-                    (e.tags.website ? '<br><a href="' + e.tags.website + '" target="_blank">More info</a>' : '') +
-                    '<br><small>© OpenStreetMap</small>'
-                );
+                buildCampPopup(marker, e, name);
                 waCampMarkers.push(marker);
             });
         });
@@ -607,10 +596,9 @@ function toggleWater() {
 }
 
 function fetchOSMLayer(tag, markersArray, colour, label) {
-    const centre = map.getCenter();
-    const lat = centre.lat.toFixed(5);
-    const lng = centre.lng.toFixed(5);
-    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[' + tag + '](around:50000,' + lat + ',' + lng + ');out;')
+    const b = map.getBounds();
+    const bbox = b.getSouth() + ',' + b.getWest() + ',' + b.getNorth() + ',' + b.getEast();
+    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node[' + tag + '](' + bbox + ');out;')
         .then(r => r.json())
         .then(data => {
             markersArray.length = 0;
@@ -740,11 +728,117 @@ function toggleTrailLayer(category) {
     }
 }
 
-// ── Trail notes (stored in Firebase under trailNotes/<safeKey>) ──
+// ── Notes (stored in Firebase, shared helper for trails + camps) ──
 let trailNotesCache = {};
+let campNotesCache = {};
 
 function trailKeyToFirebaseKey(fileKey) {
     return fileKey.replace(/[.#$\/\[\]]/g, '_');
+}
+
+function buildCampPopup(marker, e, name) {
+    const popupDiv = document.createElement('div');
+    popupDiv.style.minWidth = '220px';
+
+    const header = document.createElement('div');
+    header.innerHTML = '<b>' + name + '</b><br><small>WA Campsite</small>';
+    popupDiv.appendChild(header);
+
+    const osmDiv = document.createElement('div');
+    osmDiv.style.cssText = 'margin-top:6px;font-size:13px;color:#333;';
+    osmDiv.innerHTML =
+        (e.tags.fee ? 'Fee: ' + e.tags.fee + '<br>' : '') +
+        (e.tags.toilets ? 'Toilets: ' + e.tags.toilets + '<br>' : '') +
+        (e.tags.shower ? 'Shower: ' + e.tags.shower + '<br>' : '') +
+        (e.tags.water ? 'Water: ' + e.tags.water + '<br>' : '') +
+        (e.tags.caravans ? 'Caravans: ' + e.tags.caravans + '<br>' : '') +
+        (e.tags.website ? '<a href="' + e.tags.website + '" target="_blank">More info</a><br>' : '');
+    popupDiv.appendChild(osmDiv);
+
+    const notesDiv = document.createElement('div');
+    notesDiv.style.cssText = 'margin-top:6px;font-size:13px;color:#333;';
+    popupDiv.appendChild(notesDiv);
+
+    const credit = document.createElement('div');
+    credit.innerHTML = '<small>© OpenStreetMap</small>';
+    credit.style.cssText = 'margin-top:6px;color:#999;';
+    popupDiv.appendChild(credit);
+
+    const btnRow = document.createElement('div');
+    btnRow.style.cssText = 'display:flex;gap:8px;margin-top:10px;';
+
+    const notesBtn = document.createElement('button');
+    notesBtn.textContent = 'Add Notes';
+    notesBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:1.5px solid #d67214;background:white;color:#d67214;font-size:13px;font-weight:600;cursor:pointer;';
+    btnRow.appendChild(notesBtn);
+    popupDiv.appendChild(btnRow);
+
+    const campKey = 'camp_' + (e.id || (e.lat.toFixed(5) + '_' + e.lon.toFixed(5)));
+
+    function renderNotes(notes) {
+        if (!notes) { notesDiv.innerHTML = ''; notesBtn.textContent = 'Add Notes'; return; }
+        notesBtn.textContent = 'Edit Notes';
+        notesDiv.innerHTML = '<div style="margin-top:2px;"><b>My notes:</b><br>' + notes.blurb + '</div>';
+    }
+
+    notesBtn.addEventListener('click', function() {
+        openNotesForm(campKey, name, '#d67214', notesDiv, campNotesCache, renderNotes, true);
+    });
+
+    if (campNotesCache[campKey] !== undefined) {
+        renderNotes(campNotesCache[campKey]);
+    } else {
+        db.ref('campNotes/' + campKey).once('value').then(function(snap) {
+            const notes = snap.val();
+            campNotesCache[campKey] = notes;
+            renderNotes(notes);
+        }).catch(function() {});
+    }
+
+    marker.bindPopup(popupDiv);
+}
+
+// Generic simple notes form (blurb only) used for camps
+function openNotesForm(key, name, color, notesDiv, cache, renderFn, simple) {
+    const existing = cache[key] || {};
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:3000;display:flex;align-items:center;justify-content:center;';
+
+    const form = document.createElement('div');
+    form.style.cssText = 'background:white;border-radius:16px;padding:20px;width:300px;max-width:calc(100vw - 32px);box-shadow:0 8px 32px rgba(0,0,0,0.25);';
+
+    form.innerHTML =
+        '<h3 style="margin:0 0 12px;font-size:16px;">' + name + '</h3>' +
+        '<textarea id="cn-blurb" placeholder="Your notes about this site..." style="width:100%;height:90px;margin-bottom:10px;padding:9px 11px;border-radius:8px;border:1.5px solid #e8e8e8;font-size:14px;box-sizing:border-box;resize:none;">' + (existing.blurb || '') + '</textarea>' +
+        '<div style="display:flex;gap:8px;">' +
+        '<button id="cn-save" style="flex:1;padding:11px;border-radius:10px;border:none;background:' + color + ';color:white;font-weight:600;cursor:pointer;">Save</button>' +
+        '<button id="cn-cancel" style="flex:1;padding:11px;border-radius:10px;border:none;background:#f0f0f0;color:#444;font-weight:600;cursor:pointer;">Cancel</button>' +
+        '</div>';
+
+    overlay.appendChild(form);
+    document.body.appendChild(overlay);
+
+    form.querySelector('#cn-cancel').addEventListener('click', function() {
+        overlay.remove();
+    });
+    overlay.addEventListener('click', function(ev) {
+        if (ev.target === overlay) overlay.remove();
+    });
+
+    form.querySelector('#cn-save').addEventListener('click', function() {
+        const blurb = form.querySelector('#cn-blurb').value.trim();
+        const notes = blurb ? { blurb: blurb } : null;
+        const ref = db.ref((key.startsWith('camp_') ? 'campNotes/' : 'trailNotes/') + key);
+        const save = notes ? ref.set(notes) : ref.remove();
+        save.then(function() {
+            cache[key] = notes;
+            renderFn(notes);
+            overlay.remove();
+        }).catch(function(err) {
+            alert('Could not save notes: ' + err.message);
+        });
+    });
 }
 
 function buildTrailPopup(category, file, name, latlngs, marker) {
@@ -764,9 +858,12 @@ function buildTrailPopup(category, file, name, latlngs, marker) {
     btnRow.style.cssText = 'display:flex;gap:8px;margin-top:10px;';
 
     const routeBtn = document.createElement('button');
-    routeBtn.textContent = 'Show Route';
+    routeBtn.textContent = trailLines[category][file] ? 'Hide Route' : 'Show Route';
     routeBtn.style.cssText = 'padding:7px 14px;border-radius:8px;border:none;background:' + cfg.color + ';color:white;font-size:13px;font-weight:600;cursor:pointer;';
-    routeBtn.addEventListener('click', function() { showTrailRoute(category, file, latlngs); });
+    routeBtn.addEventListener('click', function() {
+        showTrailRoute(category, file, latlngs);
+        routeBtn.textContent = trailLines[category][file] ? 'Hide Route' : 'Show Route';
+    });
     btnRow.appendChild(routeBtn);
 
     const notesBtn = document.createElement('button');
@@ -800,6 +897,7 @@ function buildTrailPopup(category, file, name, latlngs, marker) {
     }
 
     marker._renderTrailNotes = renderNotes;
+    marker.bindPopup(popupDiv);
 }
 
 function openTrailNotesForm(file, name, color, notesDiv) {
