@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Walpole Town Jetty to Walpole River.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Walpole Town Jetty to Walpole River</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				116.7252968050671,-34.97809156872442,0 116.7233753131611,-34.97922238295748,0 116.7210373476088,-34.9802269187595,0 116.718110982586,-34.9811370219791,0 116.7162160892455,-34.9817115758183,0 116.7151401852673,-34.98206055672203,0 116.7146518788797,-34.98202835910865,0 116.7139192947744,-34.98145631598663,0 116.7130316250312,-34.98124664860291,0 116.712568565278,-34.98101726268958,0 116.7124487244358,-34.98051235950936,0 116.712527121223,-34.97996612943956,0 116.7123778452573,-34.97926701422386,0 116.7121926619188,-34.97865816103369,0 116.7132075167146,-34.97797374099074,0 116.7136743821485,-34.9781713222196,0 116.7136720166147,-34.97818639533588,0 116.7141260050948,-34.97823019189804,0 116.7146842359841,-34.97797896785593,0 116.7148027168894,-34.97771404352383,0 116.7146205689422,-34.97747093221057,0 116.7141232923062,-34.97732868766129,0 116.7137464530988,-34.97688833755443,0 116.7136991786753,-34.97623055309845,0 116.7136440574469,-34.97585269585718,0 116.7131127632942,-34.97575565876932,0 116.7127704266725,-34.97590554414791,0 116.7125932704922,-34.97609177815897,0 116.7122958723443,-34.9759436285014,0 116.7120897872924,-34.97567920584473,0 116.7121414814311,-34.97544427833312,0 116.7124503399963,-34.97538295527313,0 116.7127793908041,-34.97519598839041,0 116.7126898215766,-34.97478093093357,0 116.7126244836064,-34.97457672718672,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

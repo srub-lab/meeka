@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Taylor Inlet Paddle Trail 2025.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Taylor Inlet Paddle Trail 2025</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				118.0615891664973,-34.99642623594963,0 118.0611615487116,-34.99573125162019,0 118.0610431483355,-34.99509872703582,0 118.0613767766346,-34.99450962110212,0 118.0627946400819,-34.99381795553709,0 118.0632686901156,-34.99317619226633,0 118.064010020923,-34.99250867846114,0 118.0647911845304,-34.99201933530583,0 118.0651834251677,-34.99131018408565,0 118.0654720451244,-34.98961688377052,0 118.0651858553569,-34.98864394901243,0 118.0641899168105,-34.98807493938191,0 118.0632549906689,-34.98759257295164,0 118.0630104820942,-34.98736747185364,0 118.0625250768333,-34.98792340101984,0 118.0617276512877,-34.9885405876079,0 118.061653422303,-34.99001216497638,0 118.0615335689809,-34.99115980048852,0 118.0609798401719,-34.99215924379004,0 118.0595050895629,-34.99296300599067,0 118.0586180268178,-34.99304875528694,0 118.0572857775805,-34.99354949402206,0 118.0568331450676,-34.99344017939271,0 118.0568576651834,-34.99392325162118,0 118.0566972612494,-34.99501651401103,0 118.0572264669989,-34.9960640297096,0 118.0578177340503,-34.99683281174207,0 118.0587943605639,-34.99724960470088,0 118.0593742633938,-34.99668621050232,0 118.0599834210823,-34.99644649207469,0 118.0610543321909,-34.99653714653444,0 118.0613237267837,-34.99685227056317,0 118.0616314455687,-34.99648689919911,0 
+			</coordinates>
+		</LineString>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10441"></atom:link>
+	</Placemark>
+</Document>
+</kml>

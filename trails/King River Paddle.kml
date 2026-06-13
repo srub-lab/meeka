@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>King River Paddle Trail 2025.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>King River Paddle Trail 2025</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				117.9492344829702,-34.94395191468226,0 117.9476861180398,-34.94329955284056,0 117.9465068517001,-34.9430986777478,0 117.9460374429859,-34.94223994114122,0 117.9446997898661,-34.94192089124366,0 117.9435609153811,-34.94225419053208,0 117.9426992327909,-34.94328776681645,0 117.9434225140068,-34.9453035301126,0 117.9430068078892,-34.9465522587822,0 117.9421892534969,-34.94752995411231,0 117.9409208817925,-34.94794170706481,0 117.9393998691286,-34.94776005050394,0 117.9373968317453,-34.94709025678428,0 117.9355695371018,-34.94707764616291,0 117.9331964401869,-34.94635451145007,0 117.9311938681288,-34.94636905169608,0 117.9289733205578,-34.94653078691073,0 117.9260075654927,-34.94621677492934,0 117.9231958164394,-34.94639508076014,0 117.9203802521759,-34.9462983138239,0 117.9168959884911,-34.94295793496774,0 117.9166981726928,-34.94212137323996,0 117.9161608377848,-34.94164803657365,0 117.9156293609373,-34.9410585621022,0 117.9142820151809,-34.94080739588462,0 117.9137351511813,-34.9397497932183,0 117.913253647675,-34.93939485095354,0 117.9125759154622,-34.93926339251375,0 117.9109853452054,-34.94002417332123,0 117.9103020233324,-34.94063942715054,0 117.9088368457371,-34.9416876393631,0 117.9079890917126,-34.94180893063542,0 117.906587542778,-34.94080718671228,0 117.9049037527905,-34.94006631109602,0 117.9048456637916,-34.93930948207564,0 117.9045702566309,-34.93860675597146,0 
+			</coordinates>
+		</LineString>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10441"></atom:link>
+	</Placemark>
+</Document>
+</kml>
