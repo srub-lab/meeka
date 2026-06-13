@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Tin Horse Highway.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Tin Horse Highway</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				118.1543857067005,-32.67114687519281,0 118.1572209273473,-32.66789573827705,0 118.1581856748136,-32.66773321854712,0 118.1584739252451,-32.66776083662138,0 118.1589344981168,-32.6680586004694,0 118.1605891448396,-32.66964072719202,0 118.1634849762296,-32.67316670865277,0 118.1639647170129,-32.67398191284384,0 118.1645216031446,-32.67470886042248,0 118.1648447591498,-32.67498526533522,0 118.1654081237431,-32.6753301367576,0 118.1661817982554,-32.67560276672161,0 118.1665993419451,-32.67569221426761,0 118.1763252736202,-32.67568478273238,0 118.1850760929564,-32.67566959417748,0 118.1974395465176,-32.6756448678076,0 118.2064232096767,-32.67562820626643,0 118.2323374485217,-32.67562577436072,0 118.3082937753213,-32.6752969696723,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
