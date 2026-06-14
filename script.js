@@ -661,14 +661,14 @@ function renderLighthouses() {
     lighthouseData.features.forEach(function(f) {
         const p = f.properties;
         const icon = L.divIcon({
-            html: '<img src="icons/lighthouse.png" style="width:24px;height:24px;object-fit:contain;">',
+            html: '<img src="icons/lighthousemap.png" style="width:24px;height:24px;object-fit:contain;">',
             className: 'emoji-icon',
             iconSize: [24, 24],
             iconAnchor: [12, 24]
         });
         const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
         marker.bindPopup(
-            '<b>🔦 ' + p.name + '</b><br>' +
+            '<b>' +p.name + '</b><br>' +
             '<small>Established ' + p.established + '</small><br><br>' +
             (p.construction ? 'Construction: ' + p.construction + '<br>' : '') +
             (p.height ? 'Height: ' + p.height + '<br>' : '') +
@@ -687,9 +687,9 @@ let trailActive = { walk: false, paddle: false, '2x2': false };
 let trailIndex = null;
 
 const trailConfig = {
-    'walk':   { color: '#8B4513', label: '🥾 Walk',   type: 'Walking Trail' },
-    'paddle': { color: '#1a6dd8', label: '🚣 Paddle', type: 'Paddle Trail'   },
-    '2x2':    { color: '#7b2d8b', label: '🚙 2x2',    type: '2x2 Track'      }
+    'walk':   { color: '#8B4513', label: 'Walk',   type: 'Walking Trail' },
+    'paddle': { color: '#1a6dd8', label: 'Paddle', type: 'Paddle Trail'   },
+    '2x2':    { color: '#7b2d8b', label: '2x2',    type: '2x2 Track'      }
 };
 
 function cleanTrailName(filename) {
@@ -1013,6 +1013,57 @@ function toggle2x2() { toggleTrailLayer('2x2'); }
 function show2x2Route() {}
 
 
+// ── Aboriginal sites layer ──
+let aboriginalMarkers = [];
+let aboriginalActive = false;
+let aboriginalData = null;
+
+function toggleAboriginal() {
+    const btn = document.getElementById('btn-aboriginal');
+    if (aboriginalActive) {
+        aboriginalMarkers.forEach(function(m) { map.removeLayer(m); });
+        aboriginalMarkers = [];
+        aboriginalActive = false;
+        btn.classList.remove('active');
+    } else {
+        aboriginalActive = true;
+        btn.classList.add('active');
+        if (aboriginalData) {
+            renderAboriginal();
+        } else {
+            fetch('aboriginal-sites.geojson')
+                .then(r => r.json())
+                .then(function(data) { aboriginalData = data; renderAboriginal(); })
+                .catch(function(err) { console.log('Aboriginal sites error:', err); });
+        }
+    }
+}
+
+function renderAboriginal() {
+    aboriginalData.features.forEach(function(f) {
+        const p = f.properties;
+        const icon = L.divIcon({
+            html: '<img src="icons/aboriginal.png" style="width:28px;height:28px;object-fit:contain;">',
+            className: 'emoji-icon',
+            iconSize: [28, 28],
+            iconAnchor: [14, 28]
+        });
+        const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
+        const popupDiv = document.createElement('div');
+        popupDiv.style.minWidth = '240px';
+        popupDiv.innerHTML =
+            '<b>' + p.name + '</b><br>' +
+            '<small style="color:#888;">' + p.country + '</small><br><br>' +
+            (p.location ? '<b>Location:</b> ' + p.location + '<br>' : '') +
+            (p.significance ? '<br>' + p.significance + '<br>' : '') +
+            (p.access ? '<br><b>Access:</b> ' + p.access + '<br>' : '') +
+            (p.permits ? '<b>Permits:</b> ' + p.permits + '<br>' : '') +
+            (p.guided_tours ? '<b>Tours:</b> ' + p.guided_tours + '<br>' : '');
+        marker.bindPopup(popupDiv);
+        aboriginalMarkers.push(marker);
+    });
+}
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -1024,6 +1075,7 @@ window.toggleWACamps = toggleWACamps;
 window.toggleFuel = toggleFuel;
 window.toggleWater = toggleWater;
 window.toggleLighthouses = toggleLighthouses;
+window.toggleAboriginal = toggleAboriginal;
 window.toggle2x2 = toggle2x2;
 window.show2x2Route = show2x2Route;
 window.toggleTrailLayer = toggleTrailLayer;
