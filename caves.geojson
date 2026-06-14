@@ -1,0 +1,203 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [124.9578, -17.4089] },
+      "properties": {
+        "name": "Bandilngan — Windjana Gorge Mini-Tunnel",
+        "location": "Napier Range, Gibb River Road",
+        "type": "Limestone Breccia Squeeze Tunnel",
+        "access": "4WD recommended — corrugated roads",
+        "comment": "To enter the famous gorge trail you walk through a small natural split-rock tunnel corridor. Instant cave vibe before a massive canyon filled with freshwater crocodiles."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0292, -34.2505] },
+      "properties": {
+        "name": "Cosy Corner Sea Caves",
+        "location": "Augusta Region",
+        "type": "Ocean Caves",
+        "access": "2WD",
+        "comment": "South of the car park, visible along the limestone cliffs of the beach."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0232, -34.0415] },
+      "properties": {
+        "name": "Calgardup Cave",
+        "location": "Margaret River Region",
+        "type": "Limestone — Semi-Guided",
+        "access": "2WD",
+        "comment": "Torches and helmets provided. Great boardwalks over seasonal water features."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.9934, -22.0911] },
+      "properties": {
+        "name": "C-96 Anomaly Cave Exterior",
+        "location": "Cape Range National Park, Exmouth",
+        "type": "Wild Subterranean Karst — Closed Entry",
+        "access": "4WD — rugged walk",
+        "comment": "Cape Range has over 700 highly sensitive wild karst caves. Entry not permitted due to safety and protection of rare bats and troglobites."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [119.9833, -33.9168] },
+      "properties": {
+        "name": "Cave Point",
+        "location": "Fitzgerald River National Park, Hopetoun / Bremer Bay",
+        "type": "Coastal Cavern Ledge",
+        "access": "2WD",
+        "comment": "Incredible coastal viewing platform looking directly over a collapsed limestone and spongolite sea cave where the Southern Ocean crashes into the cliff base."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.6861, -31.5492] },
+      "properties": {
+        "name": "Crystal Cave",
+        "location": "Yanchep National Park",
+        "type": "Stream Cave — Show Cave",
+        "access": "2WD",
+        "comment": "Perth's only metropolitan tourist cave. Main tour requires a ticket. Surrounding paths show collapsed limestone karst depressions and historic stone infrastructure."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [125.1436, -17.6053] },
+      "properties": {
+        "name": "Dimalurru — Tunnel Creek",
+        "location": "King Leopold Ranges, Napier Range",
+        "type": "Self-Guided River Tunnel",
+        "access": "4WD only — seasonal",
+        "comment": "WA's oldest cave system. A breathtaking 750m natural tunnel through the reef. Cavernous entry archway visible just a short walk from the car park."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [118.5611, -22.4764] },
+      "properties": {
+        "name": "Fern Pool & Circular Pool Caverns",
+        "location": "Karijini National Park, Pilbara",
+        "type": "Ironstone Gorge Shelters",
+        "access": "2WD — corrugated roads",
+        "comment": "Massive collapsed rock amphitheatres with overhanging ironstone ledges, hidden mossy grottos and small rock cavities. Scenic rather than deep subterranean."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0384, -34.0950] },
+      "properties": {
+        "name": "Giants Cave",
+        "location": "Forest Grove / Boranup",
+        "type": "Wild Adventure Cave",
+        "access": "2WD",
+        "comment": "Pitch black self-guided exploration. Vertical ladder climbs, boulder scrambles and tight squeezes through the Chimney. Hard hats and torches mandatory."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.1014, -34.1864] },
+      "properties": {
+        "name": "Jewel Cave",
+        "location": "Augusta / Deepdene",
+        "type": "Limestone — Show Cave",
+        "access": "2WD",
+        "comment": "WA's largest show cave. Home to one of the longest straw stalactites in the world."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0318, -34.0805] },
+      "properties": {
+        "name": "Lake Cave",
+        "location": "Boranup / Margaret River",
+        "type": "Limestone — Show Cave",
+        "access": "2WD",
+        "comment": "Features a stunning Suspended Table formation hanging over a permanent crystal lake."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0269, -34.0583] },
+      "properties": {
+        "name": "Mammoth Cave",
+        "location": "Boranup / Margaret River",
+        "type": "Limestone — Self-Guided Show Cave",
+        "access": "2WD",
+        "comment": "Highly accessible. Famous for housing ancient megafauna fossils."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.8422, -22.1481] },
+      "properties": {
+        "name": "Mandu Mandu Gorge Rock Shelters",
+        "location": "Cape Range National Park, Exmouth",
+        "type": "Limestone Gorge Caverns",
+        "access": "2WD",
+        "comment": "Easy walking trail through a dry ancient riverbed with shallow open-face limestone cave shelters in the sheer canyon walls visible from the path."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [126.0686, -18.7227] },
+      "properties": {
+        "name": "Mimbi Caves",
+        "location": "Emanuel Range, east of Fitzroy Crossing",
+        "type": "Devonian Limestone Karst Labyrinth",
+        "access": "2WD to meeting point — 4WD track to site",
+        "comment": "Complex maze of deep limestone fissures and marine fossil walls. Inner sanctuaries require a guided Gooniyandi cultural tour. Outer karst portals visible from base tracks."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [118.9017, -32.4463] },
+      "properties": {
+        "name": "Mulka's Cave",
+        "location": "Hyden — near Wave Rock",
+        "type": "Inland Granite Rock Shelter",
+        "access": "2WD",
+        "comment": "Iconic inland cave near Wave Rock. No deep caving gear needed. Notable for a vast collection of ancient Indigenous handprint art."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.0120, -33.8580] },
+      "properties": {
+        "name": "Mullet Lake Sea Caves",
+        "location": "Esperance Region",
+        "type": "Limestone Coastal Inlets",
+        "access": "4WD — rocky walk",
+        "comment": "Small limestone fractures and low-ceiling cave entries along coastal tracks east of Esperance. Best viewed from the exterior."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.0336, -33.6494] },
+      "properties": {
+        "name": "Ngilgi Cave",
+        "location": "Yallingup",
+        "type": "Limestone — Show Cave",
+        "access": "2WD",
+        "comment": "Located at the northern end of the ridge. Rich Indigenous cultural significance."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.9022, -35.1221] },
+      "properties": {
+        "name": "The Blowholes and Sea Tunnels",
+        "location": "Albany, Torndirrup National Park",
+        "type": "Sea Fractures — Volcanic Crevices",
+        "access": "2WD",
+        "comment": "Easy paved walk along dramatic granite coastline. Look right down into coastal fractures where the ocean forces air and water through the rock chambers."
+      }
+    }
+  ]
+}
