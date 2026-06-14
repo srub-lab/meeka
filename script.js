@@ -1064,6 +1064,55 @@ function renderAboriginal() {
     });
 }
 
+// ── Caves layer ──
+let caveMarkers = [];
+let cavesActive = false;
+let cavesData = null;
+
+function toggleCaves() {
+    const btn = document.getElementById('btn-caves');
+    if (cavesActive) {
+        caveMarkers.forEach(function(m) { map.removeLayer(m); });
+        caveMarkers = [];
+        cavesActive = false;
+        btn.classList.remove('active');
+    } else {
+        cavesActive = true;
+        btn.classList.add('active');
+        if (cavesData) {
+            renderCaves();
+        } else {
+            fetch('caves.geojson')
+                .then(r => r.json())
+                .then(function(data) { cavesData = data; renderCaves(); })
+                .catch(function(err) { console.log('Caves error:', err); });
+        }
+    }
+}
+
+function renderCaves() {
+    cavesData.features.forEach(function(f) {
+        const p = f.properties;
+        const icon = L.divIcon({
+            html: '<div style="width:14px;height:14px;background:#008080;border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>',
+            className: '',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7]
+        });
+        const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
+        const popupDiv = document.createElement('div');
+        popupDiv.style.minWidth = '240px';
+        popupDiv.innerHTML =
+            '<b>' + p.name + '</b><br>' +
+            '<small style="color:#008080;"><b>' + p.type + '</b></small><br><br>' +
+            (p.location ? '<b>Location:</b> ' + p.location + '<br>' : '') +
+            (p.access ? '<b>Access:</b> ' + p.access + '<br>' : '') +
+            (p.comment ? '<br>' + p.comment : '');
+        marker.bindPopup(popupDiv);
+        caveMarkers.push(marker);
+    });
+}
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -1076,6 +1125,7 @@ window.toggleFuel = toggleFuel;
 window.toggleWater = toggleWater;
 window.toggleLighthouses = toggleLighthouses;
 window.toggleAboriginal = toggleAboriginal;
+window.toggleCaves = toggleCaves;
 window.toggle2x2 = toggle2x2;
 window.show2x2Route = show2x2Route;
 window.toggleTrailLayer = toggleTrailLayer;
