@@ -1,0 +1,148 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [119.7214, -21.1708] },
+      "properties": {
+        "name": "Chinaman Creek",
+        "location": "Pilbara, 5 km west of Marble Bar",
+        "country": "Nyamal",
+        "significance": "Aboriginal heritage with well-preserved rock engravings",
+        "access": "2WD in dry weather",
+        "permits": "None required",
+        "guided_tours": "None found"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.5471, -25.8239] },
+      "properties": {
+        "name": "Gutharraguda — Francois Peron National Park",
+        "location": "Shark Bay World Heritage Area",
+        "country": "Malgana",
+        "significance": "Environmental and cultural importance",
+        "access": "Entrance 2WD, past Peron Heritage Precinct 4WD",
+        "permits": "None required — Park Fees apply",
+        "guided_tours": "Wula Gura Nyinda Eco Cultural Adventures. Darren 'Capes' Capewell small-group 4WD tours."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [126.0000, -15.0000] },
+      "properties": {
+        "name": "Kimberley Wandjina & Gwion Gwion (Bradshaw) Art",
+        "location": "Far North WA",
+        "country": "Wunambal Gaambera, Dambimangari, Balanggarra",
+        "significance": "Haloed Wandjina ancestor figures and ancient Gwion Gwion (Bradshaw) figures — some of the oldest rock art in the world",
+        "access": "4WD — Gibb River Road",
+        "permits": "Required",
+        "guided_tours": "Guided helicopter tours and 4WD tours available"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [123.0112, -16.4447] },
+      "properties": {
+        "name": "Lullumb Dampier Peninsula — Jalaris",
+        "location": "Northern Dampier Peninsula",
+        "country": "Bardi Jawi",
+        "significance": "Environmental and cultural importance",
+        "access": "Broome to Cape Leveque — sealed 2WD",
+        "permits": "Required",
+        "guided_tours": "Multiple tour operators available"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [125.8258, -14.7925] },
+      "properties": {
+        "name": "Mitchell Plateau — Punamii-Uunpuu",
+        "location": "North Kimberley, Mitchell River National Park",
+        "country": "Wunambal Gaambera",
+        "significance": "Wandjina and Gwion Gwion art sites near Mitchell Falls. Home of the Wanjina Wunggurr creators.",
+        "access": "4WD only",
+        "permits": "Uunguu Visitor Pass required",
+        "guided_tours": "Scenic flights or helicopter transfers from Kununurra or dry-season stations"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [126.1555, -14.8872] },
+      "properties": {
+        "name": "Munurru — King Edward River Art Sites",
+        "location": "North Kimberley",
+        "country": "Wunambal Gaambera",
+        "significance": "Wandjina deities, human figures, plants and animals reflecting the local flora, fauna and spiritual beliefs of the Wunambal people",
+        "access": "4WD only",
+        "permits": "Uunguu Visitor Pass required",
+        "guided_tours": "Uunguu Rangers Rock Art Tours"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.8358, -20.5517] },
+      "properties": {
+        "name": "Murujuga — Burrup Peninsula",
+        "location": "Pilbara, Karratha",
+        "country": "Ngarda-Ngarli (Yindjibarndi, Yaburara, Mardudhunera, Woongoottoo)",
+        "significance": "World Heritage-listed cultural landscape with over a million petroglyphs, some up to 50,000 years old. Human figures, extinct megafauna including Thylacine, and marine life.",
+        "access": "2WD — Burrup Road off the Dampier Highway",
+        "permits": "Visitor only areas, no photographs",
+        "guided_tours": "Book at Karratha Visitor Centre"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.8184, -20.6277] },
+      "properties": {
+        "name": "Ngajarli Gorge & Deep Gorge — Murujuga",
+        "location": "Pilbara, Burrup Peninsula",
+        "country": "Ngarda-Ngarli (Ngarluma, Yindjibarndi, Yaburara, Mardudhunera, Woongoottoo)",
+        "significance": "Engravings of human images, extinct megafauna and thylacines, avian, marine and land animals",
+        "access": "2WD — fully sealed road",
+        "permits": "None required",
+        "guided_tours": "Ngurrangga Tours"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [125.1436, -17.6111] },
+      "properties": {
+        "name": "Tunnel Creek — Dimalurru",
+        "location": "Central Kimberley, off Leopold Downs Road",
+        "country": "Bunuba",
+        "significance": "Environmental and cultural importance. 750m cave tunnel with freshwater crocodiles and bats.",
+        "access": "High-clearance 2WD or 4WD",
+        "permits": "Park fees",
+        "guided_tours": "Nimowila Tours"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.8681, -26.9634] },
+      "properties": {
+        "name": "Walga Rock",
+        "location": "Murchison, 48 km west of Cue",
+        "country": "Wajarri Yamatji",
+        "significance": "Granite monolith with significant Indigenous rock art",
+        "access": "4WD, or 2WD in good conditions",
+        "permits": "None",
+        "guided_tours": "Not required"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [124.4107, -15.8111] },
+      "properties": {
+        "name": "Wijingarra Bard Bard — Freshwater Cove",
+        "location": "Kimberley",
+        "country": "Worrorra, Arraluli Clan",
+        "significance": "Freshwater springs and Wandjina rock art",
+        "access": "Access with Traditional Owner guide only",
+        "permits": "None — guided access only",
+        "guided_tours": "Wijingarra Tours Kimberley WA"
+      }
+    }
+  ]
+}
