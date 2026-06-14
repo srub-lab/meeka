@@ -187,9 +187,9 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
 
 <!-- Add Pin chooser panel -->
 <div id="add-pin-chooser">
-    <button onclick="addPinFromGPS()">📍 My Location</button>
-    <button onclick="toggleAddressSearch()">🔍 Search Address</button>
-    <button onclick="addPinFromMap()">🗺️ Select on Map</button>
+    <button onclick="addPinFromGPS()"><img src="icons/addcurrentlocation.png" style="width:28px;height:28px;">Current GPS</button>
+    <button onclick="toggleAddressSearch()"> <img src="icons/addaddress.png" style="width:28px;height:28px;">Search Address</button>
+    <button onclick="addPinFromMap()"><img src="icons/addtapmap.png" style="width:28px;height:28px;">Tap Map</button>
     <div id="address-search-row">
         <input type="text" id="address-input" placeholder="Search address or place...">
         <div id="address-results"></div>
@@ -211,6 +211,9 @@ body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'S
         </button>
         <button id="btn-2x2" class="layer-btn" onclick="toggle2x2()">
             <img src="icons/2x2.png" style="width:28px;height:28px;"><span>2x2</span>
+        </button>
+        <button id="btn-aboriginal" class="layer-btn" onclick="toggleAboriginal()">
+            <img src="icons/aboriginal.png" style="width:28px;height:28px;"><span>Country</span>
         </button>
     </div>
 </div>
