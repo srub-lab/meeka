@@ -1113,6 +1113,55 @@ function renderCaves() {
     });
 }
 
+// ── Fossils layer ──
+let fossilMarkers = [];
+let fossilsActive = false;
+let fossilsData = null;
+
+function toggleFossils() {
+    const btn = document.getElementById('btn-fossils');
+    if (fossilsActive) {
+        fossilMarkers.forEach(function(m) { map.removeLayer(m); });
+        fossilMarkers = [];
+        fossilsActive = false;
+        btn.classList.remove('active');
+    } else {
+        fossilsActive = true;
+        btn.classList.add('active');
+        if (fossilsData) {
+            renderFossils();
+        } else {
+            fetch('fossils.geojson')
+                .then(r => r.json())
+                .then(function(data) { fossilsData = data; renderFossils(); })
+                .catch(function(err) { console.log('Fossils error:', err); });
+        }
+    }
+}
+
+function renderFossils() {
+    fossilsData.features.forEach(function(f) {
+        const p = f.properties;
+        const icon = L.divIcon({
+            html: '<div style="width:14px;height:14px;background:#c8860a;border-radius:50%;border:2px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>',
+            className: '',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7]
+        });
+        const marker = L.marker([f.geometry.coordinates[1], f.geometry.coordinates[0]], { icon }).addTo(map);
+        const popupDiv = document.createElement('div');
+        popupDiv.style.minWidth = '240px';
+        popupDiv.innerHTML =
+            '<b>' + p.name + '</b><br>' +
+            '<small style="color:#c8860a;"><b>' + p.type + '</b></small><br><br>' +
+            (p.location ? '<b>Location:</b> ' + p.location + '<br>' : '') +
+            (p.access ? '<b>Access:</b> ' + p.access + '<br>' : '') +
+            (p.comment ? '<br>' + p.comment : '');
+        marker.bindPopup(popupDiv);
+        fossilMarkers.push(marker);
+    });
+}
+
 // Expose functions to global scope for inline HTML onclick handlers
 window.savePin = savePin;
 window.cancelPin = cancelPin;
@@ -1126,6 +1175,7 @@ window.toggleWater = toggleWater;
 window.toggleLighthouses = toggleLighthouses;
 window.toggleAboriginal = toggleAboriginal;
 window.toggleCaves = toggleCaves;
+window.toggleFossils = toggleFossils;
 window.toggle2x2 = toggle2x2;
 window.show2x2Route = show2x2Route;
 window.toggleTrailLayer = toggleTrailLayer;

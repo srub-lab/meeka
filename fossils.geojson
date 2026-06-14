@@ -1,0 +1,214 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.7661, -23.1415] },
+      "properties": {
+        "name": "Bill's Bay & Skeleton Beach Reef Walks",
+        "location": "Coral Bay, Ningaloo Reef Front",
+        "type": "Tropical Marine Shell Sifting",
+        "access": "2WD",
+        "comment": "Walk the shallow northern limestone rocky flats at low tide. A legendary natural collector trap for bright orange cockles, patterned cone shells, and glossy cowries washed up from the fringing reef."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.5564, -28.9512] },
+      "properties": {
+        "name": "Coalseam Riverbed Scramble",
+        "location": "Coalseam Conservation Park, Irwin River Bank",
+        "type": "Hands-on Permian Sifting",
+        "access": "2WD — gravel access",
+        "comment": "Walk right down onto the dry rocky riverbank. Flip over individual river stones to find 250-million-year-old brachiopod and marine bivalve imprints. Leave your finds on the bank for the next traveller!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [124.3850, -31.9125] },
+      "properties": {
+        "name": "Eyre Highway Limestone Road-Cuts",
+        "location": "Nullarbor Plain, between Balladonia and Madura",
+        "type": "Miocene Marine Shells",
+        "access": "2WD — highway rest areas",
+        "comment": "Pull into major highway rest areas and inspect the rubble piles blasted from vertical limestone road-cut walls. Hundreds of sea shell casts, fossilised echinoids and bryozoans sit loose on the surface. Miner's Right required to collect."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.5564, -28.9512] },
+      "properties": {
+        "name": "Fossil Picnic Area — Coalseam",
+        "location": "Coalseam Conservation Park, Irwin River Bank",
+        "type": "Permian Marine Fossils",
+        "access": "2WD — gravel roads",
+        "comment": "Walk down onto the dry riverbed next to the picnic tables. Thousands of 250-million-year-old fossilised marine shells exposed across the surface of the stones."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.1632, -34.3418] },
+      "properties": {
+        "name": "Flinders Bay Shell Grit Beds",
+        "location": "Augusta Region, near the harbour",
+        "type": "Southern Ocean Beachcombing",
+        "access": "2WD",
+        "comment": "Where the Indian and Southern Oceans collide. Rocky corners trap heavy shell grit layers after winter storms. Rock pools and weed lines yield large robust cold-water sea shells and tumbled granite pebbles."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.1932, -17.9654] },
+      "properties": {
+        "name": "Gantheaume Beach Low Tide Pools",
+        "location": "Broome, Kimberley Coast",
+        "type": "Intertidal Rock Pool Scramble",
+        "access": "2WD — 4WD on sand",
+        "comment": "Massive tidal changes expose complex rock pools along the red pindan cliffs. Sandy pockets inside low-tide rock pools reveal tropical species like snakehead and ring-top cowries."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [122.1915, -17.9642] },
+      "properties": {
+        "name": "Gantheaume Point Low Tide Reef Walk",
+        "location": "Broome, Kimberley Coastline",
+        "type": "Prehistoric Trackways Search",
+        "access": "2WD",
+        "comment": "When the tide drops below 2.1 metres, climb onto the flat red sandstone shelf to search for 130-million-year-old dinosaur footprints. Excellent interpretive signs show you what shapes to look for."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.2110, -24.8915] },
+      "properties": {
+        "name": "Gascoyne River Gravel Bars",
+        "location": "Gascoyne Junction area, dry riverbed sections",
+        "type": "Permian Crinoid Stems and Brachiopods",
+        "access": "2WD — dry season only",
+        "comment": "Walk the wide dry pebble and gravel curves of the riverbed. Flip over dark heavy siltstones to find detailed marine imprints including crinoid stems, spiriferid brachiopods and solitary corals. Miner's Right required."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.9044, -31.3470] },
+      "properties": {
+        "name": "Gingin Chalk Exposure Areas",
+        "location": "Gingin Region",
+        "type": "Cretaceous Chalk Matrix",
+        "access": "2WD — landowner permission required",
+        "comment": "Famous zone for fossilised marine life and shark teeth. Requires contacting local managers or landowners before accessing the chalk faces. Miner's Right and landowner consent needed."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.9664, -30.0712] },
+      "properties": {
+        "name": "Green Head Beachcombing Ledger",
+        "location": "Green Head, Mid-West Coast",
+        "type": "Specimen Shell Sifting",
+        "access": "2WD",
+        "comment": "One specific bay gets choked with trillions of tiny pristine pure-white shells. Collectors nickname them 'white rice' — almost identical in size and perfectly preserved."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.1624, -26.4011] },
+      "properties": {
+        "name": "Hamelin Pool Stromatolites",
+        "location": "Shark Bay World Heritage Area",
+        "type": "Living Fossils — Microbialites",
+        "access": "2WD",
+        "comment": "Active living fossils representing life on Earth from 3.5 billion years ago. Short walk to the old quarry and shoreline to see them in the shallow brine. One of the most significant fossil sites on Earth."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.1243, -33.9515] },
+      "properties": {
+        "name": "Hopetoun Back Beach Shell Sifting",
+        "location": "Hopetoun, South Coast",
+        "type": "High-Density Beachcombing Trap",
+        "access": "2WD",
+        "comment": "Ocean currents dump a massive concentration of shells here. Sifting the shell grit reveals an exceptionally high percentage of deep pink, red, and chocolate-caramel whole shells."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.7725, -32.0205] },
+      "properties": {
+        "name": "Minim Cove Fossil Bank",
+        "location": "Mosman Park, Perth Metro — Swan River",
+        "type": "Pleistocene Limestone Shell Hunt",
+        "access": "2WD — metropolitan",
+        "comment": "Secret hands-on spot right in Perth's suburbs. Run your hands along rocky limestone cliffs at the river's edge to spot thousands of ancient prehistoric bivalves, gastropods, and fossilised weevil cocoons."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [121.6810, -32.1975] },
+      "properties": {
+        "name": "Norseman Public Fossicking Area",
+        "location": "Norseman Region, 10 km west of townsite",
+        "type": "Ancient Geologic Fossicking — Agate and Chert",
+        "access": "2WD",
+        "comment": "The only official legal public fossicking area on a roadside layout in WA. Walk the open red dirt, kick over stones, search the gravel — and you are allowed to keep what you find here!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [115.6842, -32.2711] },
+      "properties": {
+        "name": "Point Peron Rock & Shell Search",
+        "location": "Rockingham Region",
+        "type": "Pleistocene Limestone and Marine Treasures",
+        "access": "2WD",
+        "comment": "Walk rugged honeycombed limestone headlands and sandy coves. Known hotspot for beach-polished sea glass, iridescent shells, and fossilised plant root tracks in the ancient limestone."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.7712, -26.2118] },
+      "properties": {
+        "name": "Shell Beach Conservation Park",
+        "location": "Shark Bay World Heritage Area",
+        "type": "Hypersaline Shell Phenomenon",
+        "access": "2WD",
+        "comment": "One of only two beaches in the world made 100% from shells. Trillions of tiny white Hamelin Cockle shells go up to 10 metres deep. Walk and read the educational signs about why they thrive here."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.8844, -22.1025] },
+      "properties": {
+        "name": "Turquoise Bay Drift Shoreline",
+        "location": "Cape Range National Park, Exmouth",
+        "type": "Coral Coast Specimen Hunting",
+        "access": "2WD",
+        "comment": "Heavy drift current pushes unique deep-sea treasures onto the tide lines. Search for olive shells, heavy-spined murex, and moon snails. Ningaloo is a marine park — look, photograph, and leave them for the ecosystem."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [124.9578, -17.4089] },
+      "properties": {
+        "name": "Windjana Gorge Ancient Coral Reef",
+        "location": "Kimberley Region, Napier Range",
+        "type": "Devonian Marine Fossils",
+        "access": "4WD recommended",
+        "comment": "The towering canyon walls are a 350-million-year-old barrier reef. Look along the vertical rock face near the entry gate for fossilised extinct corals and sponges frozen in the dark grey stone."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.6611, -19.7542] },
+      "properties": {
+        "name": "Eighty Mile Beach",
+        "location": "Between Port Hedland and Broome",
+        "type": "The Ultimate Beachcomber's Paradise",
+        "access": "2WD — via caravan park track",
+        "comment": "Widely regarded as one of the best shell collecting beaches in the world. Massive 9-metre tides clear the sand flats twice daily, leaving thousands of pristine giant shells. Famous for intact Mother-of-Pearl, sand dollars, and massive bailer shells."
+      }
+    }
+  ]
+}
